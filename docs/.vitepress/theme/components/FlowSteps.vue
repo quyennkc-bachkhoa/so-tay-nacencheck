@@ -2,17 +2,16 @@
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 
-// 9 bước của Luồng chính, ứng với chương 03 → 11.
+// 8 bước của Luồng chính, ứng với chương 03 → 10.
 const STEPS = [
   { label: 'Thiết lập DN', file: '03-thiet-lap-doanh-nghiep' },
   { label: 'Cơ sở & vùng', file: '04-co-so-va-vung-nguyen-lieu' },
   { label: 'Vật tư', file: '05-danh-muc-vat-tu' },
   { label: 'Sản phẩm', file: '06-san-pham-dinh-muc-quy-trinh' },
-  { label: 'Nguyên liệu', file: '07-nguon-nguyen-lieu' },
-  { label: 'Tạo lô', file: '08-tao-lo-hang' },
-  { label: 'Ghi công đoạn', file: '09-chi-tiet-lo-va-ghi-cong-doan' },
-  { label: 'Tem QR', file: '10-tem-va-truy-xuat' },
-  { label: 'Bán hàng', file: '11-ban-va-phan-phoi' },
+  { label: 'Nguồn & tạo lô', file: '07-nguon-nguyen-lieu-va-tao-lo' },
+  { label: 'Ghi công đoạn', file: '08-chi-tiet-lo-va-ghi-cong-doan' },
+  { label: 'Tem QR', file: '09-tem-va-truy-xuat' },
+  { label: 'Bán hàng', file: '10-ban-va-phan-phoi' },
 ]
 
 const { page } = useData()

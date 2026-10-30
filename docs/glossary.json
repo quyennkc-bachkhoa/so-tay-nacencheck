@@ -107,6 +107,13 @@
     ],
     "def": "Mã định danh một thùng hoặc pallet hàng. Kho quét một mã là nhận cả thùng."
   },
+  "sgtin": {
+    "term": "SGTIN",
+    "match": [
+      "SGTIN"
+    ],
+    "def": "Mã vạch GTIN kèm một số serial riêng, để phân biệt từng gói hàng."
+  },
   "gln": {
     "term": "GLN",
     "match": [
@@ -135,5 +142,12 @@
       "NBC"
     ],
     "def": "Cổng truy xuất nguồn gốc quốc gia, nơi NacenCheck đồng bộ dữ liệu lô lên."
+  },
+  "capa": {
+    "term": "CAPA",
+    "match": [
+      "CAPA"
+    ],
+    "def": "Kế hoạch khắc phục lỗi đã xảy ra và phòng ngừa lỗi lặp lại, nộp khi bị thông báo vi phạm."
   }
 }

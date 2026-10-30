@@ -6,47 +6,11 @@
     "steps": [],
     "marks": [
       {
-        "n": 1,
-        "label": "Thanh menu bên trái: bấm từng mục để chuyển giữa các chức năng",
-        "locator": {
-          "css": "#dashboard-sidebar"
-        }
-      },
-      {
         "n": 2,
         "label": "Bấm ô **Tìm kiếm sổ cái** (hoặc Ctrl + K) để tìm nhanh lô, sản phẩm, trang",
         "locator": {
           "role": "button",
           "name": "Tìm kiếm sổ cái"
-        }
-      },
-      {
-        "n": 3,
-        "label": "Bốn thẻ chỉ số: số lô, lượt quét 7 ngày, số sản phẩm, hạn mức sự kiện trong tháng",
-        "locator": {
-          "union": [
-            {
-              "text": "Lô đang truy xuất",
-              "exact": true,
-              "card": true
-            },
-            {
-              "text": "Lượt quét 7 ngày",
-              "exact": true,
-              "card": true,
-              "nth": 0
-            },
-            {
-              "text": "Tổng sản phẩm",
-              "exact": true,
-              "card": true
-            },
-            {
-              "text": "Hạn mức tháng này",
-              "exact": true,
-              "card": true
-            }
-          ]
         }
       },
       {
@@ -67,22 +31,6 @@
     "steps": [],
     "marks": [
       {
-        "n": 1,
-        "label": "Gõ email hoặc số điện thoại đã đăng ký vào ô **Email hoặc số điện thoại**",
-        "locator": {
-          "label": "Email hoặc số điện thoại",
-          "exact": true
-        }
-      },
-      {
-        "n": 2,
-        "label": "Gõ mật khẩu vào ô **Mật khẩu**",
-        "locator": {
-          "label": "Mật khẩu",
-          "exact": true
-        }
-      },
-      {
         "n": 3,
         "label": "Bấm **Đăng nhập** để vào Bảng điều khiển",
         "locator": {
@@ -98,31 +46,7 @@
     "auth": true,
     "viewport": "desktop",
     "steps": [],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Danh sách 10 bước thiết lập: làm lần lượt từ trên xuống, bước đang làm được tô đậm",
-        "locator": {
-          "css": "aside[aria-label='Các bước thiết lập']"
-        }
-      },
-      {
-        "n": 2,
-        "label": "Thanh tiến độ: cho biết bạn đã xong mấy bước trên 10 bước",
-        "locator": [
-          {
-            "role": "progressbar"
-          },
-          {
-            "css": "main [role=progressbar]"
-          },
-          {
-            "text": "0/10",
-            "exact": true
-          }
-        ]
-      }
-    ]
+    "marks": []
   },
   "03-mo-ho-so": {
     "url": "/dashboard/brand",
@@ -377,275 +301,97 @@
     ]
   },
   "06-dinh-muc": {
-    "url": "/dashboard/bom",
+    "url": "/dashboard/bom/1c4c8e18-aa6e-429d-8c99-5bff4970df5d",
     "auth": true,
     "viewport": "desktop",
-    "note": "Tài khoản chưa có sản phẩm nào có định mức nên ảnh chụp trang danh sách định mức.",
-    "steps": [
-      {
-        "click": {
-          "role": "link",
-          "name": "Giò ngựa tiêu đen 500g"
-        },
-        "optional": true
-      },
-      {
-        "click": {
-          "css": "main .ag-center-cols-container .ag-row:not(:has-text(\"Chưa có\"))",
-          "nth": 0
-        },
-        "optional": true,
-        "unlessUrl": "/dashboard/bom/"
-      },
-      {
-        "wait": 1200
-      }
-    ],
     "marks": [
       {
         "n": 1,
-        "label": "Bấm **Sửa định mức** để thêm hoặc sửa nguyên liệu của sản phẩm",
+        "label": "Lần đầu nút này là **Lập định mức**. Đã có định mức thì bấm **Sửa định mức**",
         "locator": {
           "role": "button",
-          "name": "Sửa định mức"
+          "name": "Sửa định mức",
+          "exact": true
         }
-      },
-      {
-        "n": 2,
-        "if": 1,
-        "label": "Danh sách vật tư và lượng cần cho **1 đơn vị** sản phẩm",
-        "locator": [
-          {
-            "css": "main .ag-root-wrapper",
-            "nth": 0
-          },
-          {
-            "css": "main table",
-            "card": true
-          },
-          {
-            "role": "table"
-          }
-        ]
-      },
-      {
-        "n": 3,
-        "ifNot": 1,
-        "label": "Danh sách sản phẩm: bấm vào một sản phẩm để mở định mức của nó",
-        "locator": [
-          {
-            "css": "main .ag-root-wrapper",
-            "nth": 0
-          },
-          {
-            "css": "main table",
-            "card": true
-          },
-          {
-            "role": "table"
-          }
-        ]
-      },
-      {
-        "n": 4,
-        "ifNot": 1,
-        "label": "Cột **Định mức**: \"Chưa có\" nghĩa là sản phẩm chưa khai công thức",
-        "locator": [
-          {
-            "role": "columnheader",
-            "name": "Định mức",
-            "exact": true
-          },
-          {
-            "css": "th:has-text('Định mức')"
-          }
-        ]
       }
     ]
   },
   "06-quy-trinh": {
-    "url": "/dashboard/products/workflows",
+    "url": "/dashboard/products/1c4c8e18-aa6e-429d-8c99-5bff4970df5d/workflow",
     "auth": true,
-    "viewport": "desktop",
-    "failIf": [
-      "Không tìm thấy sản phẩm",
-      "Không tìm thấy trang"
-    ],
-    "steps": [
-      {
-        "click": {
-          "within": {
-            "css": "main"
-          },
-          "role": "link",
-          "name": "Sửa quy trình",
-          "nth": 0
-        },
-        "optional": true
-      },
-      {
-        "wait": 1500
-      }
-    ],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Danh sách công đoạn: mỗi dòng là một việc mà mọi lô phải làm, theo đúng thứ tự",
-        "locator": [
-          {
-            "text": "Công đoạn",
-            "exact": true,
-            "card": true
-          }
-        ]
-      },
-      {
-        "n": 2,
-        "label": "Khung **xem trước biểu mẫu hiện trường**: công nhân sẽ thấy đúng màn hình này trên điện thoại",
-        "locator": [
-          {
-            "text": "Xem trước",
-            "exact": false,
-            "card": true,
-            "nth": 0
-          }
-        ]
-      },
-      {
-        "n": 3,
-        "label": "Bấm **Xuất bản** khi đã ưng; thiếu bước này sản phẩm không hiện khi tạo lô",
-        "locator": {
-          "role": "button",
-          "name": "Xuất bản"
-        }
-      }
+    "viewport": "desktop-tall",
+    "marks": [],
+    "hideText": [
+      "Lỗi máy chủ"
     ]
   },
   "06-them-san-pham": {
     "url": "/dashboard/products",
     "auth": true,
-    "viewport": "desktop",
+    "viewport": "desktop-tall",
     "steps": [
       {
         "click": {
-          "role": "button",
-          "name": "Thêm sản phẩm",
-          "exact": true
+          "css": "[data-testid=btn-add-product]"
         }
       },
       {
-        "waitFor": {
-          "role": "dialog"
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-industry]"
         }
       },
       {
-        "wait": 1200
+        "click": {
+          "role": "option",
+          "name": "Lúa gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-name-vi]"
+        },
+        "value": "Bánh gạo nướng mật ong Hạt Vàng Việt 180g"
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-sku]"
+        },
+        "value": "BG-MO-180"
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-unit]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Gói",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-gtin-mode-auto]"
+        }
+      },
+      {
+        "wait": 500
       }
     ],
     "marks": [
       {
         "n": 1,
-        "label": "Chọn **Ngành của sản phẩm** trước tiên: ngành quyết định biểu mẫu khai báo và quy trình mẫu",
+        "label": "Bấm **Chưa có — tự cấp** để hệ thống cấp mã vạch từ mã GS1 đã khai",
         "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "Ngành của sản phẩm"
-        }
-      },
-      {
-        "n": 2,
-        "label": "Gõ **Tên sản phẩm (VI)**: đây là tên khách thấy khi quét QR",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "Tên sản phẩm (VI)"
-        }
-      },
-      {
-        "n": 3,
-        "label": "Ô **SKU**: mã hàng nội bộ, hệ thống tự gợi ý từ tên, sửa được",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "SKU"
-        }
-      },
-      {
-        "n": 4,
-        "label": "Chọn **Đơn vị** bán: gói, hộp, kg…",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "Đơn vị"
-        }
-      }
-    ]
-  },
-  "07-nhap-nguyen-lieu": {
-    "url": "/dashboard/warehouse/receipts",
-    "auth": true,
-    "viewport": "desktop",
-    "steps": [
-      {
-        "click": {
-          "role": "tab",
-          "name": "Mua trong nước"
-        }
-      },
-      {
-        "wait": 1500
-      }
-    ],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Ba tab **Phiếu**, **Nhập khẩu**, **Mua trong nước**: chọn đúng con đường nguyên liệu đi vào",
-        "locator": {
-          "union": [
-            {
-              "role": "tab",
-              "name": "Phiếu",
-              "exact": true
-            },
-            {
-              "role": "tab",
-              "name": "Nhập khẩu",
-              "exact": true
-            },
-            {
-              "role": "tab",
-              "name": "Mua trong nước",
-              "exact": true
-            }
-          ]
-        }
-      },
-      {
-        "n": 2,
-        "label": "Bấm **Thêm nguyên liệu mua trong nước** để ghi một lần nhận hàng",
-        "locator": [
-          {
-            "role": "button",
-            "name": "Thêm nguyên liệu mua trong nước"
-          },
-          {
-            "role": "link",
-            "name": "Thêm nguyên liệu mua trong nước"
-          }
-        ]
-      },
-      {
-        "n": 3,
-        "ifNot": 2,
-        "label": "Bấm **Lập phiếu nhập** để ghi một lần nhận hàng mua trong nước",
-        "locator": {
-          "role": "button",
-          "name": "Lập phiếu nhập",
-          "exact": true
+          "css": "[data-testid=product-gtin-mode-auto]"
         }
       }
     ]
@@ -654,46 +400,12 @@
     "url": "/dashboard/farming-journal",
     "auth": true,
     "viewport": "desktop",
-    "steps": [],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Danh sách thửa đất: chọn thửa cần ghi nhật ký",
-        "locator": [
-          {
-            "text": "Thửa đất",
-            "exact": false,
-            "card": true,
-            "nth": 0
-          }
-        ]
-      },
-      {
-        "n": 2,
-        "label": "Bấm **Tạo vụ mới** khi thửa ghi \"Chưa có vụ sản xuất\"",
-        "locator": {
-          "role": "button",
-          "name": "Tạo vụ mới"
-        }
-      },
-      {
-        "n": 3,
-        "ifNot": 1,
-        "label": "Dòng nhắc này nghĩa là chưa có sản phẩm: khai sản phẩm (chương 5) trước rồi quay lại",
-        "locator": {
-          "text": "Đơn vị chưa có ngành từ sản phẩm đã khai",
-          "exact": false
-        }
-      }
-    ]
+    "marks": []
   },
   "08-form-tao-lo": {
     "url": "/dashboard/batches",
     "auth": true,
     "viewport": "desktop-tall",
-    "clip": {
-      "role": "dialog"
-    },
     "steps": [
       {
         "click": {
@@ -703,188 +415,63 @@
         }
       },
       {
-        "waitFor": {
-          "role": "dialog"
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder*='sản phẩm đã công bố']"
+        },
+        "value": "Bánh gạo"
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
         }
       },
       {
-        "wait": 1500
+        "wait": 1000
       },
       {
-        "scroll": {
-          "within": {
-            "role": "dialog"
-          },
-          "text": "Chi tiết nguồn gốc",
-          "exact": true
-        }
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder^='VD: Bánh gạo']"
+        },
+        "value": "Lô bánh gạo mật ong 30/10/2026"
       }
     ],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Gõ tên hoặc SKU vào ô **Sản phẩm đã công bố** rồi chọn sản phẩm",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "Sản phẩm đã công bố"
-        }
-      },
-      {
-        "n": 2,
-        "label": "Khối **Công thức của sản phẩm**: mỗi nguyên liệu trong định mức có sẵn một ô nguồn",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "text": "Công thức của sản phẩm",
-          "exact": false,
-          "card": true
-        }
-      },
-      {
-        "n": 3,
-        "label": "Ô **Lý do chưa gán đủ nguyên liệu**: điền khi chưa đủ chứng từ, hệ thống vẫn cho tạo lô",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "field": "Lý do chưa gán đủ nguyên liệu"
-        }
-      },
-      {
-        "n": 5,
-        "ifNot": 2,
-        "label": "Bấm **Thêm nguồn** để khai từng nguồn nguyên liệu (khi sản phẩm chưa có định mức)",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "role": "button",
-          "name": "Thêm nguồn",
-          "exact": true
-        }
-      },
-      {
-        "n": 4,
-        "label": "Nút **Tạo lô hàng**: chỉ sáng khi đủ điều kiện; nút mờ thì rê chuột vào để đọc lý do",
-        "locator": {
-          "within": {
-            "role": "dialog"
-          },
-          "role": "button",
-          "name": "Tạo lô hàng",
-          "exact": true
-        }
-      }
-    ]
+    "marks": []
   },
   "09-chi-tiet-lo": {
-    "url": "/dashboard/batches/fc726789-581f-41dd-bd69-0850847bfc73",
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
     "auth": true,
-    "viewport": "desktop",
-    "fullPage": true,
+    "viewport": "desktop-tall",
     "pickBatch": true,
     "steps": [],
     "marks": [
       {
         "n": 1,
-        "label": "Bốn thẻ chỉ số: số lượng, công đoạn đã ghi, hoàn thiện hồ sơ, tài liệu",
-        "locator": {
-          "union": [
-            {
-              "within": {
-                "css": "main"
-              },
-              "text": "Số lượng",
-              "exact": true,
-              "card": true,
-              "nth": 0
-            },
-            {
-              "within": {
-                "css": "main"
-              },
-              "text": "Công đoạn",
-              "exact": true,
-              "card": true,
-              "nth": 0
-            },
-            {
-              "within": {
-                "css": "main"
-              },
-              "text": "Hoàn thiện hồ sơ",
-              "exact": true,
-              "card": true,
-              "nth": 0
-            },
-            {
-              "within": {
-                "css": "main"
-              },
-              "text": "Tài liệu",
-              "exact": true,
-              "card": true,
-              "nth": 0
-            }
-          ]
-        }
-      },
-      {
-        "n": 2,
-        "label": "Khung **Cần xử lý**: việc còn thiếu, bấm nút bên cạnh để làm ngay",
-        "locator": {
-          "text": "Cần xử lý",
-          "exact": false,
-          "card": true,
-          "nth": 0
-        }
-      },
-      {
-        "n": 3,
-        "label": "Hàng nút thao tác: **Ghi công đoạn**, **Ghi chuyến vận chuyển**, **Bán / phân phối**, **Thao tác khác**",
-        "locator": {
-          "union": [
-            {
-              "role": "button",
-              "name": "Ghi công đoạn"
-            },
-            {
-              "role": "button",
-              "name": "Ghi chuyến vận chuyển"
-            },
-            {
-              "role": "button",
-              "name": "Bán / phân phối"
-            },
-            {
-              "role": "button",
-              "name": "Thao tác khác"
-            }
-          ]
-        }
-      },
-      {
-        "n": 4,
-        "label": "Khung **Truy xuất công khai**: bấm **Xem như khách hàng** để xem trang người mua thấy",
-        "locator": {
-          "text": "Truy xuất công khai",
-          "exact": false,
-          "card": true,
-          "nth": 0
-        }
-      },
-      {
-        "n": 5,
-        "label": "Năm tab thông tin của lô: bấm từng tab để xem chi tiết",
+        "label": "Bấm **Ghi công đoạn** để ghi bước tiếp theo",
         "locator": [
           {
-            "role": "tablist",
+            "css": "#main-content button:text-is('Ghi công đoạn')",
+            "nth": 1
+          },
+          {
+            "css": "#main-content button:text-is('Ghi công đoạn')",
             "nth": 0
           }
         ]
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Xem như khách hàng** để xem trang khách thấy khi quét QR",
+        "locator": {
+          "css": "#main-content a:has-text('Xem như khách hàng')"
+        }
       }
     ]
   },
@@ -893,53 +480,52 @@
     "auth": true,
     "viewport": "mobile",
     "steps": [],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Danh sách lô cần ghi: chạm vào một lô, hệ thống chỉ đúng bước tiếp theo",
-        "locator": [
-          {
-            "css": "main [role=list]"
-          },
-          {
-            "css": "main ul"
-          },
-          {
-            "css": "main a[href*='/m/events/record/']",
-            "nth": 0
-          }
-        ]
-      },
-      {
-        "n": 2,
-        "ifNot": 1,
-        "label": "Gõ mã lô hoặc tên sản phẩm vào ô tìm kiếm để lọc danh sách lô",
-        "locator": {
-          "role": "textbox"
-        }
-      },
-      {
-        "n": 3,
-        "ifNot": 1,
-        "label": "Chưa có lô nào: chạm **Tạo lô mới** (chương 7) rồi quay lại",
-        "locator": {
-          "role": "link",
-          "name": "Tạo lô mới"
-        }
-      }
-    ]
+    "marks": []
   },
   "10-in-tem-nhanh": {
     "url": "/dashboard/quick-label",
     "auth": true,
-    "viewport": "desktop",
-    "steps": [],
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "#main-content [role=combobox]:has-text('Chọn lô')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "JWQZ",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1200
+      }
+    ],
     "marks": [
       {
         "n": 1,
-        "label": "Bấm ô **Chọn sản phẩm cần tạo tem** và chọn sản phẩm đã khai",
+        "label": "Bấm **In tem QR hàng loạt** để in một tờ 24 tem cho lô",
         "locator": {
-          "field": "Chọn sản phẩm cần tạo tem"
+          "css": "#main-content button:has-text('In tem QR hàng loạt')"
         }
       }
     ]
@@ -948,100 +534,69 @@
     "url": "{publicUrl}",
     "auth": false,
     "viewport": "mobile",
-    "steps": [],
-    "marks": [
+    "steps": [
       {
-        "n": 1,
-        "label": "Các thẻ **Tổng quan**, **Hành trình**, **Nhãn**, **Thương hiệu**: chạm để chuyển nội dung",
-        "locator": {
-          "union": [
-            {
-              "text": "Tổng quan",
-              "exact": true,
-              "nth": 0
-            },
-            {
-              "text": "Hành trình",
-              "exact": true,
-              "nth": 0
-            },
-            {
-              "text": "Nhãn",
-              "exact": true,
-              "nth": 0
-            },
-            {
-              "text": "Thương hiệu",
-              "exact": true,
-              "nth": 0
-            }
-          ]
+        "scroll": {
+          "text": "Tổng quan",
+          "exact": true,
+          "nth": 0
         }
       },
       {
-        "n": 2,
-        "label": "Thông tin sản phẩm: tên, xuất xứ, nhà sản xuất, ngày sản xuất",
-        "locator": [
-          {
-            "css": "main h1",
-            "card": true
-          },
-          {
-            "css": "h1",
-            "card": true
-          }
-        ]
+        "wait": 500
       }
-    ]
+    ],
+    "marks": []
   },
   "11-ban-phan-phoi": {
-    "url": "/dashboard/batches/fc726789-581f-41dd-bd69-0850847bfc73",
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
     "auth": true,
-    "viewport": "desktop",
-    "pickBatch": true,
+    "viewport": "desktop-tall",
     "steps": [
       {
         "click": {
           "role": "button",
-          "name": "Bán / phân phối"
+          "name": "Bán / phân phối",
+          "exact": true
         }
       },
       {
-        "wait": 2000
+        "wait": 1000
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Chọn đối tác đã lưu hoặc gõ tên mới']"
+        },
+        "value": "Đại lý bánh kẹo An Bình"
+      },
+      {
+        "wait": 400
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='VD: 09xx']"
+        },
+        "value": "0912345678"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[type=number]",
+          "nth": 0
+        },
+        "value": "2"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[type=number]",
+          "nth": 1
+        },
+        "value": "25000"
+      },
+      {
+        "wait": 400
       }
     ],
-    "marks": [
-      {
-        "n": 1,
-        "label": "Gõ hoặc chọn **Tên người mua**",
-        "locator": {
-          "field": "Tên người mua"
-        }
-      },
-      {
-        "n": 2,
-        "label": "Gõ **Khối lượng** bán cho người này; kiểm tra đơn vị khớp với lô",
-        "locator": {
-          "field": "Khối lượng"
-        }
-      },
-      {
-        "n": 3,
-        "label": "Bấm **Thêm người mua** để tách tiếp cho người khác",
-        "locator": {
-          "role": "button",
-          "name": "Thêm người mua"
-        }
-      },
-      {
-        "n": 4,
-        "label": "Bấm **Ghi nhận bán cho các người mua** khi đã khai xong (bấm là lưu thật)",
-        "locator": {
-          "role": "button",
-          "name": "Ghi nhận bán cho các người mua"
-        }
-      }
-    ]
+    "marks": []
   },
   "04-them-co-so": {
     "url": "/dashboard/facilities",
@@ -1699,6 +1254,2213 @@
         "wait": 400
       }
     ],
+    "marks": []
+  },
+  "03-ma-gs1": {
+    "url": "/dashboard/gs1",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Ở khung **Khai nhanh**, gõ mã GS1 của doanh nghiệp rồi bấm **Lưu**",
+        "locator": {
+          "union": [
+            {
+              "text": "Khai nhanh (nội địa — tuỳ chọn)"
+            },
+            {
+              "css": "#main-content input[placeholder='VD: 893801234']"
+            },
+            {
+              "css": "#main-content button:text-is('Lưu')",
+              "nth": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "06-san-pham": {
+    "url": "/dashboard/products",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm sản phẩm** để mở form",
+        "locator": {
+          "css": "[data-testid=btn-add-product]"
+        }
+      }
+    ]
+  },
+  "06-them-san-pham-nhan": {
+    "url": "/dashboard/products",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "[data-testid=btn-add-product]"
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-industry]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Lúa gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-name-vi]"
+        },
+        "value": "Bánh gạo nướng mật ong Hạt Vàng Việt 180g"
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-sku]"
+        },
+        "value": "BG-MO-180"
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-unit]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Gói",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-gtin-mode-auto]"
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible :text('Nhãn eLabel')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "fill": {
+          "css": "xpath=//*[@role='dialog']//*[normalize-space(text())='Nhà sản xuất / chịu trách nhiệm']/following::input[1]"
+        },
+        "value": "Công ty TNHH Hạt Vàng Việt"
+      },
+      {
+        "fill": {
+          "css": "xpath=//*[@role='dialog']//*[normalize-space(text())='Địa chỉ pháp nhân']/following::input[1]"
+        },
+        "value": "12 Lê Duẩn, phường Cửa Nam, Hà Nội"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Tên in trên bao bì']"
+        },
+        "value": "Hạt Vàng Việt"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd Gói 500 g / Thùng 24 hộp']"
+        },
+        "value": "Gói 180 g"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Mô tả ngắn về thương phẩm']"
+        },
+        "value": "Bánh gạo nướng vị mật ong"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd 500g / 1kg / 330ml']"
+        },
+        "value": "180g"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd 365']"
+        },
+        "value": "180"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd Việt Nam']"
+        },
+        "value": "Việt Nam"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd Gạo ST25, nước, muối']"
+        },
+        "value": "Gạo tám thơm, mật ong"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='vd Nơi khô ráo, tránh nắng']"
+        },
+        "value": "Nơi khô ráo, tránh nắng"
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible input[placeholder='vd Gạo ST25, nước, muối']"
+        }
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": []
+  },
+  "06-them-san-pham-co-so": {
+    "url": "/dashboard/products",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "[data-testid=btn-add-product]"
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-industry]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Lúa gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-name-vi]"
+        },
+        "value": "Bánh gạo nướng mật ong Hạt Vàng Việt 180g"
+      },
+      {
+        "fill": {
+          "css": "[data-testid=product-sku]"
+        },
+        "value": "BG-MO-180"
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-unit]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Gói",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[data-testid=product-gtin-mode-auto]"
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible div:has(> strong:text-is('Nhà máy cơm cháy Hạt Vàng Việt')) label:has-text('Sản xuất')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible div:has(> strong:text-is('Nhà máy cơm cháy Hạt Vàng Việt')) label:has-text('Đóng gói')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Không đặt mặc định')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà máy cơm cháy",
+          "exact": false
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible button:has-text('Lưu sản phẩm')",
+          "nth": 0
+        }
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible strong:text-is('Nhà máy cơm cháy Hạt Vàng Việt')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Tick **Sản xuất**, **Đóng gói** ở cơ sở làm ra sản phẩm",
+        "locator": {
+          "css": "[role=dialog]:visible div:has(> strong:text-is('Nhà máy cơm cháy Hạt Vàng Việt'))",
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "06-dinh-muc-form": {
+    "url": "/dashboard/bom/1c4c8e18-aa6e-429d-8c99-5bff4970df5d",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Sửa định mức",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": []
+  },
+  "06-quy-trinh-mau": {
+    "url": "/dashboard/products/1c4c8e18-aa6e-429d-8c99-5bff4970df5d/workflow",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :text-is('Chế biến')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "#main-content button:has-text('Mẫu ngành')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Chèn vào bước** ở ô cần ghi tại hiện trường",
+        "locator": {
+          "css": "[role=dialog]:visible button:has-text('Chèn vào bước')",
+          "nth": 0
+        }
+      }
+    ],
+    "hideText": [
+      "Lỗi máy chủ"
+    ]
+  },
+  "06-kich-hoat": {
+    "url": "/dashboard/products/1c4c8e18-aa6e-429d-8c99-5bff4970df5d",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Kích hoạt** để sản phẩm chọn được khi tạo lô",
+        "locator": {
+          "css": "[data-testid=btn-activate-product]"
+        }
+      }
+    ]
+  },
+  "07-loai-nguon": {
+    "url": "/dashboard/batches",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo lô mới",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder*='sản phẩm đã công bố']"
+        },
+        "value": "Bánh gạo"
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible :text-is('Mua từ đơn vị khác')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder='Chọn nhà cung cấp từ danh bạ…']"
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà cung cấp mật ong Minh An",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Nhập số chứng từ (nếu có)']"
+        },
+        "value": "HD-2612"
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible :text-is('Mua từ đơn vị khác')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chọn **Loại nguồn** theo cách bạn có nguyên liệu. Các ô bên dưới đổi theo loại đã chọn",
+        "locator": {
+          "union": [
+            {
+              "css": "[role=dialog]:visible :text-is('Vùng nguyên liệu của tôi')",
+              "nth": 0
+            },
+            {
+              "css": "[role=dialog]:visible :text-is('Nhập khẩu')",
+              "nth": 0
+            },
+            {
+              "css": "[role=dialog]:visible :text-is('Không xác định')",
+              "nth": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "07-mua-trong-nuoc": {
+    "url": "/dashboard/warehouse/receipts?tab=domestic&page=1",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "[data-testid=domestic-add-btn]"
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Chọn kho')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Kho nguyên liệu Hạt Vàng Việt",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Chọn vật tư')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Mật ong",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Chọn đối tác')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà cung cấp mật ong Minh An",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input:not([type=checkbox]):not([type=file]):not([type=date])",
+          "nth": 0
+        },
+        "value": "150000"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='dd/mm/yyyy']",
+          "nth": 0
+        },
+        "value": "30/10/2027"
+      },
+      {
+        "click": {
+          "css": "[data-testid=domestic-material-type]"
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "type": "Mật ong"
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Mật ong",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[data-testid=supplier-qty-0]"
+        },
+        "value": "20"
+      },
+      {
+        "fill": {
+          "css": "[data-testid=supplier-invoice-0]"
+        },
+        "value": "HD-2611"
+      },
+      {
+        "click": {
+          "css": "[data-testid=domestic-unit]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Lít",
+          "exact": false
+        }
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Chọn tỉnh/thành')",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Thành phố Hà Nội",
+          "exact": false
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": []
+  },
+  "07-ton-kho": {
+    "url": "/dashboard/warehouse/stock",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Tạo lô truy xuất** trên dòng lô cần dùng",
+        "locator": {
+          "role": "button",
+          "name": "Tạo lô truy xuất",
+          "exact": true,
+          "nth": 1
+        }
+      }
+    ]
+  },
+  "07-nhap-khau": {
+    "url": "/dashboard/warehouse/receipts?tab=import&page=1",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "[data-testid=create-import-btn]"
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[data-testid=create-declarationNumber]"
+        },
+        "value": "VNACCS-2026-00123"
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible [role=combobox]:has-text('Chọn lô kho đã nhập')",
+          "nth": 0
+        },
+        "optional": true
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "MO-2610",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": []
+  },
+  "07-thu-hoach": {
+    "url": "/dashboard/harvest",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "[data-testid=btn-toggle-harvest-form]"
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": []
+  },
+  "08-lo-nguon": {
+    "url": "/dashboard/batches",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo lô mới",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder*='sản phẩm đã công bố']"
+        },
+        "value": "Bánh gạo"
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder^='VD: Bánh gạo']"
+        },
+        "value": "Lô bánh gạo mật ong 30/10/2026"
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder^='Chọn vùng trồng']"
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "ZP-",
+          "exact": false
+        }
+      },
+      {
+        "wait": 700
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible button:has-text('Thêm nguồn')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible :text-is('Mua từ đơn vị khác')",
+          "nth": 1
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder='Chọn nhà cung cấp từ danh bạ…']"
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà cung cấp mật ong Minh An",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Nhập số chứng từ (nếu có)']"
+        },
+        "value": "HD-2611"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible [placeholder*='chứng từ nhà cung cấp mai']"
+        },
+        "value": "Mật ong và túi mua ngoài, chứng từ bổ sung sau"
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible [placeholder*='chứng từ nhà cung cấp mai']"
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chưa đủ nguồn cho mọi nguyên liệu thì điền ô **Lý do chưa khai đủ nguồn nguyên liệu**",
+        "locator": {
+          "css": "[role=dialog]:visible [placeholder*='chứng từ nhà cung cấp mai']"
+        }
+      }
+    ]
+  },
+  "08-lo-co-so": {
+    "url": "/dashboard/batches",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo lô mới",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder*='sản phẩm đã công bố']"
+        },
+        "value": "Bánh gạo"
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder^='VD: Bánh gạo']"
+        },
+        "value": "Lô bánh gạo mật ong 30/10/2026"
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder^='Chọn vùng trồng']"
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "ZP-",
+          "exact": false
+        }
+      },
+      {
+        "wait": 700
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible button:has-text('Thêm nguồn')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible :text-is('Mua từ đơn vị khác')",
+          "nth": 1
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder='Chọn nhà cung cấp từ danh bạ…']"
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà cung cấp mật ong Minh An",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Nhập số chứng từ (nếu có)']"
+        },
+        "value": "HD-2611"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible [placeholder*='chứng từ nhà cung cấp mai']"
+        },
+        "value": "Mật ong và túi mua ngoài, chứng từ bổ sung sau"
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible button:has-text('Đúng, lô làm ở đây')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Đúng, lô làm ở đây** để xác nhận cơ sở gợi ý",
+        "locator": {
+          "css": "[role=dialog]:visible button:has-text('Đúng, lô làm ở đây')",
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "08-lo-so-luong": {
+    "url": "/dashboard/batches",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo lô mới",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder*='sản phẩm đã công bố']"
+        },
+        "value": "Bánh gạo"
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder^='VD: Bánh gạo']"
+        },
+        "value": "Lô bánh gạo mật ong 30/10/2026"
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder^='Chọn vùng trồng']"
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "ZP-",
+          "exact": false
+        }
+      },
+      {
+        "wait": 700
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible button:has-text('Thêm nguồn')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible :text-is('Mua từ đơn vị khác')",
+          "nth": 1
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible input[placeholder='Chọn nhà cung cấp từ danh bạ…']"
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà cung cấp mật ong Minh An",
+          "exact": false
+        }
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='Nhập số chứng từ (nếu có)']"
+        },
+        "value": "HD-2611"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible [placeholder*='chứng từ nhà cung cấp mai']"
+        },
+        "value": "Mật ong và túi mua ngoài, chứng từ bổ sung sau"
+      },
+      {
+        "click": {
+          "css": "[role=dialog]:visible button:has-text('Đúng, lô làm ở đây')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      },
+      {
+        "fill": {
+          "css": "[role=dialog]:visible input[placeholder='VD: 1250']"
+        },
+        "value": "10"
+      },
+      {
+        "wait": 1800
+      },
+      {
+        "scroll": {
+          "css": "[role=dialog]:visible :text-is('Định mức và tồn kho dự kiến')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Xem lượng **Cần**, **Đang tồn** và **Còn thiếu** của từng vật tư",
+        "locator": {
+          "css": "[role=dialog]:visible :text-is('Định mức và tồn kho dự kiến')",
+          "nth": 0,
+          "card": true
+        }
+      }
+    ],
+    "hideText": [
+      "Thiếu tồn kho ở"
+    ]
+  },
+  "08-lo-ket-qua": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Công bố lô** để bỏ cảnh báo bản nháp trên trang tra cứu",
+        "locator": {
+          "role": "button",
+          "name": "Công bố lô",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "09-ghi-tien-trinh": {
+    "url": "/dashboard/events/new?batchId=58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "wait": 600
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Ghi nhận công đoạn này** để ghi bước đang sáng",
+        "locator": {
+          "css": "#main-content button:text-is('Ghi nhận công đoạn này')",
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "09-ghi-form": {
+    "url": "/dashboard/events/new?batchId=58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "geolocation": {
+      "latitude": 21.0245,
+      "longitude": 105.8412
+    },
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Ghi nhận công đoạn này",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[data-testid=event-facility]"
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhà máy cơm cháy",
+          "exact": false
+        }
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": []
+  },
+  "09-nhat-ky": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :is(button,[role=tab]):has-text('Quy trình và sự kiện')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 900
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Xem các công đoạn đã ghi: thời điểm, nơi ghi, người ghi",
+        "locator": {
+          "text": "Nhật ký sự kiện",
+          "exact": true,
+          "card": true
+        }
+      }
+    ]
+  },
+  "09-dinh-chinh": {
+    "url": "/dashboard/events/new?batchId=58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :text-is('Chế biến')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Đính chính** để tạo bản sửa, bản gốc vẫn được giữ",
+        "locator": {
+          "css": "[role=dialog]:visible button:text-is('Đính chính')"
+        }
+      }
+    ]
+  },
+  "09-ho-so": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :is(button,[role=tab]):has-text('Hồ sơ và chứng cứ')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 900
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Chọn file** sau khi đã chọn **Loại tài liệu**",
+        "locator": {
+          "text": "Chọn file",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "10-truy-xuat-hanh-trinh": {
+    "url": "{publicUrl}",
+    "auth": false,
+    "viewport": "mobile",
+    "steps": [
+      {
+        "click": {
+          "text": "Hành trình",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 900
+      }
+    ],
+    "marks": []
+  },
+  "10-so-tem": {
+    "url": "/dashboard/labels",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **In tem nhanh** để sang màn in tem",
+        "locator": {
+          "css": "#main-content a:has-text('In tem nhanh'), #main-content button:has-text('In tem nhanh')",
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "10-thiet-ke-tem": {
+    "url": "/dashboard/labels/designer",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chọn **Loại serial** theo mức cần kiểm soát từng con tem",
+        "locator": {
+          "field": "Loại serial (chống giả)"
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Lưu mẫu** để dùng lại bố cục này",
+        "locator": {
+          "role": "button",
+          "name": "Lưu mẫu",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "10-tem-bao-goi": {
+    "url": "/dashboard/labels/packaging",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "fill": {
+          "css": "#main-content input:visible"
+        },
+        "value": "JWQZ"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "click": {
+          "text": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "wait": 1000
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ mã lô rồi chọn lô để mở cả 3 lớp tem",
+        "locator": [
+          {
+            "css": "#main-content [role=combobox]",
+            "nth": 0
+          },
+          {
+            "css": "#main-content input:visible",
+            "nth": 0
+          }
+        ]
+      }
+    ]
+  },
+  "10-tem-serial": {
+    "url": "/dashboard/labels/packaging",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "fill": {
+          "css": "#main-content input:visible"
+        },
+        "value": "JWQZ"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "click": {
+          "text": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "scroll": {
+          "text": "Tem serial từng sản phẩm (SGTIN)",
+          "exact": false
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ số lượng rồi bấm **Sinh serial**",
+        "locator": {
+          "role": "button",
+          "name": "Sinh serial",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "10-thung-sscc": {
+    "url": "/dashboard/labels/packaging",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "fill": {
+          "css": "#main-content input:visible"
+        },
+        "value": "JWQZ"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "click": {
+          "text": "BGNM-20261030-JWQZ",
+          "exact": false
+        },
+        "optional": true
+      },
+      {
+        "wait": 1000
+      },
+      {
+        "scroll": {
+          "text": "Thùng & Pallet (SSCC)",
+          "exact": false
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Đóng hàng có serial",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Đóng hàng có serial**, rồi tick đúng các serial đã đặt vào thùng",
+        "locator": {
+          "role": "button",
+          "name": "Đóng hàng có serial",
+          "exact": true
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Xác nhận đóng** để mở khóa nút **In nhãn**",
+        "locator": {
+          "role": "button",
+          "name": "Xác nhận đóng",
+          "exact": false
+        }
+      }
+    ]
+  },
+  "10-chong-gia": {
+    "url": "/dashboard/compliance/anti-counterfeiting",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Phát hành tem** để tạo một dải tem",
+        "locator": {
+          "role": "button",
+          "name": "Phát hành tem",
+          "exact": true
+        }
+      },
+      {
+        "n": 2,
+        "label": "Dán mã tem rồi bấm **Tra** để xem tem đã bị quét bao nhiêu lần",
+        "locator": {
+          "text": "Tra một con tem",
+          "exact": false,
+          "card": true
+        }
+      }
+    ]
+  },
+  "10-chong-gia-phat-hanh": {
+    "url": "/dashboard/compliance/anti-counterfeiting",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Phát hành tem",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[role=dialog] [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Chống giả",
+          "exact": true
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "fill": {
+          "css": "[role=dialog] input[type=number]",
+          "nth": 0
+        },
+        "value": "10"
+      },
+      {
+        "fill": {
+          "css": "[role=dialog] input[placeholder='VD: COFFEE2026']"
+        },
+        "value": "HVV2610"
+      }
+    ],
+    "marks": []
+  },
+  "10-chong-gia-menu": {
+    "url": "/dashboard/compliance/anti-counterfeiting",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Thao tác khác",
+          "exact": false,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Kích hoạt**, gõ mã lô rồi bấm **Xác nhận**",
+        "locator": {
+          "role": "menuitem",
+          "name": "Kích hoạt",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "11-lo-con": {
+    "url": "/dashboard/batches",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Lô con của phần đã bán có mã riêng, trạng thái **Đã bán**",
+        "locator": {
+          "text": "DST-20261030-dd50a11a",
+          "exact": false
+        }
+      }
+    ]
+  },
+  "11-phan-bo": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :is(button,[role=tab]):has-text('Nguồn đầu vào/đầu ra')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 900
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Xem số **còn lại** so với sản lượng của lô",
+        "locator": {
+          "text": "Phân bổ & Theo dõi lưu thông lô hàng",
+          "exact": false,
+          "card": true
+        }
+      }
+    ]
+  },
+  "11-tinh-trang": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313/control-tower",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Làm lần lượt các dòng trong **Việc phải làm**",
+        "locator": {
+          "text": "Việc phải làm",
+          "exact": false,
+          "card": true
+        }
+      }
+    ]
+  },
+  "11-mang-luoi": {
+    "url": "/dashboard/distribution/network",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm đối tác** để khai từng cấp phân phối",
+        "locator": {
+          "role": "button",
+          "name": "Thêm đối tác",
+          "exact": true
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Ghi chặng giao hàng** để ghi hàng đi từ đâu tới đâu",
+        "locator": {
+          "css": "#main-content :is(button,[role=tab]):has-text('Ghi chặng giao hàng')",
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "11-ghi-chang": {
+    "url": "/dashboard/distribution/network",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content :is(button,[role=tab]):has-text('Ghi chặng giao hàng')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "#main-content [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "DST-20261030",
+          "exact": false
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "fill": {
+          "css": "#main-content input[type=number]",
+          "nth": 0
+        },
+        "value": "2"
+      },
+      {
+        "fill": {
+          "css": "#main-content input[value='kg']",
+          "nth": 0
+        },
+        "value": "gói"
+      }
+    ],
+    "marks": []
+  },
+  "11-lien-ket": {
+    "url": "/dashboard/partners/traders",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Mời đối tác**, gõ mã số thuế của bên kia rồi gửi yêu cầu",
+        "locator": {
+          "role": "button",
+          "name": "Mời đối tác",
+          "exact": true,
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "11-giao-nhan": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Thao tác khác",
+          "exact": true
+        }
+      },
+      {
+        "wait": 400
+      },
+      {
+        "click": {
+          "role": "menuitem",
+          "name": "Gửi xác nhận giao–nhận",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": []
+  },
+  "11-thu-hoi": {
+    "url": "/dashboard/batches/58710f64-9b10-4e62-8da3-6b388da22313/recall",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "click": {
+          "text": "Mức 3 — Vi phạm nhãn / chất lượng",
+          "exact": false
+        }
+      },
+      {
+        "wait": 200
+      },
+      {
+        "click": {
+          "css": "#main-content [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Sai nhãn",
+          "exact": true
+        }
+      },
+      {
+        "wait": 200
+      },
+      {
+        "fill": {
+          "css": "#main-content input[placeholder='vd 1200']"
+        },
+        "value": "8"
+      },
+      {
+        "fill": {
+          "css": "#main-content textarea",
+          "nth": 0
+        },
+        "value": "Tem của lô BGNM-20261030-JWQZ in sai hạn sử dụng. Người mua kiểm tra hạn sử dụng trên bao bì và đổi hàng tại nơi mua."
+      },
+      {
+        "fill": {
+          "css": "#main-content input[placeholder='vd Đồng Tháp + TP.HCM + Hà Nội']"
+        },
+        "value": "Hà Nội"
+      }
+    ],
+    "marks": []
+  },
+  "11-tieu-thu": {
+    "url": "/dashboard/distribution",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "12-tuan-thu": {
+    "url": "/dashboard/compliance",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm các mục ở hàng này để mở từng công cụ tuân thủ",
+        "locator": {
+          "union": [
+            {
+              "css": "#main-content a[href='/dashboard/compliance/labels']"
+            },
+            {
+              "css": "#main-content a[href='/dashboard/compliance/reports']"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "12-kiem-tra-nhan": {
+    "url": "/dashboard/compliance/labels",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "css": "#main-content [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Bánh gạo",
+          "exact": false
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "scroll": {
+          "role": "button",
+          "name": "Kiểm tra",
+          "exact": true
+        }
+      },
+      {
+        "wait": 400
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Kiểm tra** để biết nhãn còn thiếu mục nào",
+        "locator": {
+          "role": "button",
+          "name": "Kiểm tra",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "12-lich-su-quet": {
+    "url": "/dashboard/compliance/qr-scan-history",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "12-rui-ro": {
+    "url": "/dashboard/compliance/risk",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "12-ho-chieu-lo": {
+    "url": "/dashboard/compliance/batch-passports",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Phát hành hộ chiếu",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "#main-content [role=combobox]:has-text('Chọn lô'), [role=dialog] [role=combobox]:has-text('Chọn lô')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "BGNM-20261030",
+          "exact": false
+        }
+      },
+      {
+        "wait": 300
+      }
+    ],
+    "marks": []
+  },
+  "12-bang-chung": {
+    "url": "/dashboard/compliance/evidence",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chọn kỳ và loại bằng chứng, rồi bấm **Tạo**",
+        "locator": {
+          "role": "button",
+          "name": "Tạo",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "12-vi-pham": {
+    "url": "/dashboard/violations",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "12-truy-vet": {
+    "url": "/dashboard/lineage",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "13-tong-quan": {
+    "url": "/dashboard/doi-phuong-tien",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "13-tai-san": {
+    "url": "/dashboard/doi-phuong-tien/tai-san",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo mới",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "#main-content [role=combobox]:has-text('Tàu / thuyền'), [role=dialog] [role=combobox]:has-text('Tàu / thuyền')",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Xe tải / xe tải lạnh",
+          "exact": true
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: 51C-123.45 hoặc 89-TG-0001']"
+        },
+        "value": "29C-123.45"
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: Xe lạnh 51C-123.45']"
+        },
+        "value": "Xe tải Hạt Vàng Việt 29C-123.45"
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: 50']"
+        },
+        "value": "5"
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: 2018']"
+        },
+        "value": "2022"
+      }
+    ],
+    "marks": []
+  },
+  "13-thiet-bi": {
+    "url": "/dashboard/doi-phuong-tien/thiet-bi",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo mới",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: 357938050509926 hoặc SN-20240001']"
+        },
+        "value": "357938050509926"
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: Teltonika FMB920 / Dragino LHT65']"
+        },
+        "value": "Teltonika FMB920"
+      }
+    ],
+    "marks": []
+  },
+  "13-hanh-trinh": {
+    "url": "/dashboard/doi-phuong-tien/hanh-trinh",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tạo mới",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: Cảng Vũng Tàu']"
+        },
+        "value": "Nhà máy cơm cháy Hạt Vàng Việt"
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='VD: Cảng Cát Lái']"
+        },
+        "value": "Đại lý bánh kẹo An Bình"
+      }
+    ],
+    "marks": []
+  },
+  "13-ket-noi-iot": {
+    "url": "/dashboard/doi-phuong-tien/iot",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Tạo token**, rồi đưa token cho bên cung cấp hệ thống giám sát",
+        "locator": {
+          "role": "button",
+          "name": "Tạo token",
+          "exact": true,
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "14-tong-quan": {
+    "url": "/dashboard/cooperative",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "14-tao-nong-ho": {
+    "url": "/dashboard/users",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Thêm thành viên",
+          "exact": false,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "css": "[role=dialog] [role=combobox]",
+          "nth": 0
+        }
+      },
+      {
+        "wait": 300
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nông hộ",
+          "exact": true
+        }
+      },
+      {
+        "wait": 300
+      }
+    ],
+    "marks": []
+  },
+  "14-dang-ky-hang-loat": {
+    "url": "/dashboard/cooperative/bulk-signup",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Tải mẫu CSV** để lấy đúng file mẫu",
+        "locator": {
+          "text": "Tải mẫu CSV",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "14-khai-thua": {
+    "url": "/dashboard/cooperative/signup",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": []
+  },
+  "14-lich-mau": {
+    "url": "/dashboard/templates/workflows",
+    "auth": true,
+    "viewport": "desktop",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Sao chép để chỉnh** để có bản lịch riêng",
+        "locator": {
+          "text": "Sao chép để chỉnh",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Ban hành mùa vụ** để gửi lịch tới nông hộ",
+        "locator": {
+          "text": "Ban hành mùa vụ",
+          "exact": true,
+          "nth": 0
+        }
+      }
+    ]
+  },
+  "14-phat-quy-trinh": {
+    "url": "/dashboard/cooperative/broadcasting?templateId=38f87066-2b20-41d9-9344-be0f209fe7d6",
+    "auth": true,
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "wait": 6000
+      },
+      {
+        "fill": {
+          "css": "input[placeholder='Ví dụ: Vụ Đông-Xuân 2026 — nhóm Khe Cốc']"
+        },
+        "value": "Vụ Đông Xuân 2026 – Khu B"
+      }
+    ],
+    "marks": []
+  },
+  "14-uy-quyen": {
+    "url": "/dashboard/proxy-authorizations",
+    "auth": true,
+    "viewport": "desktop",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Ghi giấy uỷ quyền",
+          "exact": true,
+          "nth": 0
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": []
+  },
+  "14-khai-ho": {
+    "url": "/m/htx-proxy",
+    "auth": true,
+    "viewport": "tablet",
     "marks": []
   }
 }

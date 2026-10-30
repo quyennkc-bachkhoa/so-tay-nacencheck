@@ -5,7 +5,7 @@ import { computed } from 'vue'
 
 const { theme, page, isDark } = useData()
 
-// Đường dẫn hiện tại dạng "/luong-chinh/08-tao-lo-hang", trang chủ là "/".
+// Đường dẫn hiện tại dạng "/luong-chinh/07-nguon-nguyen-lieu-va-tao-lo", trang chủ là "/".
 const current = computed(() => '/' + page.value.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, ''))
 const tabs = computed(() =>
   (theme.value.nav as { text: string; link: string; activeMatch: string }[]).map((t) => ({

@@ -24,13 +24,14 @@ const VIEWPORTS = {
   desktop: { viewport: { width: 1440, height: 900 } },
   'desktop-tall': { viewport: { width: 1440, height: 1200 } },
   'desktop-wide': { viewport: { width: 1920, height: 1080 } },
+  tablet: { viewport: { width: 1024, height: 768 } },
   mobile: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
 };
 
 // Nút lưu dữ liệu: script từ chối bấm, kể cả khi annotations.json khai nhầm.
-const FORBIDDEN = /^(lưu\b.*|tạo lô hàng|ghi nhận.*|xuất bản.*|xóa.*|xoá.*|phát hành.*|đăng ký vùng|bắt đầu|tạo sản phẩm \+ tem|tạo tài khoản|gửi.*|xác nhận.*|cập nhật thông tin|công khai trang)$/i;
-// Nút trùng tên nút lưu nhưng chỉ mở form: "Cập nhật thông tin" ở Hồ sơ doanh nghiệp.
-const OPENERS = ['company-profile-edit'];
+const FORBIDDEN = /^(lưu\b.*|tạo lô hàng|ghi nhận.*|xuất bản.*|xóa.*|xoá.*|phát hành.*|đăng ký vùng|bắt đầu|tạo sản phẩm \+ tem|tạo tài khoản|kích hoạt|gửi.*|xác nhận.*|cập nhật thông tin|công khai trang|sinh serial|tạo 1 thùng|tạo cây|in tem serial.*|ghi chặng|khởi tạo lệnh thu hồi|giao lô.*|in lại|tạm khoá|hủy tem)$/i;
+// Nút trùng tên nút lưu nhưng chỉ mở form: "Cập nhật thông tin" ở Hồ sơ doanh nghiệp, "Ghi nhận nhanh" ở Thu hoạch, "Ghi nhận công đoạn này" ở trang ghi công đoạn, "Phát hành tem" ở Tem chống giả, "Gửi xác nhận giao–nhận" ở menu lô, "Phát hành hộ chiếu" ở Hộ chiếu lô.
+const OPENERS = ['company-profile-edit', 'btn-toggle-harvest-form', 'Ghi nhận công đoạn này', 'Phát hành tem', 'Gửi xác nhận giao–nhận', 'Phát hành hộ chiếu'];
 
 if (!EMAIL || !PASSWORD) {
   console.error('Thiếu NACEN_EMAIL hoặc NACEN_PASSWORD trong .env');
@@ -210,7 +211,7 @@ async function clickSafe(page, spec, name) {
   if (!el) throw new Error('không tìm thấy phần tử để bấm: ' + JSON.stringify(spec));
   const label = ((await el.getAttribute('aria-label').catch(() => null)) || (await el.innerText().catch(() => '')) || '').trim();
   const testId = await el.getAttribute('data-testid').catch(() => null);
-  if (FORBIDDEN.test(label) && !OPENERS.includes(testId)) throw new Error(`từ chối bấm nút lưu dữ liệu "${label}"`);
+  if (FORBIDDEN.test(label) && !OPENERS.includes(testId) && !OPENERS.includes(label)) throw new Error(`từ chối bấm nút lưu dữ liệu "${label}"`);
   await el.click();
   log(`  bấm: ${label || JSON.stringify(spec)}`);
 }
@@ -291,12 +292,16 @@ async function shoot(browser, name, a) {
   // Tắt service worker: yêu cầu đi qua service worker thì page.route không chặn được.
   const ctxOpts = { ...VIEWPORTS[vpName], deviceScaleFactor: 2, colorScheme: 'light', locale: 'vi-VN', serviceWorkers: 'block' };
   if (a.auth && fs.existsSync(STATE)) ctxOpts.storageState = STATE;
+  // Form tự xin vị trí: không cấp thì ảnh hiện dòng lỗi đỏ "chưa cho phép định vị".
+  if (a.geolocation) Object.assign(ctxOpts, { geolocation: a.geolocation, permissions: ['geolocation'] });
   const ctx = await browser.newContext(ctxOpts);
   const page = await ctx.newPage();
   // Lớp chặn cuối: ngoài đăng nhập và làm mới phiên, mọi yêu cầu ghi dữ liệu đều bị hủy.
   await page.route('**/*', (route) => {
     const r = route.request();
     if (['GET', 'HEAD', 'OPTIONS'].includes(r.method()) || page.url().includes('/sign-in') || /auth|refresh|token/i.test(r.url())) return route.continue();
+    // Xem trước định mức trong form tạo lô: POST nhưng chỉ tính toán, không lưu.
+    if (/\/manufacturing\/requirements\/preview$/.test(r.url())) return route.continue();
     return route.abort();
   });
   try {
@@ -322,6 +327,10 @@ async function shoot(browser, name, a) {
           await box.fill(s.value);
           if (s.press) await box.press(s.press);
           await page.waitForTimeout(300);
+        }
+        if (s.type) {
+          await page.keyboard.type(s.type);
+          await page.waitForTimeout(400);
         }
         if (s.waitFor) await buildLocator(page, s.waitFor).first().waitFor({ state: 'visible', timeout: 10000 });
         if (s.scroll) {
@@ -421,6 +430,14 @@ async function shoot(browser, name, a) {
       if (pub) shared.publicUrl = pub;
     }
 
+    // Thông báo lỗi tạm của trang không liên quan đến thao tác đang hướng dẫn: khai hideText để ẩn khỏi ảnh và ghi lại lỗi.
+    if (a.hideText) {
+      await page.evaluate((texts) => {
+        for (const el of document.querySelectorAll('body *')) {
+          if (getComputedStyle(el).position === 'fixed' && !el.querySelector('[role=dialog]') && el.getAttribute('role') !== 'dialog' && texts.some((t) => el.innerText?.includes(t)) && el.getBoundingClientRect().width < 700) el.style.setProperty('display', 'none', 'important');
+        }
+      }, a.hideText);
+    }
     await drawOverlay(page, draw, bounds);
     const file = path.join(OUT, `${name}.png`);
     if (clipLoc) await page.screenshot({ path: file, clip: bounds });

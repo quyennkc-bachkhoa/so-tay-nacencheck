@@ -98,6 +98,6 @@ Nhật ký canh tác ghi theo từng **đơn vị sản xuất** (thửa), khôn
 
 ![Form phân công thửa](/images/04-phan-cong.png)
 
-Người canh tác được phân công sẽ ghi được nhật ký. Quản trị và Quản lý ghi được mọi thửa.
+Người canh tác được phân công sẽ ghi được nhật ký. Tài khoản quản trị chưa được phân công thì vẫn bị báo chưa được ghi, nên hãy phân công đúng người ghi.
 
 > Lưu ý: nếu đã tick **Đơn vị là hợp tác xã** ở trang Tùy chọn, tạo vùng sẽ không tự sinh Thửa 1. Khi đó bạn khai đơn vị riêng cho từng hộ.

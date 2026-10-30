@@ -62,14 +62,15 @@ export default defineConfig({
   },
 
   themeConfig: {
-    // Menu ngang 5 nhóm (vẽ bởi SiteHeader.vue). Không có sidebar.
+    // Menu ngang 6 nhóm (vẽ bởi SiteHeader.vue). Không có sidebar.
     nav: [
       { text: 'Trang chủ', link: '/', activeMatch: '^/$' },
       { text: 'Mở đầu', link: '/mo-dau/00-gioi-thieu', activeMatch: '^/mo-dau/' },
       { text: 'Bắt đầu', link: '/bat-dau/02-dang-nhap-va-giao-dien', activeMatch: '^/bat-dau/' },
       { text: 'Luồng chính', link: '/luong-chinh/03-thiet-lap-doanh-nghiep', activeMatch: '^/luong-chinh/' },
-      { text: 'Mở rộng', link: '/mo-rong/12-tinh-nang-bo-sung', activeMatch: '^/mo-rong/' },
-      { text: 'Hỗ trợ', link: '/ho-tro/13-cau-hoi-thuong-gap', activeMatch: '^/ho-tro/' },
+      { text: 'Mở rộng', link: '/mo-rong/11-tinh-nang-bo-sung', activeMatch: '^/mo-rong/' },
+      { text: 'Hợp tác xã', link: '/hop-tac-xa/14-hop-tac-xa', activeMatch: '^/hop-tac-xa/' },
+      { text: 'Hỗ trợ', link: '/ho-tro/15-cau-hoi-thuong-gap', activeMatch: '^/ho-tro/' },
     ],
     outline: { level: 2, label: 'Trên trang này' },
     docFooter: { prev: 'Chương trước', next: 'Chương sau' },

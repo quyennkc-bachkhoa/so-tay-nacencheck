@@ -19,7 +19,7 @@ Mọi sản phẩm và lô hàng về sau đều gắn vào doanh nghiệp này,
 | 1.1 | Khai hồ sơ doanh nghiệp | `/dashboard/brand` | Bắt buộc |
 | 1.2 | Công khai trang giới thiệu | `/dashboard/brand` | Nên làm |
 | 1.3 | Thêm nhân viên | `/dashboard/users` | Nên làm |
-| 1.4 | Khai mã GS1 | `/dashboard/gs1` | Khi cần in nhãn thùng, pallet |
+| 1.4 | Khai mã GS1 | `/dashboard/gs1` | Nên làm trước khi thêm sản phẩm |
 
 Ví dụ trong chương này là Công ty TNHH Hạt Vàng Việt, làm bánh gạo. Khi làm thật, bạn thay bằng thông tin của mình.
 
@@ -103,12 +103,12 @@ Có nhiều nhân viên thì bấm **Nhập hàng loạt nhân viên (CSV)** tha
 
 ## 1.4 Khai mã GS1
 
-Chỉ cần khi in nhãn thùng, pallet (SSCC) hoặc xuất khẩu. Chưa cần thì bỏ qua và làm sau.
+Hệ thống dùng mã GS1 của doanh nghiệp để tự cấp mã vạch GTIN cho sản phẩm và in nhãn thùng, pallet (SSCC). Khai trước khi thêm sản phẩm thì khỏi phải quay lại. Doanh nghiệp bán trong nước chỉ cần khai nhanh.
 
-Mở `/dashboard/gs1`, rồi làm theo trường hợp của bạn:
+1. Bấm **Mã GS1 / Mã vạch** ở menu trái.
+2. Ở khung **Khai nhanh**, gõ mã GS1 doanh nghiệp đang có, từ 6 đến 12 chữ số.
+3. Bấm **Lưu**. Đầu trang hiện **Mã đang dùng cho SSCC** kèm chữ khai nhanh.
 
-| Trường hợp | Làm gì |
-|---|---|
-| Bán trong nước | Ở khung **Khai nhanh**, gõ mã GS1 đang có (6–12 chữ số, ví dụ 893801234), bấm **Lưu**. |
-| Xuất khẩu, đã có mã | Ở khung **Đăng ký chính thức**, gõ mã do GS1 Việt Nam cấp (thường bắt đầu bằng 893), bấm **Đăng ký**. |
-| Xuất khẩu, chưa có mã | Ở khung **Đăng ký chính thức**, bấm **Đề nghị NBC cấp**. |
+![Khai nhanh mã GS1](/images/03-ma-gs1.png)
+
+Sau này cần xuất khẩu thì dùng khung **Đăng ký chính thức**: gõ mã do GS1 Việt Nam cấp (thường bắt đầu bằng 893) rồi bấm **Đăng ký**. Chưa có mã thì bấm **Đề nghị NBC cấp**. Mã chính thức đang hoạt động được ưu tiên dùng cho SSCC.

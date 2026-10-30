@@ -129,7 +129,7 @@ Sau khi lưu phiếu, hàng hiện ở tab **Tồn kho**, tách riêng theo từ
 ![Tồn kho theo lô](/images/05-ton-kho.png)
 
 - **Tồn kho:** lượng còn theo lô và hạn dùng. Bấm **Sắp hết hạn (30 ngày)** để lọc lô sắp hết hạn.
-- **Tạo lô truy xuất:** tạo lô nguyên liệu từ dòng tồn kho này để dùng trong chuỗi truy xuất.
+- **Tạo lô truy xuất:** tạo lô nguyên liệu từ dòng tồn kho này để dùng trong chuỗi truy xuất. Xem lưu ý ở mục 5.2.
 - **Thẻ kho:** lịch sử nhập, xuất của một vật tư. Chọn vật tư, khoảng ngày rồi bấm **Xem**.
 - **Truy xuất:** tìm một lô để xem lô đó làm từ gì và đã đi đâu.
 
@@ -141,7 +141,7 @@ Các nút nằm ở tab **Phiếu**.
 
 - **Lập phiếu xuất:** chọn lý do **Bán hàng**, **Trả nhà cung cấp**, **Hủy do hỏng/hết hạn** hoặc **Xuất khác**, rồi chọn kho, vật tư và lô. Danh sách lô hiện lượng còn, nhà cung cấp và hạn dùng.
 - **Chuyển kho:** chọn **Kho đi**, **Kho đến**, vật tư và lô. Cần có ít nhất hai cơ sở loại Kho.
-- **Nhập thành phẩm:** chọn kho và lô sản xuất, sau khi đã có lô ở chương 8.
+- **Nhập thành phẩm:** chọn kho và lô sản xuất, sau khi đã có lô ở chương 7.
 - **Hủy phiếu:** bấm **Chi tiết** trên dòng phiếu, rồi bấm **Hủy phiếu** và nhập lý do. Phiếu đã hủy không còn tính vào tồn kho.
 
 > Lưu ý: nếu hàng của phiếu nhập đã được xuất hoặc chuyển đi, phải hủy các phiếu đó trước thì mới hủy được phiếu nhập.

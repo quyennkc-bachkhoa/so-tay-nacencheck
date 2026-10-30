@@ -490,7 +490,7 @@
 
 .flow-steps ol {
   display: flex;
-  min-width: max-content;
+  min-width: 640px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -498,7 +498,8 @@
 
 .flow-steps li {
   position: relative;
-  flex: 1 0 86px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .flow-steps li:not(:last-child)::after {
@@ -850,6 +851,6 @@
 
 @media (min-width: 960px) {
   .VPFeatures .items .item {
-    width: 20% !important;
+    width: calc(100% / 3) !important;
   }
 }
