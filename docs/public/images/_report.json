@@ -1,0 +1,464 @@
+{
+  "images": {
+    "02-bang-dieu-khien": {
+      "ok": true,
+      "file": "/images/02-bang-dieu-khien.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Thanh menu bên trái: bấm từng mục để chuyển giữa các chức năng",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm ô **Tìm kiếm sổ cái** (hoặc Ctrl + K) để tìm nhanh lô, sản phẩm, trang",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Bốn thẻ chỉ số: số lô, lượt quét 7 ngày, số sản phẩm, hạn mức sự kiện trong tháng",
+          "source": 3
+        },
+        {
+          "n": 4,
+          "label": "Khung **Hoàn thiện hồ sơ**: các việc thiết lập còn thiếu, bấm từng dòng để làm",
+          "source": 4
+        }
+      ],
+      "missing": []
+    },
+    "02-dang-nhap": {
+      "ok": true,
+      "file": "/images/02-dang-nhap.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ email hoặc số điện thoại đã đăng ký vào ô **Email hoặc số điện thoại**",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Gõ mật khẩu vào ô **Mật khẩu**",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Bấm **Đăng nhập** để vào Bảng điều khiển",
+          "source": 3
+        }
+      ],
+      "missing": []
+    },
+    "02-onboarding": {
+      "ok": true,
+      "file": "/images/02-onboarding.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Danh sách 10 bước thiết lập: làm lần lượt từ trên xuống, bước đang làm được tô đậm",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Thanh tiến độ: cho biết bạn đã xong mấy bước trên 10 bước",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "04-co-so": {
+      "ok": true,
+      "file": "/images/04-co-so.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm cơ sở** để mở form",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "04-vung-nguyen-lieu": {
+      "ok": true,
+      "file": "/images/04-vung-nguyen-lieu.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Chưa được cơ quan cấp mã thì bấm **Chưa có mã**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "05-danh-muc-vat-tu": {
+      "ok": true,
+      "file": "/images/05-danh-muc-vat-tu.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm vật tư** để mở form",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "06-dinh-muc": {
+      "ok": true,
+      "file": "/images/06-dinh-muc.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Danh sách sản phẩm: bấm vào một sản phẩm để mở định mức của nó",
+          "source": 3
+        },
+        {
+          "n": 2,
+          "label": "Cột **Định mức**: \"Chưa có\" nghĩa là sản phẩm chưa khai công thức",
+          "source": 4
+        }
+      ],
+      "missing": [
+        {
+          "n": 1,
+          "label": "Bấm **Sửa định mức** để thêm hoặc sửa nguyên liệu của sản phẩm",
+          "reason": "không tìm thấy phần tử"
+        }
+      ],
+      "note": "Tài khoản chưa có sản phẩm nào có định mức nên ảnh chụp trang danh sách định mức."
+    },
+    "06-quy-trinh": {
+      "ok": false,
+      "file": "/images/06-quy-trinh.png",
+      "drawn": [],
+      "missing": [],
+      "error": "trang báo \"Không tìm thấy sản phẩm\" (tài khoản chưa có dữ liệu cho màn này)"
+    },
+    "06-them-san-pham": {
+      "ok": true,
+      "file": "/images/06-them-san-pham.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Chọn **Ngành của sản phẩm** trước tiên: ngành quyết định biểu mẫu khai báo và quy trình mẫu",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Gõ **Tên sản phẩm (VI)**: đây là tên khách thấy khi quét QR",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Ô **SKU**: mã hàng nội bộ, hệ thống tự gợi ý từ tên, sửa được",
+          "source": 3
+        },
+        {
+          "n": 4,
+          "label": "Chọn **Đơn vị** bán: gói, hộp, kg…",
+          "source": 4
+        }
+      ],
+      "missing": []
+    },
+    "07-nhap-nguyen-lieu": {
+      "ok": true,
+      "file": "/images/07-nhap-nguyen-lieu.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Ba tab **Phiếu**, **Nhập khẩu**, **Mua trong nước**: chọn đúng con đường nguyên liệu đi vào",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Lập phiếu nhập** để ghi một lần nhận hàng mua trong nước",
+          "source": 3
+        }
+      ],
+      "missing": [
+        {
+          "n": 2,
+          "label": "Bấm **Thêm nguyên liệu mua trong nước** để ghi một lần nhận hàng",
+          "reason": "không tìm thấy phần tử"
+        }
+      ],
+      "note": "Màn hình chưa có dữ liệu nên dùng khung thay thế."
+    },
+    "07-nhat-ky-canh-tac": {
+      "ok": true,
+      "file": "/images/07-nhat-ky-canh-tac.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Tạo vụ mới** khi thửa ghi \"Chưa có vụ sản xuất\"",
+          "source": 2
+        }
+      ],
+      "missing": [
+        {
+          "n": 1,
+          "label": "Danh sách thửa đất: chọn thửa cần ghi nhật ký",
+          "reason": "không tìm thấy phần tử"
+        }
+      ]
+    },
+    "08-form-tao-lo": {
+      "ok": true,
+      "file": "/images/08-form-tao-lo.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ tên hoặc SKU vào ô **Sản phẩm đã công bố** rồi chọn sản phẩm",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Thêm nguồn** để khai từng nguồn nguyên liệu (khi sản phẩm chưa có định mức)",
+          "source": 5
+        },
+        {
+          "n": 3,
+          "label": "Nút **Tạo lô hàng**: chỉ sáng khi đủ điều kiện; nút mờ thì rê chuột vào để đọc lý do",
+          "source": 4
+        }
+      ],
+      "missing": [
+        {
+          "n": 2,
+          "label": "Khối **Công thức của sản phẩm**: mỗi nguyên liệu trong định mức có sẵn một ô nguồn",
+          "reason": "không tìm thấy phần tử"
+        },
+        {
+          "n": 3,
+          "label": "Ô **Lý do chưa gán đủ nguyên liệu**: điền khi chưa đủ chứng từ, hệ thống vẫn cho tạo lô",
+          "reason": "không tìm thấy phần tử"
+        }
+      ],
+      "note": "Màn hình chưa có dữ liệu nên dùng khung thay thế."
+    },
+    "09-chi-tiet-lo": {
+      "ok": false,
+      "file": "/images/09-chi-tiet-lo.png",
+      "drawn": [],
+      "missing": [],
+      "error": "Tài khoản chưa có lô hàng nào chưa bán (danh sách Lô hàng trống)"
+    },
+    "09-ghi-cong-doan": {
+      "ok": true,
+      "file": "/images/09-ghi-cong-doan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ mã lô hoặc tên sản phẩm vào ô tìm kiếm để lọc danh sách lô",
+          "source": 2
+        },
+        {
+          "n": 2,
+          "label": "Chưa có lô nào: chạm **Tạo lô mới** (chương 7) rồi quay lại",
+          "source": 3
+        }
+      ],
+      "missing": [
+        {
+          "n": 1,
+          "label": "Danh sách lô cần ghi: chạm vào một lô, hệ thống chỉ đúng bước tiếp theo",
+          "reason": "không tìm thấy phần tử"
+        }
+      ],
+      "note": "Màn hình chưa có dữ liệu nên dùng khung thay thế."
+    },
+    "10-in-tem-nhanh": {
+      "ok": true,
+      "file": "/images/10-in-tem-nhanh.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm ô **Chọn sản phẩm cần tạo tem** và chọn sản phẩm đã khai",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "10-trang-truy-xuat": {
+      "ok": false,
+      "file": "/images/10-trang-truy-xuat.png",
+      "drawn": [],
+      "missing": [],
+      "error": "chưa có link truy xuất công khai (ảnh 09-chi-tiet-lo chưa chụp được)"
+    },
+    "11-ban-phan-phoi": {
+      "ok": false,
+      "file": "/images/11-ban-phan-phoi.png",
+      "drawn": [],
+      "missing": [],
+      "error": "Tài khoản chưa có lô hàng nào chưa bán (danh sách Lô hàng trống)"
+    },
+    "04-don-vi-san-xuat": {
+      "ok": true,
+      "file": "/images/04-don-vi-san-xuat.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Muốn chia vùng thành nhiều thửa thì bấm **Thêm đơn vị**",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Phân công** để chọn người ghi nhật ký cho thửa",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "03-mo-ho-so": {
+      "ok": true,
+      "file": "/images/03-mo-ho-so.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Hồ sơ thương hiệu** ở menu trái",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Cập nhật thông tin** để mở form",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "03-ho-so-doanh-nghiep": {
+      "ok": true,
+      "file": "/images/03-ho-so-doanh-nghiep.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Điền form trong khung **Hồ sơ doanh nghiệp**, rồi bấm **Lưu**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "03-them-nhan-vien": {
+      "ok": true,
+      "file": "/images/03-them-nhan-vien.png",
+      "drawn": [],
+      "missing": []
+    },
+    "03-cong-khai-trang": {
+      "ok": true,
+      "file": "/images/03-cong-khai-trang.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Công khai trang** sau khi đã điền đủ ba mục phía trên",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Công khai xong, lấy liên kết, nút xem trang và mã QR ở khung **Trang công khai**",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "04-them-co-so": {
+      "ok": true,
+      "file": "/images/04-them-co-so.png",
+      "drawn": [],
+      "missing": []
+    },
+    "04-vung-danh-sach": {
+      "ok": true,
+      "file": "/images/04-vung-danh-sach.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Đăng ký vùng mới** để mở form",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "04-vung-toa-do": {
+      "ok": true,
+      "file": "/images/04-vung-toa-do.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Kiểm tra lại rồi bấm **Đăng ký vùng**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "04-phan-cong": {
+      "ok": true,
+      "file": "/images/04-phan-cong.png",
+      "drawn": [],
+      "missing": []
+    },
+    "05-tao-kho": {
+      "ok": true,
+      "file": "/images/05-tao-kho.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Ở ô **Loại cơ sở**, chọn đúng **Kho**. Chọn loại khác thì cơ sở không hiện ở ô Kho của phiếu",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "05-them-doi-tac": {
+      "ok": true,
+      "file": "/images/05-them-doi-tac.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Ở ô **Loại**, đổi **Đại lý** thành **Nhà cung cấp** hoặc **Khách hàng**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "05-them-vat-tu": {
+      "ok": true,
+      "file": "/images/05-them-vat-tu.png",
+      "drawn": [],
+      "missing": []
+    },
+    "05-phieu-nhap": {
+      "ok": true,
+      "file": "/images/05-phieu-nhap.png",
+      "drawn": [],
+      "missing": []
+    },
+    "05-ton-kho": {
+      "ok": true,
+      "file": "/images/05-ton-kho.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Tạo lô truy xuất** khi cần theo dõi lô nguyên liệu này trên chuỗi truy xuất",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "05-the-kho": {
+      "ok": true,
+      "file": "/images/05-the-kho.png",
+      "drawn": [],
+      "missing": []
+    },
+    "05-phieu-nhap-gia": {
+      "ok": true,
+      "file": "/images/05-phieu-nhap-gia.png",
+      "drawn": [],
+      "missing": []
+    }
+  },
+  "generatedAt": "2026-10-30T10:55:30.619Z",
+  "base": "https://trace.nacencheck.com"
+}

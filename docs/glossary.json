@@ -1,0 +1,139 @@
+{
+  "_comment": "Thuật ngữ có chú giải khi rê chuột. 'match' là các cách viết được nhận diện (không phân biệt hoa thường). Định nghĩa lấy từ chương 01.",
+  "san-pham": {
+    "term": "Sản phẩm",
+    "match": [
+      "sản phẩm"
+    ],
+    "def": "Một mặt hàng trong danh mục, như một tờ lý lịch: tên, SKU, đơn vị, mã vạch. Nó mô tả \"loại hàng\", không phải hàng thật trong kho."
+  },
+  "lo-hang": {
+    "term": "Lô hàng",
+    "match": [
+      "lô hàng"
+    ],
+    "def": "Một mẻ sản phẩm cụ thể đã làm ra, ví dụ 10 gói bánh làm ngày 27/10. Mọi nguyên liệu, công đoạn, chứng từ và mã QR đều gắn vào lô."
+  },
+  "quy-trinh": {
+    "term": "Quy trình",
+    "match": [
+      "quy trình"
+    ],
+    "def": "Danh sách các công đoạn mà mọi lô của một sản phẩm phải đi qua. Quy trình chỉ có hiệu lực sau khi bấm Xuất bản."
+  },
+  "cong-doan": {
+    "term": "Công đoạn",
+    "match": [
+      "công đoạn"
+    ],
+    "def": "Một bước trong quy trình, ví dụ \"Sơ chế\" hay \"Đóng gói\". Mỗi công đoạn có vai trò phụ trách và các ô cần điền tại hiện trường."
+  },
+  "su-kien": {
+    "term": "Sự kiện",
+    "match": [
+      "sự kiện"
+    ],
+    "def": "Bản ghi một việc đã thực sự xảy ra: ai làm, lúc nào, ở đâu, kèm ảnh, chứng từ. Sự kiện đã ghi không xóa hay sửa đè được."
+  },
+  "vat-tu": {
+    "term": "Vật tư",
+    "match": [
+      "vật tư"
+    ],
+    "def": "Mọi thứ dùng để làm ra sản phẩm: nguyên liệu, gia vị, bao bì, tem."
+  },
+  "dinh-muc": {
+    "term": "Định mức",
+    "match": [
+      "định mức"
+    ],
+    "def": "Công thức của sản phẩm: để làm 1 đơn vị sản phẩm cần bao nhiêu mỗi loại vật tư."
+  },
+  "lo-nguyen-lieu": {
+    "term": "Lô nguyên liệu",
+    "match": [
+      "lô nguyên liệu"
+    ],
+    "def": "Nguyên liệu thật đã nhận về, kèm ngày nhận, nhà cung cấp và hóa đơn. Nhờ nó, chuỗi truy xuất nối ngược được về nguồn."
+  },
+  "vung-nguyen-lieu": {
+    "term": "Vùng nguyên liệu",
+    "match": [
+      "vùng nguyên liệu",
+      "vùng trồng"
+    ],
+    "def": "Khu vực sản xuất của doanh nghiệp tự trồng hoặc tự nuôi (cánh đồng, trang trại, ao nuôi), khai báo với cơ quan quản lý và có thể có mã vùng. Còn gọi là vùng trồng."
+  },
+  "don-vi-san-xuat": {
+    "term": "Đơn vị sản xuất",
+    "match": [
+      "đơn vị sản xuất"
+    ],
+    "def": "Mảnh nhỏ trong vùng nguyên liệu, nơi ghi nhật ký và thu hoạch; trên một số màn hình gọi là thửa đất."
+  },
+  "thua": {
+    "term": "Thửa",
+    "match": [
+      "thửa"
+    ],
+    "def": "Phần nhỏ của một vùng nguyên liệu, ví dụ \"ruộng số 1\". Thửa là nơi ghi nhật ký canh tác hằng ngày và nơi thu hoạch."
+  },
+  "truy-vet": {
+    "term": "Truy vết chuỗi",
+    "match": [
+      "truy vết chuỗi",
+      "sơ đồ truy vết"
+    ],
+    "def": "Quan hệ cha – con giữa các lô: lô nào làm từ lô nguyên liệu nào, lô nào được tách ra bán cho ai."
+  },
+  "gs1": {
+    "term": "GS1",
+    "match": [
+      "GS1"
+    ],
+    "def": "Tổ chức quốc tế quản lý hệ thống mã vạch. Dữ liệu NacenCheck theo chuẩn GS1 để liên thông với cổng quốc gia và đối tác nước ngoài."
+  },
+  "gtin": {
+    "term": "GTIN",
+    "match": [
+      "GTIN"
+    ],
+    "def": "Mã số thương phẩm: dãy số dưới mã vạch in trên bao bì sản phẩm."
+  },
+  "sscc": {
+    "term": "SSCC",
+    "match": [
+      "SSCC"
+    ],
+    "def": "Mã định danh một thùng hoặc pallet hàng. Kho quét một mã là nhận cả thùng."
+  },
+  "gln": {
+    "term": "GLN",
+    "match": [
+      "GLN"
+    ],
+    "def": "Mã định danh một địa điểm: trụ sở, kho, nhà máy, vùng trồng."
+  },
+  "ma-hs": {
+    "term": "Mã HS",
+    "match": [
+      "mã HS"
+    ],
+    "def": "Mã phân loại hàng hóa dùng trong hải quan, cần khi xuất nhập khẩu."
+  },
+  "elabel": {
+    "term": "eLabel (nhãn điện tử)",
+    "match": [
+      "eLabel",
+      "nhãn điện tử"
+    ],
+    "def": "Thông tin nhãn hiển thị dạng điện tử khi quét QR, bổ sung cho nhãn giấy."
+  },
+  "nbc": {
+    "term": "NBC",
+    "match": [
+      "NBC"
+    ],
+    "def": "Cổng truy xuất nguồn gốc quốc gia, nơi NacenCheck đồng bộ dữ liệu lô lên."
+  }
+}
