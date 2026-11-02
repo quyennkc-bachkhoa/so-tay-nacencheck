@@ -17,6 +17,13 @@ Luồng chính 9 bước (bước 1–8 ứng với chương 03–10; bước 9 
 
 Cơ sở và vùng đi ngay sau thông tin doanh nghiệp vì form vùng cần **Cơ sở phụ trách**, và nhật ký canh tác phải ghi từ đầu mùa vụ.
 
+Nhóm **Quản trị** (chương 15–21) là mục lớn ngang Luồng chính, dành cho đội vận hành NacenCheck trên cổng riêng `https://admin.nacencheck.com/admin`, gồm 7 bước:
+
+```
+1. Làm quen (15) → 2. Tổ chức, người dùng (16) → 3. Ngành, quy trình, biểu mẫu (17) → 4. Bộ luật (18)
+→ 5. Giá, thu tiền (19) → 6. Tích hợp, tên miền (20) → 7. Giám sát, nội dung (21)
+```
+
 ## 2. Lệnh chạy
 
 ```
@@ -61,19 +68,21 @@ NACEN_PASSWORD=...
     ├── luong-chinh/ 03 … 10     (04 = cơ sở và vùng nguyên liệu)
     ├── mo-rong/     11 (tổng hợp), 12 tuân thủ, 13 quản lý tài sản
     ├── hop-tac-xa/  14
-    └── ho-tro/      15
+    ├── quan-tri/    15 … 21     (cổng quản trị, ảnh chụp tay, xem mục 6)
+    └── ho-tro/      22
 ```
 
 ## 4. Quy tắc về nội dung
 
 - Toàn bộ chương đã được viết lại theo yêu cầu người dùng, theo mục "Cách viết chương Luồng chính" bên dưới. Khi giao diện đổi, cứ sửa bài cho khớp màn thật.
-- Frontmatter mỗi chương: `title`, `order`, `group`. Chương Luồng chính (03–10) có thêm `prerequisites` (2–3 việc phải xong, mỗi việc có `text` và `link`) và `outcome` (một câu kết quả).
+- Frontmatter mỗi chương: `title`, `order`, `group`. Chương Luồng chính (03–10) và Quản trị (15–21) có thêm `prerequisites` (1–3 việc phải xong, mỗi việc có `text` và `link`) và `outcome` (một câu kết quả).
 - Thứ tự chương và nút **Chương trước / Chương sau** lấy theo `order` (tính trong `config.mts`).
 - Ảnh viết dạng `![mô tả](/images/xx.png)`; plugin tự đổi thành `<Shot name="xx">`. Thiếu ảnh thì hiện khung "Ảnh minh họa đang cập nhật".
 - Khối ` ``` ` là sơ đồ luồng dạng chữ (monospace, nền nhạt, giữ xuống dòng). Khối `>` là hộp lưu ý: bắt đầu bằng "Lưu ý"/"Về kỹ thuật" → biểu tượng i; chứa "không bấm", "không xóa được", "bắt buộc" → cảnh báo cam.
-- Chuỗi `/dashboard/...` hoặc `/m/...` trong dấu `` ` `` tự hiển thị thành nhãn breadcrumb, bấm mở trang thật ở tab mới.
+- Chuỗi `/dashboard/...`, `/m/...` hoặc `/admin/...` trong dấu `` ` `` tự hiển thị thành nhãn breadcrumb, bấm mở trang thật ở tab mới (`/admin` mở `admin.nacencheck.com`).
 - Thuật ngữ trong `glossary.json` được gạch chân chấm ở lần xuất hiện đầu tiên mỗi trang (trừ chương 01, trừ chữ in đậm và tiêu đề).
 - Lỗi và điểm bất hợp lý của trang NacenCheck, phần bài chưa kiểm chứng được: ghi vào `docs/_goi-y-sua-noi-dung.md`.
+- Chỗ nào trang doanh nghiệp và cổng quản trị liên quan nhau thì thêm đúng một câu ngắn có link sang chương bên kia, không viết thành đoạn. Chi tiết và chứng cứ ở `QUAN-HE-DOANH-NGHIEP-VA-QUAN-TRI.md`.
 
 ### Cách viết chương Luồng chính
 
@@ -95,9 +104,9 @@ Người đọc là nhân viên lần đầu mở NacenCheck. Câu ngắn, tiế
 
 ## 5. Giao diện
 
-- Header hai hàng màu xanh NacenCheck (`SiteHeader.vue`): hàng 1 logo, tên sổ tay, ô tìm kiếm (local search tiếng Việt), nút sáng/tối; hàng 2 bảy tab **Trang chủ · Mở đầu · Bắt đầu · Luồng chính · Mở rộng · Hợp tác xã · Hỗ trợ** (khai trong `themeConfig.nav`, tab sáng theo `activeMatch`). Thanh điều hướng mặc định của VitePress bị ẩn.
+- Header hai hàng màu xanh NacenCheck (`SiteHeader.vue`): hàng 1 logo, tên sổ tay, ô tìm kiếm (local search tiếng Việt), nút sáng/tối; hàng 2 tám tab **Trang chủ · Mở đầu · Bắt đầu · Luồng chính · Mở rộng · Hợp tác xã · Quản trị · Hỗ trợ** (khai trong `themeConfig.nav`, tab sáng theo `activeMatch`). Thanh điều hướng mặc định của VitePress bị ẩn.
 - **Không có sidebar.** Giữ khung "Trên trang này" (outline cấp `##`).
-- 8 trang Luồng chính có `FlowSteps` (thanh 8 bước) và hộp "Trước khi bắt đầu" ở đầu, hộp "Kết quả sau bước này" ở cuối.
+- 8 trang Luồng chính và 7 trang Quản trị có `FlowSteps` (thanh bước riêng của từng nhóm) và hộp "Trước khi bắt đầu" ở đầu, hộp "Kết quả sau bước này" ở cuối.
 - Màu nhấn `#0f6e56`, font Be Vietnam Pro, chữ 16.5px, giãn dòng 1.7, nội dung rộng tối đa 760px. Không gradient, không hiệu ứng động.
 
 ## 6. Chụp ảnh màn hình (Playwright + Visual Grounding)
@@ -138,7 +147,17 @@ Tài khoản dữ liệu thật. Script chỉ được **xem và chụp**:
 - `steps`: `click`, `fill` (kèm `value`, tùy chọn `press`), `type` (gõ vào ô đang mở), `waitFor`, `scroll`, `wait`; `optional: true` để bỏ qua nếu lỗi. `click` chỉ dùng thao tác **mở**.
 - Khác: `fullPage`, `clip` (chụp riêng một vùng), `pickBatch` (lô gợi ý không tồn tại thì mở lô đầu tiên chưa "Đã bán"), `failIf` (trang chứa chữ này thì coi là lỗi, không chụp), `hideText` (ẩn khỏi ảnh thông báo nổi chứa chữ này, chỉ dùng cho lỗi tạm đã ghi vào `_goi-y-sua-noi-dung.md`), `geolocation` (cấp quyền và vị trí giả cho form tự xin định vị), `url: "{publicUrl}"` (link truy xuất công khai lấy từ ảnh `09-chi-tiet-lo`, nên ảnh này phải đứng trước trong `annotations.json`).
 
+### Ảnh cổng quản trị (`15-…` đến `21-…`)
+
+`.env` không có tài khoản quản trị hệ thống và không ghi tài khoản này vào file nào, nên `npm run shots` bỏ qua các ảnh này (khai `"manual": true` trong `annotations.json`). Chụp bằng tiện ích Claude in Chrome trên trình duyệt người dùng đã đăng nhập sẵn, theo cách sau:
+
+- Không có lớp chặn ghi ở tầng mạng, nên chỉ xem, mở form rồi đóng. **Không bấm:** Tạo mới, Lưu, Tạo tên miền, Nạp ngành, Nạp lại, Xác minh, Ký lại, Cấm, Hạn chế, Khôi phục, Đặt lại, Khoá, Đăng nhập hộ, Tạm ngưng, Bắt đầu xoá, Run All, Chạy smoke test, Mở dialog rollback, Sửa giá, các lựa chọn ở Cổng vai theo công đoạn. Thêm thử ô trong trình dựng biểu mẫu chưa ghi gì, miễn không bấm **Xuất bản**.
+- Trước khi chụp, đặt `document.documentElement.style.zoom = 1.25` cho chữ dễ đọc (ảnh rộng 1568px, nhỏ hơn ảnh Playwright), đưa khung 100vh về đúng chiều cao, và vẽ khung đỏ đánh số bằng lớp phủ giống script. Ảnh `save_to_disk` là JPG, đổi sang PNG khi chép vào `docs/public/images/`, rồi tự thêm mục vào `annotations.json` và `_report.json` để số trên ảnh khớp chú thích.
+- **Bắt buộc che** trước khi đưa ảnh vào dự án: tên, mã, email của tổ chức khác, email quản trị nền tảng, số tài khoản và chủ tài khoản ngân hàng, địa chỉ IP trong nhật ký. Làm mờ lúc chụp rồi tô kín vùng đó trên file PNG, vì chữ số bị làm mờ vẫn có thể đoán lại được. Không ghi các thông tin này vào bài.
+
 ### Danh sách ảnh
+
+Ảnh cổng quản trị xem danh sách trong `annotations.json` (mục có `"manual": true`).
 
 Tiền tố tên ảnh giữ số chương cũ (`08-…`, `09-…`, `10-…`, `11-…`) để khỏi đổi tên file; ảnh `08-…` thuộc chương 07, ảnh `09-…` thuộc chương 08, ảnh `10-…` thuộc chương 09, ảnh `11-…` thuộc chương 10.
 
@@ -203,8 +222,8 @@ Tiền tố tên ảnh giữ số chương cũ (`08-…`, `09-…`, `10-…`, `1
 
 ## 7. Kiểm tra trước khi bàn giao
 
-- 16 chương (00–15) hiển thị đủ, đúng nhóm, đúng thứ tự; không có sidebar; tab nhóm sáng đúng khi đang đọc.
-- `FlowSteps` chỉ có ở 8 trang Luồng chính, bước hiện tại đúng.
+- 23 chương (00–22) hiển thị đủ, đúng nhóm, đúng thứ tự; không có sidebar; tab nhóm sáng đúng khi đang đọc.
+- `FlowSteps` chỉ có ở 8 trang Luồng chính và 7 trang Quản trị, bước hiện tại đúng.
 - Mở vài ảnh: số trên ảnh khớp chú thích dưới ảnh; không popup che; không có dữ liệu nhập dở.
 - `_report.json` không còn ảnh lỗi; nếu còn, ghi lý do khi bàn giao.
 - Không có mật khẩu trong file nào ngoài `.env`; `.env` và `.auth/` nằm trong `.gitignore`.

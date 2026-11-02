@@ -14,7 +14,7 @@ outcome: "Tem QR đã in và dán lên bao bì. Người mua quét là thấy tr
 
 # Bước 7 – Các loại tem và trang truy xuất
 
-Tem mang mã QR trỏ tới trang truy xuất của đúng lô. Người mua chỉ cần quét bằng camera điện thoại, không phải cài ứng dụng. Trang đó không có dữ liệu riêng, nên hãy kiểm tra trước rồi mới in số lượng lớn.
+Tem mang mã QR trỏ tới trang truy xuất của đúng lô. Người mua chỉ cần quét bằng camera điện thoại, không phải cài ứng dụng. Trang đó không có dữ liệu riêng, nên hãy kiểm tra trước rồi mới in số lượng lớn. Tem đã in giữ nguyên địa chỉ trong mã QR, kể cả khi sau này đổi sang tên miền riêng ([chương 20](/quan-tri/20-tich-hop-va-ten-mien)).
 
 Nhóm **Tem in** ở menu trái có nhiều màn hình, nhưng để bán được hàng thì chỉ cần mục 7.1 và 7.3. Các mục còn lại dùng khi cần kiểm soát kỹ hơn.
 

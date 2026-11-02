@@ -3462,5 +3462,406 @@
     "auth": true,
     "viewport": "tablet",
     "marks": []
+  },
+  "15-tong-quan": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Xem **Cần xử lý** đầu tiên mỗi ngày: việc tồn đọng của toàn hệ thống hiện ở đây"
+      }
+    ]
+  },
+  "16-to-chuc": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm tổ chức** khi cần tạo giúp một doanh nghiệp"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Chi tiết** để mở hồ sơ một tổ chức"
+      }
+    ]
+  },
+  "16-them-to-chuc": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants",
+    "marks": []
+  },
+  "16-chi-tiet-to-chuc": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": [
+      {
+        "n": 1,
+        "label": "**Đăng nhập hộ**: vào tài khoản doanh nghiệp để hỗ trợ, chỉ dùng khi họ nhờ"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Cấu hình Quy trình & Form** để chỉnh quy trình riêng của tổ chức này"
+      },
+      {
+        "n": 3,
+        "label": "Bấm **Đổi gói** khi khách nâng hoặc hạ gói"
+      }
+    ]
+  },
+  "16-cong-vai": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": []
+  },
+  "16-su-dung": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": []
+  },
+  "16-vung-nguy-hiem": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": []
+  },
+  "16-cai-dat-truy-xuat": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": []
+  },
+  "16-dung-thu": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/trials",
+    "marks": []
+  },
+  "16-nguoi-dung": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/users",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Mời người dùng** để tạo tài khoản mới cho một tổ chức"
+      },
+      {
+        "n": 2,
+        "label": "**Đặt lại** và **Khoá** ảnh hưởng ngay tới việc đăng nhập của người đó"
+      }
+    ]
+  },
+  "16-moi-nguoi-dung": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/users",
+    "marks": []
+  },
+  "17-goi-nganh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/industry-bundles",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Nạp ngành mới** khi cần thêm một ngành"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Chi tiết** để xem các công đoạn của ngành"
+      },
+      {
+        "n": 3,
+        "label": "Bấm **Xác minh** để kiểm tra chữ ký của gói ngành"
+      }
+    ]
+  },
+  "17-nap-nganh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/industry-bundles",
+    "marks": []
+  },
+  "17-chi-tiet-nganh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/industry-bundles",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Sửa mã GPC xong phải bấm **Ký lại**, nếu không chữ ký cũ hết hiệu lực"
+      }
+    ]
+  },
+  "17-quy-trinh-to-chuc": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Form** ở dòng công đoạn để thiết kế biểu mẫu của bước đó"
+      }
+    ]
+  },
+  "17-buoc-tuy-chinh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/<id>",
+    "marks": []
+  },
+  "17-dung-form": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/tenants/hat-vang-viet/workflow/forms/HARVEST",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm một loại ô để thêm vào biểu mẫu"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Xuất bản** thì biểu mẫu mới có tác dụng"
+      }
+    ]
+  },
+  "17-truong-tao-lo": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/batch-form-fields",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm trường** để thêm ô riêng của ngành"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Lưu thông tin**: lưu xong áp dụng ngay cho form tạo lô"
+      }
+    ]
+  },
+  "17-bvtv": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/bvtv-catalog",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Import từ MARD CSV** để nạp danh mục từ file"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Cấm** khi thuốc bị cấm lưu hành. Thuốc đã cấm có nút **Khôi phục**"
+      }
+    ]
+  },
+  "18-bo-luat": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Soạn bộ luật** để tạo bộ luật mới"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Sandbox thử CEL** để chạy thử một quy tắc"
+      },
+      {
+        "n": 3,
+        "label": "Mở **Hàng đợi duyệt** để xem các bản đang chờ duyệt"
+      }
+    ]
+  },
+  "18-soan-bo-luat": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules",
+    "marks": []
+  },
+  "18-sandbox": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules/sandbox",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Chạy thử** để xem quy tắc cho kết quả gì với dữ liệu mẫu"
+      }
+    ]
+  },
+  "18-chi-tiet": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules/packs/<id>",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Chạy smoke test** để kiểm tra nhanh sau khi xuất bản"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Mở dialog rollback** khi bộ luật gây lỗi và cần lùi về bản trước"
+      }
+    ]
+  },
+  "18-hang-doi": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules/approvals",
+    "marks": []
+  },
+  "18-nha-phat-hanh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/rules/publishers",
+    "marks": []
+  },
+  "18-tham-dinh": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/compliance-reviews",
+    "marks": []
+  },
+  "19-gia": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/pricing",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Tra ở đây để biết doanh nghiệp thật sự bị tính bao nhiêu tiền"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Sửa giá** để đổi giá một gói"
+      }
+    ]
+  },
+  "19-uu-dai": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/pricing",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm ưu đãi** để tạo ưu đãi tự động"
+      }
+    ]
+  },
+  "19-ky-han": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/pricing",
+    "marks": []
+  },
+  "19-thue": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/pricing",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chỉ bấm **Đổi thuế suất** khi kế toán đã xác nhận mức thuế"
+      }
+    ]
+  },
+  "19-thanh-toan": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/settings",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm tài khoản** để khai tài khoản nhận tiền"
+      }
+    ]
+  },
+  "19-doi-soat": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/billing/reconcile",
+    "marks": []
+  },
+  "19-doanh-thu": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/revenue",
+    "marks": []
+  },
+  "20-tich-hop": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/integrations",
+    "marks": []
+  },
+  "20-nbc": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/nbc-sync",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Giám sát log đồng bộ** để xem từng lần gửi và lỗi"
+      }
+    ]
+  },
+  "20-nbc-monitor": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/nbc-sync/monitor",
+    "marks": []
+  },
+  "20-ten-mien": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/domains",
+    "marks": []
+  },
+  "20-ky-nang": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/agent-skills",
+    "marks": []
+  },
+  "20-cong-cu": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/agent-tools",
+    "marks": []
+  },
+  "21-giam-sat": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/monitoring",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Mở Grafana** để xem bảng cảnh báo và tình trạng hạ tầng"
+      }
+    ]
+  },
+  "21-hieu-nang": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/performance",
+    "marks": [
+      {
+        "n": 1,
+        "label": "**Run All** tạo tải thật lên hệ thống. Chỉ bấm khi có kế hoạch kiểm thử"
+      }
+    ]
+  },
+  "21-nhat-ky": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/audit-logs",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Dữ liệu** để xem chi tiết một bản ghi"
+      }
+    ]
+  },
+  "21-bai-viet": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/portal/articles",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Thêm bài viết** để soạn bài mới"
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Thao tác** để xem trước, sửa hoặc ẩn bài"
+      }
+    ]
+  },
+  "21-them-bai": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/portal/articles",
+    "marks": []
+  },
+  "21-lien-he": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/portal/contacts",
+    "marks": []
+  },
+  "21-tham-so": {
+    "manual": true,
+    "url": "https://admin.nacencheck.com/admin/portal/settings",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Chỉnh sửa cấu hình** để đổi thông tin liên hệ công khai"
+      }
+    ]
   }
 }

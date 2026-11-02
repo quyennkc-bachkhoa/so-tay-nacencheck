@@ -80,7 +80,7 @@ Ví dụ trong chương này là Bánh gạo nướng mật ong Hạt Vàng Vi�
 
 ## 4.3 Dựng và xuất bản quy trình
 
-Quy trình là danh sách công đoạn mà mọi lô của sản phẩm phải đi qua, theo đúng thứ tự.
+Quy trình là danh sách công đoạn mà mọi lô của sản phẩm phải đi qua, theo đúng thứ tự. Các loại công đoạn lấy từ gói ngành do đội vận hành quản lý ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)), thiếu loại nào thì [liên hệ hỗ trợ](/ho-tro/22-cau-hoi-thuong-gap).
 
 1. Ở danh sách sản phẩm, bấm vào chữ trong cột **Quy trình** của dòng sản phẩm.
 2. Bấm **Áp dụng quy trình chuẩn ngành** để nạp sẵn các công đoạn.
@@ -101,6 +101,8 @@ Quy trình là danh sách công đoạn mà mọi lô của sản phẩm phải 
 8. Bấm **Xuất bản**, đọc bảng kiểm, rồi bấm **Xác nhận xuất bản quy trình**.
 
 > Lưu ý: nút **Bỏ bước tùy chọn** chỉ giữ lại các bước đang đánh dấu bắt buộc, nên có thể mất bước bạn cần như **Đóng gói**. Với xưởng chế biến, nên xóa từng bước thay vì dùng nút này. Luôn giữ bước **Đóng gói**, vì lô chưa ghi bước này thì không bán được.
+
+Vai phụ trách khai ở từng bước sẽ có tác dụng chặn hoặc cảnh báo nếu đội vận hành bật **Cổng vai** ([chương 16](/quan-tri/16-to-chuc-va-nguoi-dung)).
 
 Sửa quy trình và xuất bản lại thì lô cũ vẫn giữ phiên bản đã ghim, chỉ lô mới dùng bản mới. Một sản phẩm cần quy trình khác hẳn thì bấm **Tạo bản sao** ở trang sản phẩm.
 

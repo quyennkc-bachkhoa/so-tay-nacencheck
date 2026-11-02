@@ -33,7 +33,7 @@ Tab **Carbon & thị trường** tổng hợp phát thải và tỷ lệ hồ s�
 
 ## Kiểm tra nhãn {#kiem-tra-nhan}
 
-Nên làm trước khi in tem số lượng lớn, vì in sai nhãn thì phải in lại cả lô.
+Nên làm trước khi in tem số lượng lớn, vì in sai nhãn thì phải in lại cả lô. Nếu màn hình báo ngành chưa đọc được danh sách trường bắt buộc thì chưa phải là đạt, hãy báo đội vận hành ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)).
 
 1. Bấm **Nhãn (NĐ37)**.
 2. Ở ô **Sản phẩm**, chọn sản phẩm. Thông tin đã khai ở sản phẩm tự điền vào form.
@@ -70,7 +70,7 @@ Bấm **Đánh giá rủi ro** để xem điểm và mức rủi ro của từng
 | **Tạo kiểm tra** | Tạo một lượt kiểm tra cho lô |
 | **Xuất CSV** | Tải danh sách về máy |
 
-Mục **Ngoại lệ tuân thủ** dành cho gói Enterprise, dùng khi cần cho qua một lô đang bị chặn trong tình huống khẩn cấp có cơ sở pháp lý.
+Mục **Ngoại lệ tuân thủ** dành cho gói Enterprise, dùng khi cần cho qua một lô đang bị chặn trong tình huống khẩn cấp có cơ sở pháp lý. Lệnh chặn đến từ bộ luật do đội vận hành quản lý ([chương 18](/quan-tri/18-bo-luat-tuan-thu)).
 
 > Không bấm **Yêu cầu Override mới** để thử. Màn hình ghi rõ mỗi yêu cầu là cam kết pháp lý không đảo được, cần 2 chữ ký, và được tự động báo cáo cơ quan nhà nước.
 

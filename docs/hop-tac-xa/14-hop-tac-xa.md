@@ -49,7 +49,7 @@ Bấm **Hợp tác xã** ở nhóm **Vùng nguyên liệu & Hợp tác xã** tr�
 2. Bật **DN có hoạt động nông nghiệp** để menu hiện vùng trồng, nhật ký, thu hoạch và HTX.
 3. Bật **Đơn vị là hợp tác xã**.
 
-Nên bật trước khi đăng ký vùng. Khi bật, vùng mới không tự sinh sẵn "Thửa 1". Nếu để thửa chung phủ cả vùng, thửa này sẽ chồng lên thửa của từng hộ và làm tổng diện tích bị đếm đôi.
+HTX có thể được ưu đãi giá theo số thành viên ([chương 19](/quan-tri/19-gia-va-thu-tien)). Nên bật trước khi đăng ký vùng. Khi bật, vùng mới không tự sinh sẵn "Thửa 1". Nếu để thửa chung phủ cả vùng, thửa này sẽ chồng lên thửa của từng hộ và làm tổng diện tích bị đếm đôi.
 
 ## 2. Đăng ký vùng nguyên liệu
 
@@ -171,7 +171,7 @@ Hệ thống lưu mỗi hộ một bản, nên có thể thu hồi uỷ quyền 
 
 ![Ghi nhật ký thay nông hộ](/images/14-khai-ho.png)
 
-**Phun thuốc BVTV**, **Trị bệnh cây**, **Đi thăm ruộng** không ghi thay được. Nông dân phải tự ghi các việc này.
+**Phun thuốc BVTV**, **Trị bệnh cây**, **Đi thăm ruộng** không ghi thay được. Nông dân phải tự ghi các việc này. Danh mục thuốc do đội vận hành quản lý ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)).
 
 ## 8. Thu hoạch rồi tạo lô hàng
 

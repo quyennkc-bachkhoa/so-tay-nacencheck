@@ -149,5 +149,54 @@
       "CAPA"
     ],
     "def": "Kế hoạch khắc phục lỗi đã xảy ra và phòng ngừa lỗi lặp lại, nộp khi bị thông báo vi phạm."
+  },
+  "tenant": {
+    "term": "Tenant",
+    "match": [
+      "tenant"
+    ],
+    "def": "Một khách hàng trên nền tảng, còn gọi là tổ chức hoặc đơn vị. Dữ liệu của mỗi tenant tách biệt hoàn toàn với tenant khác."
+  },
+  "goi-nganh": {
+    "term": "Gói ngành",
+    "match": [
+      "gói ngành"
+    ],
+    "def": "Bộ công đoạn chuẩn của một ngành, được ký số. Doanh nghiệp trong ngành dùng chung bộ này."
+  },
+  "ky-so": {
+    "term": "Ký số",
+    "match": [
+      "ký số"
+    ],
+    "def": "Đóng dấu điện tử để chứng minh nội dung do đúng người phát hành và chưa bị sửa sau khi ký."
+  },
+  "doi-soat": {
+    "term": "Đối soát",
+    "match": [
+      "đối soát"
+    ],
+    "def": "Khớp từng khoản tiền ngân hàng báo về với đúng hoá đơn, để xác nhận khách đã trả."
+  },
+  "sandbox": {
+    "term": "Sandbox",
+    "match": [
+      "sandbox"
+    ],
+    "def": "Nơi chạy thử trên dữ liệu giả, không ảnh hưởng tới dữ liệu thật."
+  },
+  "smoke-test": {
+    "term": "Smoke test",
+    "match": [
+      "smoke test"
+    ],
+    "def": "Kiểm tra nhanh ngay sau khi xuất bản, để biết bản mới có chạy đúng không."
+  },
+  "rollback": {
+    "term": "Rollback",
+    "match": [
+      "rollback"
+    ],
+    "def": "Lùi về phiên bản trước khi bản mới gây lỗi."
   }
 }

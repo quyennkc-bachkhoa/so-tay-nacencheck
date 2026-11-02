@@ -14,6 +14,8 @@ group: Bắt đầu
 
 ![Màn hình đăng nhập](/images/02-dang-nhap.png)
 
+Đây là trang của doanh nghiệp. Đội vận hành NacenCheck dùng một cổng riêng ([chương 15](/quan-tri/15-tong-quan-cong-quan-tri)).
+
 ## Bố cục màn hình
 
 Mọi trang đều có chung ba phần.

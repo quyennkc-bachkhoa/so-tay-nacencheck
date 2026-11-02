@@ -19,7 +19,7 @@ const TERMS = Object.entries(glossary as Record<string, any>)
   })
 const NO_TERMS = ['index.md', 'mo-dau/01-khai-niem-co-ban.md']
 
-export function markdownPlugins(md: MarkdownIt, opts: { appBase: string }) {
+export function markdownPlugins(md: MarkdownIt, opts: { appBase: string; adminBase: string }) {
   // 1. Ảnh: ![alt](/images/xx.png) → <Shot name="xx" alt="alt" />, bỏ thẻ <p> bao quanh.
   const onlyImage = (tokens: any[], i: number) =>
     tokens[i + 1]?.type === 'inline' && tokens[i + 1].children?.length === 1 && tokens[i + 1].children[0].type === 'image'
@@ -36,16 +36,17 @@ export function markdownPlugins(md: MarkdownIt, opts: { appBase: string }) {
     return `<Shot name="${m[1]}" alt="${esc(alt)}" />`
   }
 
-  // 2. Đường dẫn màn hình `/dashboard/...` → nhãn breadcrumb, bấm mở trang thật ở tab mới.
+  // 2. Đường dẫn màn hình `/dashboard/...`, `/admin/...` → nhãn breadcrumb, bấm mở trang thật ở tab mới.
   const code = md.renderer.rules.code_inline!
   md.renderer.rules.code_inline = (tokens, idx, o, env, self) => {
     const c = tokens[idx].content.trim()
     let route = c
     if (c.startsWith(opts.appBase)) route = c.slice(opts.appBase.length) || '/'
-    if (/^\/(dashboard|m)(\/|$)/.test(route)) {
+    if (/^\/(dashboard|m|admin)(\/|$)/.test(route)) {
       const segs = route.split('/').filter(Boolean)
       const cut = segs.findIndex((s) => s.includes('<'))
-      const href = opts.appBase + '/' + (cut < 0 ? segs : segs.slice(0, cut)).join('/')
+      const base = segs[0] === 'admin' ? opts.adminBase : opts.appBase
+      const href = base + '/' + (cut < 0 ? segs : segs.slice(0, cut)).join('/')
       const crumbs = segs
         .map((s) => `<span class="crumb${s.includes('<') ? ' crumb-var' : ''}">${esc(s.replace(/[<>]/g, ''))}</span>`)
         .join('<span class="crumb-sep" aria-hidden="true">›</span>')

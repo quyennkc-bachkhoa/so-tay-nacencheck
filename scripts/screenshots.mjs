@@ -42,7 +42,8 @@ fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(path.dirname(STATE), { recursive: true });
 
 const only = process.argv.slice(2);
-const names = Object.keys(ANN).filter((n) => !only.length || only.includes(n));
+// Ảnh "manual" (cổng quản trị) chụp tay bằng Claude in Chrome vì .env không có tài khoản quản trị hệ thống.
+const names = Object.keys(ANN).filter((n) => !ANN[n].manual && (!only.length || only.includes(n)));
 const report = fs.existsSync(REPORT) ? JSON.parse(fs.readFileSync(REPORT, 'utf8')) : { images: {} };
 const shared = {}; // dữ liệu truyền giữa các ảnh, ví dụ link truy xuất công khai
 

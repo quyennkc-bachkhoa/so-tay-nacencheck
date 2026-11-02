@@ -907,8 +907,492 @@
       "file": "/images/12-lich-su-quet.png",
       "drawn": [],
       "missing": []
+    },
+    "15-tong-quan": {
+      "ok": true,
+      "file": "/images/15-tong-quan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Xem **Cần xử lý** đầu tiên mỗi ngày: việc tồn đọng của toàn hệ thống hiện ở đây",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "16-to-chuc": {
+      "ok": true,
+      "file": "/images/16-to-chuc.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm tổ chức** khi cần tạo giúp một doanh nghiệp",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Chi tiết** để mở hồ sơ một tổ chức",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "16-them-to-chuc": {
+      "ok": true,
+      "file": "/images/16-them-to-chuc.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-chi-tiet-to-chuc": {
+      "ok": true,
+      "file": "/images/16-chi-tiet-to-chuc.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "**Đăng nhập hộ**: vào tài khoản doanh nghiệp để hỗ trợ, chỉ dùng khi họ nhờ",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Cấu hình Quy trình & Form** để chỉnh quy trình riêng của tổ chức này",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Bấm **Đổi gói** khi khách nâng hoặc hạ gói",
+          "source": 3
+        }
+      ],
+      "missing": []
+    },
+    "16-cong-vai": {
+      "ok": true,
+      "file": "/images/16-cong-vai.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-su-dung": {
+      "ok": true,
+      "file": "/images/16-su-dung.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-vung-nguy-hiem": {
+      "ok": true,
+      "file": "/images/16-vung-nguy-hiem.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-cai-dat-truy-xuat": {
+      "ok": true,
+      "file": "/images/16-cai-dat-truy-xuat.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-dung-thu": {
+      "ok": true,
+      "file": "/images/16-dung-thu.png",
+      "drawn": [],
+      "missing": []
+    },
+    "16-nguoi-dung": {
+      "ok": true,
+      "file": "/images/16-nguoi-dung.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Mời người dùng** để tạo tài khoản mới cho một tổ chức",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "**Đặt lại** và **Khoá** ảnh hưởng ngay tới việc đăng nhập của người đó",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "16-moi-nguoi-dung": {
+      "ok": true,
+      "file": "/images/16-moi-nguoi-dung.png",
+      "drawn": [],
+      "missing": []
+    },
+    "17-goi-nganh": {
+      "ok": true,
+      "file": "/images/17-goi-nganh.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Nạp ngành mới** khi cần thêm một ngành",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Chi tiết** để xem các công đoạn của ngành",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Bấm **Xác minh** để kiểm tra chữ ký của gói ngành",
+          "source": 3
+        }
+      ],
+      "missing": []
+    },
+    "17-nap-nganh": {
+      "ok": true,
+      "file": "/images/17-nap-nganh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "17-chi-tiet-nganh": {
+      "ok": true,
+      "file": "/images/17-chi-tiet-nganh.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Sửa mã GPC xong phải bấm **Ký lại**, nếu không chữ ký cũ hết hiệu lực",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "17-quy-trinh-to-chuc": {
+      "ok": true,
+      "file": "/images/17-quy-trinh-to-chuc.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Form** ở dòng công đoạn để thiết kế biểu mẫu của bước đó",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "17-buoc-tuy-chinh": {
+      "ok": true,
+      "file": "/images/17-buoc-tuy-chinh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "17-dung-form": {
+      "ok": true,
+      "file": "/images/17-dung-form.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm một loại ô để thêm vào biểu mẫu",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Xuất bản** thì biểu mẫu mới có tác dụng",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "17-truong-tao-lo": {
+      "ok": true,
+      "file": "/images/17-truong-tao-lo.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm trường** để thêm ô riêng của ngành",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Lưu thông tin**: lưu xong áp dụng ngay cho form tạo lô",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "17-bvtv": {
+      "ok": true,
+      "file": "/images/17-bvtv.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Import từ MARD CSV** để nạp danh mục từ file",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Cấm** khi thuốc bị cấm lưu hành. Thuốc đã cấm có nút **Khôi phục**",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "18-bo-luat": {
+      "ok": true,
+      "file": "/images/18-bo-luat.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Soạn bộ luật** để tạo bộ luật mới",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Sandbox thử CEL** để chạy thử một quy tắc",
+          "source": 2
+        },
+        {
+          "n": 3,
+          "label": "Mở **Hàng đợi duyệt** để xem các bản đang chờ duyệt",
+          "source": 3
+        }
+      ],
+      "missing": []
+    },
+    "18-soan-bo-luat": {
+      "ok": true,
+      "file": "/images/18-soan-bo-luat.png",
+      "drawn": [],
+      "missing": []
+    },
+    "18-sandbox": {
+      "ok": true,
+      "file": "/images/18-sandbox.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Chạy thử** để xem quy tắc cho kết quả gì với dữ liệu mẫu",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "18-chi-tiet": {
+      "ok": true,
+      "file": "/images/18-chi-tiet.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Chạy smoke test** để kiểm tra nhanh sau khi xuất bản",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Mở dialog rollback** khi bộ luật gây lỗi và cần lùi về bản trước",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "18-hang-doi": {
+      "ok": true,
+      "file": "/images/18-hang-doi.png",
+      "drawn": [],
+      "missing": []
+    },
+    "18-nha-phat-hanh": {
+      "ok": true,
+      "file": "/images/18-nha-phat-hanh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "18-tham-dinh": {
+      "ok": true,
+      "file": "/images/18-tham-dinh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "19-gia": {
+      "ok": true,
+      "file": "/images/19-gia.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Tra ở đây để biết doanh nghiệp thật sự bị tính bao nhiêu tiền",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Sửa giá** để đổi giá một gói",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "19-uu-dai": {
+      "ok": true,
+      "file": "/images/19-uu-dai.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm ưu đãi** để tạo ưu đãi tự động",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "19-ky-han": {
+      "ok": true,
+      "file": "/images/19-ky-han.png",
+      "drawn": [],
+      "missing": []
+    },
+    "19-thue": {
+      "ok": true,
+      "file": "/images/19-thue.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Chỉ bấm **Đổi thuế suất** khi kế toán đã xác nhận mức thuế",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "19-thanh-toan": {
+      "ok": true,
+      "file": "/images/19-thanh-toan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm tài khoản** để khai tài khoản nhận tiền",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "19-doi-soat": {
+      "ok": true,
+      "file": "/images/19-doi-soat.png",
+      "drawn": [],
+      "missing": []
+    },
+    "19-doanh-thu": {
+      "ok": true,
+      "file": "/images/19-doanh-thu.png",
+      "drawn": [],
+      "missing": []
+    },
+    "20-tich-hop": {
+      "ok": true,
+      "file": "/images/20-tich-hop.png",
+      "drawn": [],
+      "missing": []
+    },
+    "20-nbc": {
+      "ok": true,
+      "file": "/images/20-nbc.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Giám sát log đồng bộ** để xem từng lần gửi và lỗi",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "20-nbc-monitor": {
+      "ok": true,
+      "file": "/images/20-nbc-monitor.png",
+      "drawn": [],
+      "missing": []
+    },
+    "20-ten-mien": {
+      "ok": true,
+      "file": "/images/20-ten-mien.png",
+      "drawn": [],
+      "missing": []
+    },
+    "20-ky-nang": {
+      "ok": true,
+      "file": "/images/20-ky-nang.png",
+      "drawn": [],
+      "missing": []
+    },
+    "20-cong-cu": {
+      "ok": true,
+      "file": "/images/20-cong-cu.png",
+      "drawn": [],
+      "missing": []
+    },
+    "21-giam-sat": {
+      "ok": true,
+      "file": "/images/21-giam-sat.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Mở Grafana** để xem bảng cảnh báo và tình trạng hạ tầng",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "21-hieu-nang": {
+      "ok": true,
+      "file": "/images/21-hieu-nang.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "**Run All** tạo tải thật lên hệ thống. Chỉ bấm khi có kế hoạch kiểm thử",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "21-nhat-ky": {
+      "ok": true,
+      "file": "/images/21-nhat-ky.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Dữ liệu** để xem chi tiết một bản ghi",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "21-bai-viet": {
+      "ok": true,
+      "file": "/images/21-bai-viet.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Thêm bài viết** để soạn bài mới",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Thao tác** để xem trước, sửa hoặc ẩn bài",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "21-them-bai": {
+      "ok": true,
+      "file": "/images/21-them-bai.png",
+      "drawn": [],
+      "missing": []
+    },
+    "21-lien-he": {
+      "ok": true,
+      "file": "/images/21-lien-he.png",
+      "drawn": [],
+      "missing": []
+    },
+    "21-tham-so": {
+      "ok": true,
+      "file": "/images/21-tham-so.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Chỉnh sửa cấu hình** để đổi thông tin liên hệ công khai",
+          "source": 1
+        }
+      ],
+      "missing": []
     }
   },
-  "generatedAt": "2026-10-30T17:33:55.989Z",
+  "generatedAt": "2026-10-31T03:35:18.000Z",
   "base": "https://trace.nacencheck.com"
 }

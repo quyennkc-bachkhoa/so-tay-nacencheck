@@ -159,7 +159,7 @@ Với sản phẩm có định mức, hệ thống đối chiếu từng vật t
 ![Form tạo lô, phần cơ sở](/images/08-lo-co-so.png)
 
 8. Gõ **Số lượng** của lô. Hệ thống hiện bảng **Định mức và tồn kho dự kiến**: cần bao nhiêu mỗi vật tư, đang tồn bao nhiêu, còn thiếu bao nhiêu. Thiếu tồn kho vẫn tạo được lô.
-9. Để trống **Mã lô** thì hệ thống tự sinh, ví dụ BGNM-20261030-JWQZ.
+9. Để trống **Mã lô** thì hệ thống tự sinh, ví dụ BGNM-20261030-JWQZ. Muốn mã theo tiền tố riêng thì nhờ đội vận hành ([chương 16](/quan-tri/16-to-chuc-va-nguoi-dung)). Ô riêng của từng ngành trong form cũng do đội này cấu hình ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)).
 10. Bấm **Tạo lô hàng**.
 
 ![Form tạo lô, phần số lượng và định mức](/images/08-lo-so-luong.png)
@@ -191,4 +191,4 @@ Trên trang chi tiết lô có sẵn mã QR, liên kết truy xuất công khai 
 - **Lấy vật tư cho lô:** theo hướng dẫn trên form, vào tab **Định mức** của lô để lập lệnh sản xuất, rồi từ lệnh lập phiếu xuất theo lô vật tư. Tại thời điểm viết (30/10/2026) tab này đang báo lỗi, nên tạm lập **Lập phiếu xuất** ở Kho (mục 3.6).
 - **Tạo nhầm khi còn Nháp:** ở danh sách **Lô hàng**, bấm **Xóa**. Lô vào **Thùng rác**, có thể khôi phục, và hệ thống tự dọn sau 30 ngày.
 
-> Lưu ý: gói Free giới hạn số lô truy xuất mỗi tháng. Nguồn **Mua từ đơn vị khác** có thể sinh thêm một lô đầu vào, và mỗi lần bán tạo một lô con, nên một mẻ hàng có thể trừ nhiều lượt. Xem số còn lại ở tab **Sản phẩm** của **Hồ sơ thương hiệu**.
+> Lưu ý: gói Free giới hạn số lô truy xuất mỗi tháng, xem mức đã dùng ở `/dashboard/settings/billing`. Nguồn **Mua từ đơn vị khác** có thể sinh thêm một lô đầu vào, và mỗi lần bán tạo một lô con, nên một mẻ hàng có thể trừ nhiều lượt. Xem số còn lại ở tab **Sản phẩm** của **Hồ sơ thương hiệu**.

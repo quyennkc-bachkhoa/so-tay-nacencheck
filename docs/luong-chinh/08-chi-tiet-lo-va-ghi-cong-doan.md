@@ -73,7 +73,7 @@ Phía dưới là 6 tab:
 
 Hai điều cần biết khi ghi:
 
-- **Ghi công đoạn đầu tiên làm lô rời trạng thái Nháp.** Lô chuyển sang **Đang xử lý**, trang tra cứu bỏ cảnh báo bản nháp, và trạng thái đồng bộ thành **Chờ đồng bộ**. Hãy kiểm tra thông tin lô trước khi ghi.
+- **Ghi công đoạn đầu tiên làm lô rời trạng thái Nháp.** Lô chuyển sang **Đang xử lý**, trang tra cứu bỏ cảnh báo bản nháp, và trạng thái đồng bộ thành **Chờ đồng bộ**. Hãy kiểm tra thông tin lô trước khi ghi. Cổng quốc gia chưa cấp quyền kết nối nên nhãn này có thể giữ lâu, không phải lỗi của bạn ([chương 20](/quan-tri/20-tich-hop-va-ten-mien)).
 - **Phải ghi Đóng gói thì mới bán được**, dù trong quy trình bước này có thể là tùy chọn.
 
 Công đoạn đã ghi hiện ở tab **Quy trình và sự kiện**, kèm thời điểm, nơi ghi và người ghi. Tất cả sự kiện của doanh nghiệp nằm ở `/dashboard/events`.

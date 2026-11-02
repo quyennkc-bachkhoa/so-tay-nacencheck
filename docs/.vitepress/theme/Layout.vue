@@ -8,7 +8,7 @@ import InfoBox from './components/InfoBox.vue'
 import NewbieSteps from './components/NewbieSteps.vue'
 
 const { page, frontmatter } = useData()
-const isFlow = computed(() => page.value.relativePath.startsWith('luong-chinh/'))
+const isFlow = computed(() => /^(luong-chinh|quan-tri)\//.test(page.value.relativePath))
 </script>
 
 <template>

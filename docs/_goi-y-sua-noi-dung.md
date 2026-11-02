@@ -85,3 +85,37 @@ Các đoạn này viết theo chữ trên màn hình hoặc bài cũ, chưa bấ
 - **Ghi chặng và cây phân phối (mục 8.5):** bị chặn bởi lỗi 4 ở trên, tab cây chỉ thấy "Lô này chưa có chặng". Form **Ghi chuyến vận chuyển** chỉ mở, chưa lưu.
 - **Liên kết và giao nhận (mục 8.6):** chỉ mở form, chưa gửi yêu cầu vì cần doanh nghiệp thứ hai. Việc bên nhận xác nhận rồi nhập kho viết theo chữ trên màn hình.
 - **Thu hồi (mục 8.7):** chỉ mở form, không tạo lệnh. Chưa rõ sau khi tạo lệnh, hệ thống báo cho đầu mối thế nào.
+
+## Cổng quản trị (`https://admin.nacencheck.com/admin`, kiểm tra ngày 31/10/2026)
+
+### Lỗi, điểm mâu thuẫn trên màn hình
+
+1. **Bộ luật ở trạng thái Nháp không có nút đi tiếp.** Trang chi tiết gói nháp (ví dụ `PLAN_QUOTA_BASELINE`) chỉ có **So sánh**, **Các phiên bản**, **Chạy smoke test**. Tài liệu `dev-docs` ghi bấm **Ký số** ở trang chi tiết, nhưng không thấy nút **Gửi duyệt**, **Ký số**, **Xuất bản**. Khối **Danh sách quy tắc** của gói này cũng trống.
+2. **Hiệu năng chạy API thật trên hệ thống thật.** `/admin/performance` có **Run All** và nút chạy từng bài (tạo 50 lô, ghi 200 sự kiện, 100.000 dòng vào TimescaleDB), không có nhãn môi trường, và chưa bấm nên chưa rõ có hỏi xác nhận không. Nên chặn trên môi trường thật. Trang còn ghi `Tenant: 550e8400...` và phần lớn chữ tiếng Anh.
+3. **Nút Grafana ghi `uat-monitor`** trên cổng quản trị đang dùng, người đọc không rõ đây là UAT hay môi trường thật.
+4. **Mọi gói ngành đều "Chờ verify" trong khi đầu trang ghi "10/10 gói có chữ ký".** Cột **Đáp ứng GS1** toàn dấu gạch đỏ. Chi tiết gói Nông nghiệp báo đỏ "Bộ ngành thiếu khối gs1_conformance — vi phạm ADR-058 §2.11". Công đoạn đầu tiên `APPLY_PESTICIDE` có **Tên VI** trống.
+5. **Danh mục BVTV ghi "0 sản phẩm" nhưng bảng có 6 thuốc.** Dòng **Đồng bộ MARD** ghi chưa từng đồng bộ, không thấy nút đồng bộ.
+6. **Nền tảng có 3 tổ chức nhưng Doanh thu ghi "Tổ chức đang hoạt động: 0", "0 trả phí / 0 miễn phí".** Trong khi Tổng quan ghi 3 doanh nghiệp hoạt động, và Bảng giá ghi gói Community có 3 doanh nghiệp.
+7. **Thanh toán báo sai về tài khoản nhận.** Bảng có 1 tài khoản "mặc định, đang dùng", nhưng khối đối soát ghi "Mọi tài khoản — chưa có tài khoản nhận nào đang bật".
+8. **Cấu hình tích hợp lệch số:** thẻ ghi 32 nhà cung cấp, bảng ghi "1-10 / 34 kết quả".
+9. **Đồng bộ NBC:** cả 4 dòng lịch sử ở trạng thái `DLQ`, 0 điểm kết nối, không có thời lượng, thời điểm. Đầu trang ghi "Đã tích hợp" cho mọi adapter dễ khiến người đọc tưởng đang chạy. Tài liệu ghi có thể thử gửi lại, nhưng màn hình không thấy nút.
+10. **Bản dùng thử lệch tài liệu:** trang ghi "Tenant mới sẽ tự động tạo trial 30 ngày khi signup", nhưng cả 3 tổ chức đều ở gói Community và danh sách trial trống. Form cấp tay lại mặc định 14 ngày.
+11. **Tính năng:** nút **Cờ mới** bị khoá, danh sách trống, không có giải thích.
+12. **Form Thêm tên miền không có nhãn ô**, chỉ có chữ mờ, gõ vào là mất gợi ý.
+13. **Trường Tên pháp lý của Hạt Vàng Việt hiện "admin"** ở trang chi tiết tổ chức, dù hồ sơ doanh nghiệp đã khai tên công ty.
+14. **Lộ từ ngữ kỹ thuật cho người dùng:** "Đối tác được gieo ở mig 116", "Không có invoice chờ reconcile", "Chưa có tenant trial nào active", "Mở dialog rollback", "Redis hot-reload", "cron", chú thích ADR. Trang `/admin/nbc-sync/monitor`, `/admin/rules/sandbox` gần như toàn tiếng Anh. Ngành `PROCESSED_FOOD` chưa có tên tiếng Việt ở danh sách tổ chức.
+15. **Còn tên cũ TracePro:** "TracePro Platform" ở Nhà phát hành, "TracePro rơi vào nhóm nào" ở Thuế suất.
+16. **Tên không thống nhất:** menu **Tổ chức** mở trang "Quản lý đơn vị", menu **Quy trình & gói ngành** mở trang "Ngành & công đoạn chuẩn", menu **Bảng điều khiển luật** mở trang "Bộ luật tuân thủ", tab **Sổ ghi vết** mở trang "Nhật ký kiểm toán". Tài liệu gọi "Đánh giá tuân thủ", màn hình gọi "Thẩm định tuân thủ", và màn này không có trên menu.
+17. **Tài liệu `dev-docs` lạc hậu so với màn hình:** ghi vào **Tenants** rồi **Quy trình**, **Biểu mẫu**, trong khi hiện là nút **Cấu hình Quy trình & Form** ở trang chi tiết tổ chức. Mục menu cũng đã đổi tên.
+
+### Phần bài chưa kiểm chứng được
+
+Cổng quản trị không có lớp chặn ghi như script Playwright, nên chỉ mở màn hình và form, không lưu gì:
+
+- **Tổ chức (chương 16):** chưa tạo tổ chức, chưa bấm **Đăng nhập hộ**, **Tạm ngưng**, **Bắt đầu xoá**, **Đặt lại khoá**, **Buộc đăng xuất**, **Bật chặn cứng**. Chưa rõ chọn mức ở **Cổng vai theo công đoạn** có lưu ngay hay không. **Đặt lại**, **Khoá**, **Gửi nhắc** viết theo tên nút và tài liệu. Công dụng **Đăng nhập hộ** viết theo tên nút.
+- **Ngành (chương 17):** chưa nạp ngành, chưa bấm **Xác minh**, **Nạp lại**, **Ký lại**, **Nhân bản**. Công dụng **Xác minh**, **Nạp lại** viết theo tên nút. Form **Nạp ngành mới** chỉ xem đến khối văn bản pháp lý. Loại mã sự kiện khác ngoài "Chọn mã đã đăng ký" lấy từ tài liệu, chưa mở. Trình dựng biểu mẫu đã thử thêm một ô trên màn hình, xác nhận chưa có yêu cầu ghi, rồi bỏ. Chưa bấm **Thêm trường**, **Import từ MARD CSV**, **Cấm**.
+- **Bộ luật (chương 18):** chưa soạn, duyệt, ký, xuất bản, chưa chạy Sandbox, smoke test, rollback. Vòng đời viết theo tài liệu `dev-docs`. Form **Soạn bộ luật** chỉ xem đến Bước 1B, chưa rõ còn bước nào phía sau. Chưa bấm **Tạo bản nháp** ở Thẩm định, quy trình đánh giá lấy từ tài liệu.
+- **Giá, thu tiền (chương 19):** chưa sửa gì. Tab **Mã phát cho khách**, **Giá riêng theo DN** chỉ đọc chữ trên màn hình. Đối soát, Liên hệ chưa có dữ liệu nên chưa thấy nút thao tác trong bảng. Ăn chia, Chiến dịch tài trợ cũng trống.
+- **Tích hợp (chương 20):** chưa tạo tên miền, chưa thấy bước xác minh DNS thật. Chưa bấm **Lịch sử**. Ô màu trong form tên miền đoán theo chữ mờ `var(--nc-primary)`.
+- **Giám sát, nội dung (chương 21):** chưa mở Grafana, chưa rõ cần tài khoản gì. Chưa bấm **Run All**. Chưa mở chi tiết **Dữ liệu** của nhật ký. Chưa xuất bản bài, nên bước gửi duyệt và **Thu hồi consent** viết theo chữ trên màn hình.
+- **Tìm kiếm nhanh** trên thanh đầu trang chưa thử, nên bài không hướng dẫn.

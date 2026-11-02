@@ -59,6 +59,8 @@ Chuẩn bị sẵn giấy đăng ký kinh doanh để điền đúng tên pháp 
 
 ![Công khai trang giới thiệu](/images/03-cong-khai-trang.png)
 
+Trang nằm trên tên miền chung của NacenCheck. Muốn dùng tên miền riêng thì nhờ đội vận hành ([chương 20](/quan-tri/20-tich-hop-va-ten-mien)).
+
 Muốn trang đầy đủ hơn, bạn làm thêm các việc sau, làm lúc nào cũng được:
 
 - **Thêm nội dung:** điền khung **Nội dung trang giới thiệu**, ví dụ khẩu hiệu "Bánh gạo từ lúa nhà trồng", rồi bấm **Lưu thay đổi**.

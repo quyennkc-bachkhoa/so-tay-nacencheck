@@ -54,7 +54,7 @@ Mở `/dashboard/invoices` để quản lý hóa đơn mua vào và bán ra. B�
 
 | Màn hình | Dùng để |
 |---|---|
-| **TraceBot** (`/dashboard/agent`) | Trợ lý AI tra cứu lô hàng, kiểm tra tuân thủ, hướng dẫn thao tác |
+| **TraceBot** (`/dashboard/agent`) | Trợ lý AI tra cứu lô hàng, kiểm tra tuân thủ, hướng dẫn thao tác. Một số việc trợ lý làm sẽ ghi vào dữ liệu ([chương 20](/quan-tri/20-tich-hop-va-ten-mien)). |
 | **Thông báo** (`/dashboard/notifications`) | Xem cảnh báo theo mức độ ưu tiên |
 | **Thùng rác** (`/dashboard/trash`) | Khôi phục lô, sản phẩm đã xóa. Hệ thống tự dọn sau 30 ngày. |
-| **Cài đặt** (`/dashboard/settings/account`) | Tài khoản, bảo mật, gói dịch vụ, tích hợp, khóa API |
+| **Cài đặt** (`/dashboard/settings/account`) | Tài khoản, bảo mật, gói dịch vụ ([chương 19](/quan-tri/19-gia-va-thu-tien)), tích hợp, khóa API |

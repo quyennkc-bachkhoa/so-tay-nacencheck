@@ -32,9 +32,13 @@ features:
     details: Chương 14. Tạo tài khoản nông hộ, khai thửa, phát quy trình kỹ thuật, ghi nhật ký thay nông hộ.
     link: /hop-tac-xa/14-hop-tac-xa
     linkText: Đọc nhóm này
+  - title: Quản trị
+    details: Chương 15–21. Dành cho đội vận hành NacenCheck. 7 bước trên cổng quản trị, từ mở tổ chức, cấu hình ngành, bộ luật đến thu tiền và giám sát.
+    link: /quan-tri/15-tong-quan-cong-quan-tri
+    linkText: Đọc nhóm này
   - title: Hỗ trợ
-    details: Chương 15. Câu hỏi thường gặp và nơi liên hệ khi cần giúp.
-    link: /ho-tro/15-cau-hoi-thuong-gap
+    details: Chương 22. Câu hỏi thường gặp và nơi liên hệ khi cần giúp.
+    link: /ho-tro/22-cau-hoi-thuong-gap
     linkText: Đọc nhóm này
 ---
 

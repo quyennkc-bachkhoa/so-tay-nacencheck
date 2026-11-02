@@ -1,6 +1,6 @@
 ---
 title: Câu hỏi thường gặp
-order: 15
+order: 22
 group: Hỗ trợ
 ---
 
@@ -79,6 +79,20 @@ Khai **Đơn giá** khi bán, rồi xem ở `/dashboard/distribution` (mục 8.4
 
 **Đang làm thì bị đưa về trang đăng nhập.**
 Phiên làm việc đã hết hạn, hoặc tài khoản vừa đăng nhập ở nơi khác. Đăng nhập lại là được. Dữ liệu đã lưu không mất, phần đang nhập dở trong form có thể mất.
+
+## Quản trị hệ thống
+
+**Khách quên mật khẩu.**
+Xác minh đúng người, rồi bấm **Đặt lại** ở `/admin/users` (chương 16, mục 7).
+
+**Khách bị tính sai tiền.**
+Các công cụ giá không cộng dồn. Dùng **Tra cứu giá theo doanh nghiệp** ở `/admin/billing/pricing` để xem con số thật (chương 19, mục 1).
+
+**Doanh nghiệp bị chặn sai sau khi xuất bản bộ luật.**
+Mở bộ luật, bấm **Mở dialog rollback** (chương 18, mục 5).
+
+**Lô đã lên cổng quốc gia chưa.**
+NBC đang chờ cấp quyền kết nối, nên dữ liệu chưa tự động gửi lên. Xem `/admin/nbc-sync` (chương 20, mục 2).
 
 ## Cần hỗ trợ thêm
 
