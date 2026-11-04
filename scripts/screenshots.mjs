@@ -14,6 +14,10 @@ const BASE = process.env.NACEN_BASE || 'https://trace.nacencheck.com';
 const EMAIL = process.env.NACEN_EMAIL;
 const PASSWORD = process.env.NACEN_PASSWORD;
 const STATE = path.join(ROOT, '.auth/state.json');
+// Cổng cơ quan quản lý (ảnh 22-… đến 27-…): khai "portal": "gov" trong annotations.json.
+const GOV = { base: process.env.GOV_BASE || 'https://dev-gov.nacencheck.com', email: process.env.GOV_EMAIL, password: process.env.GOV_PASSWORD, state: path.join(ROOT, '.auth/gov-state.json') };
+const portalOf = (a) => (a.portal === 'gov' ? { gov: true, base: GOV.base, state: GOV.state } : { gov: false, base: BASE, state: STATE });
+const MASK_COLOR = '#3f3f46';
 const OUT = path.join(ROOT, 'docs/public/images');
 const REPORT = path.join(OUT, '_report.json');
 const ANN = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/annotations.json'), 'utf8'));
@@ -29,7 +33,8 @@ const VIEWPORTS = {
 };
 
 // Nút lưu dữ liệu: script từ chối bấm, kể cả khi annotations.json khai nhầm.
-const FORBIDDEN = /^(lưu\b.*|tạo lô hàng|ghi nhận.*|xuất bản.*|xóa.*|xoá.*|phát hành.*|đăng ký vùng|bắt đầu|tạo sản phẩm \+ tem|tạo tài khoản|kích hoạt|gửi.*|xác nhận.*|cập nhật thông tin|công khai trang|sinh serial|tạo 1 thùng|tạo cây|in tem serial.*|ghi chặng|khởi tạo lệnh thu hồi|giao lô.*|in lại|tạm khoá|hủy tem)$/i;
+const FORBIDDEN = /^(lưu\b.*|tạo lô hàng|ghi nhận.*|xuất bản.*|xóa.*|xoá.*|phát hành.*|đăng ký vùng|bắt đầu|tạo sản phẩm \+ tem|tạo tài khoản|kích hoạt|gửi.*|xác nhận.*|cập nhật thông tin|công khai trang|sinh serial|tạo 1 thùng|tạo cây|in tem serial.*|ghi chặng|khởi tạo lệnh thu hồi|giao lô.*|in lại|tạm khoá|hủy tem|lập cuộc thanh tra|tạo báo cáo|chuyển cấp cao hơn|kết thúc.*|ký.*|rút lại.*|tính khung phạt.*|đổi mật khẩu|bật 2fa|đăng xuất.*|đổi ảnh đại diện)$/i;
+// Cổng cơ quan quản lý: form Lập cuộc thanh tra, Tạo báo cáo mở bằng đường dẫn `?drawer=tao` vì nút mở trùng tên nút gửi.
 // Nút trùng tên nút lưu nhưng chỉ mở form: "Cập nhật thông tin" ở Hồ sơ doanh nghiệp, "Ghi nhận nhanh" ở Thu hoạch, "Ghi nhận công đoạn này" ở trang ghi công đoạn, "Phát hành tem" ở Tem chống giả, "Gửi xác nhận giao–nhận" ở menu lô, "Phát hành hộ chiếu" ở Hộ chiếu lô.
 const OPENERS = ['company-profile-edit', 'btn-toggle-harvest-form', 'Ghi nhận công đoạn này', 'Phát hành tem', 'Gửi xác nhận giao–nhận', 'Phát hành hộ chiếu'];
 
@@ -94,7 +99,8 @@ async function hidePopups(page) {
 
 // ---------- đăng nhập ----------
 
-async function login(page, ctx) {
+async function login(page, ctx, P = portalOf({})) {
+  if (P.gov) return loginGov(page, ctx);
   await page.goto(BASE + '/sign-in');
   await settle(page);
   const email = page.getByLabel('Email hoặc số điện thoại', { exact: true });
@@ -106,11 +112,25 @@ async function login(page, ctx) {
   log('  đã đăng nhập lại');
 }
 
-async function gotoAuthed(page, ctx, url, auth) {
+// Trang đăng nhập cổng cơ quan quản lý nhớ tài khoản: lần sau chỉ còn ô Mật khẩu.
+async function loginGov(page, ctx) {
+  if (!GOV.email || !GOV.password) throw new Error('Thiếu GOV_EMAIL hoặc GOV_PASSWORD trong .env');
+  if (!page.url().includes('/sign-in')) await page.goto(GOV.base + '/sign-in');
+  await settle(page);
+  const email = page.getByLabel('Địa chỉ email', { exact: true });
+  if (await email.isVisible().catch(() => false)) await email.fill(GOV.email);
+  await page.getByLabel('Mật khẩu', { exact: true }).fill(GOV.password);
+  await page.getByRole('button', { name: 'Đăng nhập', exact: true }).click();
+  await page.waitForURL((u) => !u.toString().includes('/sign-in'), { timeout: 30000, waitUntil: 'commit' });
+  await ctx.storageState({ path: GOV.state });
+  log('  đã đăng nhập cổng cơ quan quản lý');
+}
+
+async function gotoAuthed(page, ctx, url, auth, P = portalOf({})) {
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await settle(page);
   if (auth && page.url().includes('/sign-in')) {
-    await login(page, ctx);
+    await login(page, ctx, P);
     await page.goto(url, { waitUntil: 'domcontentloaded' });
     await settle(page);
   }
@@ -290,13 +310,16 @@ async function ensureBatch(page, ctx, name) {
 async function shoot(browser, name, a) {
   const res = { ok: false, file: `/images/${name}.png`, drawn: [], missing: [], note: a.note || undefined };
   const vpName = a.viewport || 'desktop';
+  const P = portalOf(a);
   // Tắt service worker: yêu cầu đi qua service worker thì page.route không chặn được.
   const ctxOpts = { ...VIEWPORTS[vpName], deviceScaleFactor: 2, colorScheme: 'light', locale: 'vi-VN', serviceWorkers: 'block' };
-  if (a.auth && fs.existsSync(STATE)) ctxOpts.storageState = STATE;
+  if (a.auth && fs.existsSync(P.state)) ctxOpts.storageState = P.state;
   // Form tự xin vị trí: không cấp thì ảnh hiện dòng lỗi đỏ "chưa cho phép định vị".
   if (a.geolocation) Object.assign(ctxOpts, { geolocation: a.geolocation, permissions: ['geolocation'] });
   const ctx = await browser.newContext(ctxOpts);
   const page = await ctx.newPage();
+  // Mục "Gần đây" ở menu cổng cơ quan quản lý đổi theo lịch sử xem: xóa để ảnh nào cũng giống nhau.
+  if (P.gov) await page.addInitScript(() => { try { localStorage.removeItem('tp.gov.sidebar.recent'); } catch {} });
   // Lớp chặn cuối: ngoài đăng nhập và làm mới phiên, mọi yêu cầu ghi dữ liệu đều bị hủy.
   await page.route('**/*', (route) => {
     const r = route.request();
@@ -311,9 +334,12 @@ async function shoot(browser, name, a) {
       if (!shared.publicUrl) throw new Error('chưa có link truy xuất công khai (ảnh 09-chi-tiet-lo chưa chụp được)');
       url = url.replace('{publicUrl}', shared.publicUrl);
     }
-    if (!/^https?:/.test(url)) url = BASE + url;
-    if (a.auth && !fs.existsSync(STATE)) await login(page, ctx);
-    await gotoAuthed(page, ctx, url, a.auth);
+    if (!/^https?:/.test(url)) url = P.base + url;
+    if (a.auth && !fs.existsSync(P.state)) {
+      if (P.gov) await page.goto(GOV.base + '/sign-in');
+      await login(page, ctx, P);
+    }
+    await gotoAuthed(page, ctx, url, a.auth, P);
     await hidePopups(page);
     if (a.pickBatch) await ensureBatch(page, ctx, name);
 
@@ -441,8 +467,11 @@ async function shoot(browser, name, a) {
     }
     await drawOverlay(page, draw, bounds);
     const file = path.join(OUT, `${name}.png`);
-    if (clipLoc) await page.screenshot({ path: file, clip: bounds });
-    else await page.screenshot({ path: file });
+    // Che kín (không làm mờ) chữ không được lộ: tên, mã của tổ chức khác, email quản trị, địa chỉ IP.
+    const mask = (a.mask || []).map((t) => page.getByText(t, { exact: false }));
+    const shotOpts = { path: file, ...(mask.length ? { mask, maskColor: MASK_COLOR } : {}) };
+    if (clipLoc) await page.screenshot({ ...shotOpts, clip: bounds });
+    else await page.screenshot(shotOpts);
     await removeOverlay(page);
     await page.keyboard.press('Escape').catch(() => {});
     res.ok = true;
@@ -451,7 +480,7 @@ async function shoot(browser, name, a) {
     res.error = e.message.split('\n')[0];
     console.error(`  ✗ ${name}: ${res.error}`);
   } finally {
-    if (a.auth) await ctx.storageState({ path: STATE }).catch(() => {});
+    if (a.auth) await ctx.storageState({ path: P.state }).catch(() => {});
     await ctx.close();
   }
   return res;

@@ -120,7 +120,7 @@ Bấm **Báo cáo** (ở menu trái ghi **Báo cáo tuân thủ**), rồi **Tạ
 
 ## Vi phạm và CAPA {#vi-pham-va-capa}
 
-Bấm **Vi phạm** ở menu trái. Màn hình này có dữ liệu khi cơ quan quản lý gửi thông báo vi phạm.
+Bấm **Vi phạm** ở menu trái. Màn hình này có dữ liệu khi cơ quan quản lý gửi thông báo vi phạm. Cán bộ lập vi phạm trên cổng cơ quan quản lý ([chương 26](/co-quan-quan-ly/26-vi-pham-va-quyet-dinh)).
 
 **CAPA** là kế hoạch doanh nghiệp nộp để sửa lỗi đã xảy ra và ngăn lỗi lặp lại. Nộp đúng hạn để tránh bị xử phạt nặng hơn.
 

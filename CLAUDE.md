@@ -24,6 +24,15 @@ Nhóm **Quản trị** (chương 15–21) là mục lớn ngang Luồng chính, 
 → 5. Giá, thu tiền (19) → 6. Tích hợp, tên miền (20) → 7. Giám sát, nội dung (21)
 ```
 
+Nhóm **Cơ quan quản lý** (chương 22–27) dành cho cán bộ Sở trên cổng riêng `https://dev-gov.nacencheck.com` (bản thử nghiệm, đổi tên miền ở `GOV_BASE` trong `config.mts`), gồm 6 bước:
+
+```
+1. Làm quen (22) → 2. Tra cứu lô, truy vết (23) → 3. Giám sát địa bàn: bản đồ, thu hồi, tem (24)
+→ 4. Thanh tra (25) → 5. Vi phạm, CAPA, Hộp quyết định (26) → 6. Báo cáo kỳ, phân hạng dữ liệu, sổ vết, trợ lý AI (27)
+```
+
+Chương **Hỗ trợ** là chương 28.
+
 ## 2. Lệnh chạy
 
 ```
@@ -42,6 +51,9 @@ Tài khoản đọc từ `.env` (không commit, không ghi mật khẩu vào fil
 NACEN_BASE=https://trace.nacencheck.com
 NACEN_EMAIL=...
 NACEN_PASSWORD=...
+GOV_BASE=https://dev-gov.nacencheck.com   # cổng cơ quan quản lý (ảnh 22-… đến 27-…)
+GOV_EMAIL=...
+GOV_PASSWORD=...
 ```
 
 ## 3. Cấu trúc thư mục
@@ -49,15 +61,15 @@ NACEN_PASSWORD=...
 ```
 ├── CLAUDE.md
 ├── .env                         ← tài khoản (KHÔNG commit)
-├── .auth/state.json             ← phiên đăng nhập Playwright (KHÔNG commit)
+├── .auth/state.json             ← phiên đăng nhập Playwright (KHÔNG commit); gov-state.json cho cổng cơ quan quản lý
 ├── scripts/screenshots.mjs      ← chụp ảnh có khoanh vùng
 └── docs/
     ├── .vitepress/
-    │   ├── config.mts           ← menu 6 nhóm, tìm kiếm, nút trước/sau, thời gian đọc
+    │   ├── config.mts           ← menu 6 tab, tìm kiếm, nút trước/sau, thời gian đọc
     │   ├── markdown.ts          ← plugin markdown-it: ảnh → <Shot>, đường dẫn, hộp lưu ý, thuật ngữ
     │   └── theme/
     │       ├── index.ts, Layout.vue, style.css
-    │       └── components/      ← SiteHeader, FlowSteps, Shot, Term, InfoBox, ChapterMeta, NewbieSteps
+    │       └── components/      ← SiteHeader, PartNav, FlowSteps, Shot, Term, InfoBox, ChapterMeta, NewbieSteps
     ├── public/images/           ← ảnh chụp + _report.json
     ├── annotations.json         ← khoanh vùng từng ảnh (dùng chung cho script chụp và Shot.vue)
     ├── glossary.json            ← thuật ngữ có chú giải khi rê chuột (lấy từ chương 01)
@@ -69,17 +81,18 @@ NACEN_PASSWORD=...
     ├── mo-rong/     11 (tổng hợp), 12 tuân thủ, 13 quản lý tài sản
     ├── hop-tac-xa/  14
     ├── quan-tri/    15 … 21     (cổng quản trị, ảnh chụp tay, xem mục 6)
-    └── ho-tro/      22
+    ├── co-quan-quan-ly/ 22 … 27 (cổng cơ quan quản lý, ảnh chụp bằng script)
+    └── ho-tro/      28
 ```
 
 ## 4. Quy tắc về nội dung
 
 - Toàn bộ chương đã được viết lại theo yêu cầu người dùng, theo mục "Cách viết chương Luồng chính" bên dưới. Khi giao diện đổi, cứ sửa bài cho khớp màn thật.
-- Frontmatter mỗi chương: `title`, `order`, `group`. Chương Luồng chính (03–10) và Quản trị (15–21) có thêm `prerequisites` (1–3 việc phải xong, mỗi việc có `text` và `link`) và `outcome` (một câu kết quả).
+- Frontmatter mỗi chương: `title`, `order`, `group`. Chương Luồng chính (03–10), Quản trị (15–21) và Cơ quan quản lý (22–27) có thêm `prerequisites` (1–3 việc phải xong, mỗi việc có `text` và `link`) và `outcome` (một câu kết quả).
 - Thứ tự chương và nút **Chương trước / Chương sau** lấy theo `order` (tính trong `config.mts`).
 - Ảnh viết dạng `![mô tả](/images/xx.png)`; plugin tự đổi thành `<Shot name="xx">`. Thiếu ảnh thì hiện khung "Ảnh minh họa đang cập nhật".
 - Khối ` ``` ` là sơ đồ luồng dạng chữ (monospace, nền nhạt, giữ xuống dòng). Khối `>` là hộp lưu ý: bắt đầu bằng "Lưu ý"/"Về kỹ thuật" → biểu tượng i; chứa "không bấm", "không xóa được", "bắt buộc" → cảnh báo cam.
-- Chuỗi `/dashboard/...`, `/m/...` hoặc `/admin/...` trong dấu `` ` `` tự hiển thị thành nhãn breadcrumb, bấm mở trang thật ở tab mới (`/admin` mở `admin.nacencheck.com`).
+- Chuỗi `/dashboard/...`, `/m/...` hoặc `/admin/...` trong dấu `` ` `` tự hiển thị thành nhãn breadcrumb, bấm mở trang thật ở tab mới (`/admin` mở `admin.nacencheck.com`). Màn cổng cơ quan quản lý viết `/gov/inspections`: chữ `gov` được thay bằng tên miền `GOV_BASE`, nhãn hiện `dev-gov › inspections`.
 - Thuật ngữ trong `glossary.json` được gạch chân chấm ở lần xuất hiện đầu tiên mỗi trang (trừ chương 01, trừ chữ in đậm và tiêu đề).
 - Lỗi và điểm bất hợp lý của trang NacenCheck, phần bài chưa kiểm chứng được: ghi vào `docs/_goi-y-sua-noi-dung.md`.
 - Chỗ nào trang doanh nghiệp và cổng quản trị liên quan nhau thì thêm đúng một câu ngắn có link sang chương bên kia, không viết thành đoạn. Chi tiết và chứng cứ ở `QUAN-HE-DOANH-NGHIEP-VA-QUAN-TRI.md`.
@@ -104,10 +117,11 @@ Người đọc là nhân viên lần đầu mở NacenCheck. Câu ngắn, tiế
 
 ## 5. Giao diện
 
-- Header hai hàng màu xanh NacenCheck (`SiteHeader.vue`): hàng 1 logo, tên sổ tay, ô tìm kiếm (local search tiếng Việt), nút sáng/tối; hàng 2 tám tab **Trang chủ · Mở đầu · Bắt đầu · Luồng chính · Mở rộng · Hợp tác xã · Quản trị · Hỗ trợ** (khai trong `themeConfig.nav`, tab sáng theo `activeMatch`). Thanh điều hướng mặc định của VitePress bị ẩn.
+- Header hai hàng màu xanh NacenCheck (`SiteHeader.vue`): hàng 1 logo, tên sổ tay, ô tìm kiếm (local search tiếng Việt), nút sáng/tối; hàng 2 sáu tab **Trang chủ · Doanh nghiệp · Hợp tác xã · Quản trị · Cơ quan quản lý · Hỗ trợ** (khai trong `themeConfig.nav`, tab sáng theo `activeMatch`). Thanh điều hướng mặc định của VitePress bị ẩn.
+- Tab **Doanh nghiệp** gom 4 thư mục `mo-dau`, `bat-dau`, `luong-chinh`, `mo-rong` (theo yêu cầu người dùng, đường dẫn giữ nguyên). Đầu mỗi trang của tab có hàng chọn phần **Mở đầu · Bắt đầu · Luồng chính · Mở rộng** (`PartNav.vue`). Nhãn nhóm dưới tiêu đề hiện "Doanh nghiệp · <phần>" (`ChapterMeta.vue`). Luồng chính vẫn có `FlowSteps` 8 bước.
 - **Không có sidebar.** Giữ khung "Trên trang này" (outline cấp `##`).
-- 8 trang Luồng chính và 7 trang Quản trị có `FlowSteps` (thanh bước riêng của từng nhóm) và hộp "Trước khi bắt đầu" ở đầu, hộp "Kết quả sau bước này" ở cuối.
-- Màu nhấn `#0f6e56`, font Be Vietnam Pro, chữ 16.5px, giãn dòng 1.7, nội dung rộng tối đa 760px. Không gradient, không hiệu ứng động.
+- 8 trang Luồng chính, 7 trang Quản trị và 6 trang Cơ quan quản lý có `FlowSteps` (thanh bước riêng của từng nhóm) và hộp "Trước khi bắt đầu" ở đầu, hộp "Kết quả sau bước này" ở cuối.
+- Màu nhấn `#0f6e56`, font Be Vietnam Pro, chữ 16.5px, giãn dòng 1.7, nội dung rộng tối đa 980px (khung trang và header 1360px, theo yêu cầu người dùng cho đỡ phí chỗ hai bên). Không gradient, không hiệu ứng động.
 
 ## 6. Chụp ảnh màn hình (Playwright + Visual Grounding)
 
@@ -155,9 +169,19 @@ Tài khoản dữ liệu thật. Script chỉ được **xem và chụp**:
 - Trước khi chụp, đặt `document.documentElement.style.zoom = 1.25` cho chữ dễ đọc (ảnh rộng 1568px, nhỏ hơn ảnh Playwright), đưa khung 100vh về đúng chiều cao, và vẽ khung đỏ đánh số bằng lớp phủ giống script. Ảnh `save_to_disk` là JPG, đổi sang PNG khi chép vào `docs/public/images/`, rồi tự thêm mục vào `annotations.json` và `_report.json` để số trên ảnh khớp chú thích.
 - **Bắt buộc che** trước khi đưa ảnh vào dự án: tên, mã, email của tổ chức khác, email quản trị nền tảng, số tài khoản và chủ tài khoản ngân hàng, địa chỉ IP trong nhật ký. Làm mờ lúc chụp rồi tô kín vùng đó trên file PNG, vì chữ số bị làm mờ vẫn có thể đoán lại được. Không ghi các thông tin này vào bài.
 
+### Ảnh cổng cơ quan quản lý (`22-…` đến `27-…`)
+
+Chụp bằng `npm run shots` như ảnh trang doanh nghiệp: mục trong `annotations.json` khai `"portal": "gov"`, script dùng `GOV_BASE`, tài khoản `GOV_EMAIL`/`GOV_PASSWORD`, phiên `.auth/gov-state.json`, và vẫn hủy mọi yêu cầu ghi ở tầng mạng.
+
+- Trang đăng nhập nhớ tài khoản: lần sau chỉ còn ô Mật khẩu, script tự xử lý.
+- Script xóa mục **Gần đây** ở menu trái (`localStorage tp.gov.sidebar.recent`) để ảnh nào cũng giống nhau.
+- **Che kín** bằng khai `"mask": ["chữ cần che", …]`: phần tử chứa chữ đó bị tô kín màu xám đậm khi chụp. Bắt buộc che email quản trị nền tảng, tên, mã lô, sản phẩm của doanh nghiệp khác (không phải Hạt Vàng Việt) và địa chỉ IP (`"ipAddress"` ở Sổ vết). Danh sách nào lọc được thì lọc về Hạt Vàng Việt thay vì che.
+- **Không bấm:** Gửi vi phạm, Chuyển cấp cao hơn, Tính khung phạt theo NĐ37, Tạo báo cáo, Kết thúc…, Ký…, Rút lại…, Gửi (trợ lý AI), Yêu thích, và ở Hồ sơ cá nhân: Đổi mật khẩu, Bật 2FA, Đổi ảnh đại diện, Đăng xuất khỏi các thiết bị khác, Xóa tài khoản. Trang `/account` có màn chờ vài giây, khai bước `waitFor` trước khi chụp. Nút mở form **Lập cuộc thanh tra**, **Tạo báo cáo mới** trùng tên nút gửi nên mở form bằng đường dẫn `/inspections?drawer=tao`, `/reports?drawer=tao`.
+- Tạo dữ liệu thử trên cổng (cuộc thanh tra, vi phạm) phải hỏi người dùng từng lần. Dữ liệu cổng này dùng chung với trang doanh nghiệp, vi phạm lập cho Hạt Vàng Việt sẽ hiện bên doanh nghiệp.
+
 ### Danh sách ảnh
 
-Ảnh cổng quản trị xem danh sách trong `annotations.json` (mục có `"manual": true`).
+Ảnh cổng quản trị xem danh sách trong `annotations.json` (mục có `"manual": true`). Ảnh cổng cơ quan quản lý là các mục có `"portal": "gov"`.
 
 Tiền tố tên ảnh giữ số chương cũ (`08-…`, `09-…`, `10-…`, `11-…`) để khỏi đổi tên file; ảnh `08-…` thuộc chương 07, ảnh `09-…` thuộc chương 08, ảnh `10-…` thuộc chương 09, ảnh `11-…` thuộc chương 10.
 
@@ -222,8 +246,8 @@ Tiền tố tên ảnh giữ số chương cũ (`08-…`, `09-…`, `10-…`, `1
 
 ## 7. Kiểm tra trước khi bàn giao
 
-- 23 chương (00–22) hiển thị đủ, đúng nhóm, đúng thứ tự; không có sidebar; tab nhóm sáng đúng khi đang đọc.
-- `FlowSteps` chỉ có ở 8 trang Luồng chính và 7 trang Quản trị, bước hiện tại đúng.
+- 29 chương (00–28) hiển thị đủ, đúng nhóm, đúng thứ tự; không có sidebar; tab nhóm sáng đúng khi đang đọc (chương 00–13 sáng tab Doanh nghiệp, hàng PartNav sáng đúng phần).
+- `FlowSteps` chỉ có ở 8 trang Luồng chính, 7 trang Quản trị và 6 trang Cơ quan quản lý, bước hiện tại đúng.
 - Mở vài ảnh: số trên ảnh khớp chú thích dưới ảnh; không popup che; không có dữ liệu nhập dở.
 - `_report.json` không còn ảnh lỗi; nếu còn, ghi lý do khi bàn giao.
 - Không có mật khẩu trong file nào ngoài `.env`; `.env` và `.auth/` nằm trong `.gitignore`.
@@ -231,6 +255,6 @@ Tiền tố tên ảnh giữ số chương cũ (`08-…`, `09-…`, `10-…`, `1
 
 ## 8. Khi bổ sung nội dung
 
-- Chương mới: thêm file `.md` vào đúng thư mục nhóm với `title`, `order`, `group` (và `prerequisites`, `outcome` nếu thuộc Luồng chính). Nếu là chương Luồng chính, thêm bước vào `FlowSteps.vue`.
+- Chương mới: thêm file `.md` vào đúng thư mục nhóm với `title`, `order`, `group` (và `prerequisites`, `outcome` nếu thuộc Luồng chính). Nếu là chương Luồng chính, Quản trị hoặc Cơ quan quản lý, thêm bước vào `FlowSteps.vue`.
 - Ảnh mới: thêm mục vào `docs/annotations.json`, chèn `![mô tả](/images/<tên>.png)` vào bài, chạy `npm run shots -- <tên>` rồi `npm run build`.
 - Thuật ngữ mới: thêm vào `docs/glossary.json` (`term`, `match`, `def`).

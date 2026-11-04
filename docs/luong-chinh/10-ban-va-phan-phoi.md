@@ -165,6 +165,8 @@ Bên nhận mở trang **Lô hàng**, bấm **Hàng đến chờ xác nhận** �
 4. Tick ô xác nhận, bấm **Khởi tạo lệnh thu hồi**.
 5. Theo dõi lệnh ở trang **Thu hồi**.
 
+Sở theo dõi lệnh thu hồi của doanh nghiệp trên cổng cơ quan quản lý ([chương 24](/co-quan-quan-ly/24-giam-sat-dia-ban#_2-theo-doi-lenh-thu-hoi)).
+
 ![Form thu hồi](/images/11-thu-hoi.png)
 
 | Ô | Điền gì |

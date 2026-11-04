@@ -68,7 +68,7 @@
 }
 
 .sh-row {
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -212,15 +212,24 @@
   top: var(--vp-nav-height) !important;
 }
 
-/* Không có sidebar: nội dung rộng tối đa ~760px */
+/* Không có sidebar: nội dung rộng tối đa ~980px, đủ chỗ cho bảng và ảnh màn hình */
 .VPDoc.has-aside .content-container,
 .VPDoc .content-container {
-  max-width: 760px !important;
+  max-width: 980px !important;
+}
+
+/* Khung .content của VitePress mặc định chặn ở 784px (gồm 32px đệm mỗi bên): nới cho vừa 980px nội dung. */
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 1044px !important;
 }
 
 @media (min-width: 1280px) {
   .VPDoc:not(.has-sidebar) .container {
-    max-width: 1140px !important;
+    max-width: 1360px !important;
+  }
+  /* Thẳng hàng logo trên header với mép trái nội dung (32px đệm VPDoc + 32px đệm .content). */
+  .sh-row {
+    padding: 0 64px;
   }
 }
 
@@ -845,7 +854,7 @@
 }
 
 .VPHome .home-flow {
-  max-width: 760px;
+  max-width: 980px;
   margin: 0 auto;
 }
 

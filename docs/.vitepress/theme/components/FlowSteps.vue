@@ -2,7 +2,7 @@
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 
-// Thanh bước theo nhóm: Luồng chính (chương 03 → 10), Quản trị (chương 15 → 21).
+// Thanh bước theo nhóm: Luồng chính (chương 03 → 10), Quản trị (chương 15 → 21), Cơ quan quản lý (chương 22 → 27).
 const FLOWS: Record<string, { aria: string; steps: { label: string; file: string }[] }> = {
   'luong-chinh': {
     aria: 'Các bước của luồng chính',
@@ -27,6 +27,17 @@ const FLOWS: Record<string, { aria: string; steps: { label: string; file: string
       { label: 'Giá & thu tiền', file: '19-gia-va-thu-tien' },
       { label: 'Tích hợp', file: '20-tich-hop-va-ten-mien' },
       { label: 'Giám sát & nội dung', file: '21-giam-sat-va-noi-dung' },
+    ],
+  },
+  'co-quan-quan-ly': {
+    aria: 'Các bước của mục cơ quan quản lý',
+    steps: [
+      { label: 'Làm quen', file: '22-lam-quen-cong-co-quan-quan-ly' },
+      { label: 'Tra cứu & truy vết', file: '23-tra-cuu-lo-va-truy-vet' },
+      { label: 'Giám sát địa bàn', file: '24-giam-sat-dia-ban' },
+      { label: 'Thanh tra', file: '25-thanh-tra' },
+      { label: 'Vi phạm & quyết định', file: '26-vi-pham-va-quyet-dinh' },
+      { label: 'Báo cáo & dữ liệu', file: '27-bao-cao-va-du-lieu' },
     ],
   },
 }

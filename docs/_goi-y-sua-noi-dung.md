@@ -119,3 +119,46 @@ Cổng quản trị không có lớp chặn ghi như script Playwright, nên ch�
 - **Tích hợp (chương 20):** chưa tạo tên miền, chưa thấy bước xác minh DNS thật. Chưa bấm **Lịch sử**. Ô màu trong form tên miền đoán theo chữ mờ `var(--nc-primary)`.
 - **Giám sát, nội dung (chương 21):** chưa mở Grafana, chưa rõ cần tài khoản gì. Chưa bấm **Run All**. Chưa mở chi tiết **Dữ liệu** của nhật ký. Chưa xuất bản bài, nên bước gửi duyệt và **Thu hồi consent** viết theo chữ trên màn hình.
 - **Tìm kiếm nhanh** trên thanh đầu trang chưa thử, nên bài không hướng dẫn.
+
+## Cổng cơ quan quản lý (`https://dev-gov.nacencheck.com`, kiểm tra ngày 03/11/2026)
+
+Tài khoản quản trị hệ thống, phạm vi "Bộ Công Thương / NacenCheck Trung tâm", xem toàn quốc. Script Playwright chặn mọi yêu cầu ghi, không tạo dữ liệu nào.
+
+### Lỗi chặn luồng
+
+0. **Quên mật khẩu không dùng được khi chưa đăng nhập.** Ở `/sign-in`, bấm **Quên mật khẩu?** bị đưa về `/sign-in?redirect_url=%2Fforgot-password`. Trang `/forgot-password` chỉ mở được khi đã đăng nhập, tức là người quên mật khẩu không bao giờ tới được. Bài tạm hướng dẫn nhờ quản trị viên đặt lại.
+1. **Form Lập cuộc thanh tra bắt nhập UUID doanh nghiệp.** Ô **Mã DN (tenantId)** gợi ý "copy từ trang Tra cứu lô", nhưng Tra cứu lô, Chuỗi cung ứng, Vi phạm đều không hiện mã này. Cán bộ không có cách lấy mã. Nên đổi thành ô chọn doanh nghiệp, hoặc lập thanh tra từ một lô như form vi phạm. Bài tạm hướng dẫn xin mã từ đội vận hành.
+2. **Menu Đối soát tuân thủ (`/compliance`) chuyển sang `/reports`**, tức màn Báo cáo kỳ. Chưa có màn đối soát riêng.
+
+### Logic dễ gây nhầm
+
+- **Nút Lập cuộc thanh tra ở Tổng quan chỉ mở `/inspections`, không mở form**, trong khi `/inspections?drawer=tao` mở được form.
+- **Mức vi phạm hai cách gọi:** form dùng LOW, MEDIUM, HIGH, CRITICAL, danh sách và Hộp quyết định dùng SEV1–SEV4. Màn hình không nói mức nào tương ứng mức nào. Bài suy ra SEV1 là nặng nhất từ câu "SEV1 cần hai người ký", cần xác nhận.
+- **Tab Đang mở, Quá hạn CAPA chỉ lọc trong trang đang xem** (màn có ghi chú). Khi nhiều trang, cán bộ dễ bỏ sót vi phạm quá hạn.
+- **Tem theo tỉnh trống (0 tem)** dù doanh nghiệp ví dụ Hạt Vàng Việt đã phát hành 10 tem chống giả. Màn báo "hoặc tài khoản chưa gắn mã tỉnh", có thể do tài khoản trung ương. Cần xác nhận tài khoản trung ương có xem được tem toàn quốc không.
+- **Báo cáo kỳ chưa có báo cáo nào** dù màn ghi tự sinh lúc 02:00 ngày 1 hằng tháng (01/11/2026 đã qua).
+- **Bản đồ nhiệt chưa hiện vi phạm lập ngày 03/11/2026** ở chỉ số Số vi phạm, 30 ngày gần nhất. Có thể do tổng hợp 30 phút một lần, cần kiểm tra lại.
+- **Sổ vết truy cập chỉ có 20 bản ghi** ("Hiển thị 1-10 / 20 kết quả") trong khi mã bản ghi đã tới 378. Cán bộ không xem được nhật ký cũ hơn.
+- **Tra cứu lô không tìm không dấu:** `banh gao` không ra lô Bánh gạo.
+- **Bộ lọc Ngành ở Tra cứu lô** chỉ có Nông nghiệp, Dược phẩm, Mỹ phẩm, Đồ uống, Điện tử. Không có Lúa gạo, Thực phẩm chế biến, là ngành của các lô thật trên hệ thống.
+- **Trang Hồ sơ cá nhân (`/account`) hiện màn chờ "Đang khởi tạo kết nối…" vài giây** trước khi có nội dung, trông như bấm không có tác dụng. (Lần kiểm tra đầu mình ghi nhầm là "bấm không mở gì".)
+
+### Lỗi hiển thị
+
+- **Chữ tiếng Anh và mã thô:** cột Ngành, Trạng thái ở Tra cứu lô hiện `AGRI_RICE`, `PROCESSING`. Sơ đồ truy vết hiện "Level 0", "RAW", "PROCESSING", "DISTRIBUTION", "ACTIVE", "SOLD", "READ-ONLY inspection view". Sổ vết có "All Actions" và cột "Inspection ID", "Inspector", "Batch ID", "Action", "Finding". Form vi phạm "LOW…CRITICAL". Nội dung vi phạm "[Safety]". Bản đồ "CAGG", "DCRE rule pack", "SUPER_ADMIN". Tạo báo cáo "ad-hoc", "Template", "READY".
+- **Trang truy vết lấy tiêu đề "Batch <UUID>"** và ô **Mã định danh lô** cũng là UUID, thay vì mã lô `BGNM-20261030-JWQZ` mà cán bộ vừa tìm.
+- **Cột Finding ở Sổ vết hiện nguyên JSON**, kèm địa chỉ IP và trình duyệt.
+- **Tên menu khác tiêu đề trang:** Chuỗi cung ứng → "Truy vết", Sổ vết truy cập → "Nhật ký kiểm toán", Bản đồ vùng trồng → "Bản đồ nhiệt quản lý nhà nước", Phân hạng dữ liệu → "Phân loại và bảo vệ dữ liệu cá nhân".
+- **Dòng Phạm vi trên thanh đầu trang bị cắt** ("Bộ Công Thương / NacenChec…").
+- **Dải THỬ NGHIỆM che ảnh đại diện** và góc menu tài khoản. Bản dev còn hiện bong bóng "1 Issue" của Next.js ở góc dưới trái.
+
+### Phần bài chưa kiểm chứng được
+
+- **Chi tiết cuộc thanh tra (chương 25, mục 3):** dữ liệu thử chưa có cuộc thanh tra nào, không tạo thử vì cần UUID doanh nghiệp và chưa hỏi người dùng. Chưa thấy nút ghi phát hiện, bắt đầu, kết thúc.
+- **Xác minh C/O (chương 23):** chưa có giấy C/O nào để thử, chưa thấy màn kết quả.
+- **Tính khung phạt theo NĐ37, Chuyển cấp cao hơn (chương 26):** chưa bấm. Chưa gửi vi phạm thử, nên chưa xác nhận vi phạm có lưu mã lô hay chỉ lưu doanh nghiệp.
+- **Hộp quyết định (chương 26):** danh sách trống. Chưa rõ quyết định SEV1 được đề xuất từ màn nào.
+- **Trợ lý AI (chương 27):** chưa gửi câu hỏi. Bài chỉ nhắc đối chiếu số liệu.
+- **Yêu thích trong Tìm kiếm nhanh:** chưa bấm, chưa rõ có ghim lên đầu không.
+- **Hồ sơ cá nhân (chương 22):** chưa bấm **Bật 2FA**, **Đổi mật khẩu**, **Đổi ảnh đại diện**, **Đăng xuất khỏi các thiết bị khác**, **Xóa tài khoản**. Bài viết theo chữ trên màn hình.
+- **Bản đồ (chương 23, 24):** nút **Lớp bản đồ**, **Vị trí của tôi** chưa thử, bài không hướng dẫn.

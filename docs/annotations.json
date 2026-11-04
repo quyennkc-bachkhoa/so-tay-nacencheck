@@ -3863,5 +3863,754 @@
         "label": "Bấm **Chỉnh sửa cấu hình** để đổi thông tin liên hệ công khai"
       }
     ]
+  },
+  "22-dang-nhap": {
+    "portal": "gov",
+    "auth": false,
+    "url": "/sign-in",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ email, mật khẩu rồi bấm **Đăng nhập**",
+        "locator": {
+          "role": "button",
+          "name": "Đăng nhập",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "22-tong-quan": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Kiểm tra cơ quan và vai trò của tài khoản ở khung đầu menu",
+        "locator": {
+          "union": [
+            {
+              "text": "Cơ quan quản lý",
+              "exact": true
+            },
+            {
+              "text": "Quản trị hệ thống",
+              "exact": true
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "label": "Xem nhanh số doanh nghiệp, lô hàng, vi phạm, đợt kiểm tra trong phạm vi",
+        "locator": {
+          "union": [
+            {
+              "text": "Doanh nghiệp trong phạm vi",
+              "card": true
+            },
+            {
+              "text": "Đợt kiểm tra",
+              "exact": true,
+              "card": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "22-tim-kiem-nhanh": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tìm kiếm nhanh"
+        }
+      },
+      {
+        "wait": 600
+      },
+      {
+        "type": "vi phạm"
+      }
+    ],
+    "marks": []
+  },
+  "22-tai-khoan": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Tài khoản"
+        }
+      },
+      {
+        "wait": 600
+      }
+    ],
+    "mask": [
+      "admin@nacencheck.com"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Đăng xuất** khi dùng xong trên máy dùng chung",
+        "locator": {
+          "text": "Đăng xuất",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "22-ho-so-ca-nhan": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/account",
+    "fullPage": true,
+    "mask": [
+      "admin@nacencheck.com"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Đổi mật khẩu ở khối **Đổi mật khẩu**",
+        "locator": {
+          "role": "button",
+          "name": "Đổi mật khẩu",
+          "exact": true
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Bật 2FA** để thêm lớp bảo vệ khi đăng nhập",
+        "locator": {
+          "role": "button",
+          "name": "Bật 2FA",
+          "exact": true
+        }
+      }
+    ],
+    "steps": [
+      {
+        "waitFor": {
+          "text": "Hồ sơ cá nhân",
+          "exact": true
+        }
+      },
+      {
+        "wait": 1500
+      }
+    ]
+  },
+  "23-tra-cuu-lo": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/search",
+    "steps": [
+      {
+        "fill": {
+          "css": "main input[placeholder='Mã lô hoặc tên sản phẩm']"
+        },
+        "value": "BGNM"
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Tra cứu",
+          "exact": true
+        }
+      },
+      {
+        "wait": 1500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ mã lô hoặc tên sản phẩm rồi bấm **Tra cứu**",
+        "locator": {
+          "union": [
+            {
+              "css": "main input[placeholder='Mã lô hoặc tên sản phẩm']"
+            },
+            {
+              "role": "button",
+              "name": "Tra cứu",
+              "exact": true
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Chi tiết** để mở sơ đồ truy vết của lô",
+        "locator": {
+          "role": "link",
+          "name": "Chi tiết"
+        }
+      }
+    ]
+  },
+  "23-chuoi-cung-ung": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/lineage",
+    "steps": [
+      {
+        "fill": {
+          "css": "main input[placeholder='Tìm lô hàng hoặc công ty...']"
+        },
+        "value": "Hạt Vàng"
+      },
+      {
+        "wait": 1500
+      }
+    ],
+    "mask": [
+      "E2E Ánh Dương LED",
+      "Hộ kinh doanh Trần Quốc Việt"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ mã lô hoặc tên doanh nghiệp để lọc danh sách",
+        "locator": {
+          "css": "main input[placeholder='Tìm lô hàng hoặc công ty...']"
+        }
+      }
+    ]
+  },
+  "23-truy-vet": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/lineage/58710f64-9b10-4e62-8da3-6b388da22313",
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "wait": 3000
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Đọc chuỗi từ trái sang phải: nguyên liệu, chế biến, phân phối",
+        "locator": {
+          "text": "Level 0",
+          "exact": true,
+          "card": true
+        }
+      }
+    ]
+  },
+  "23-chi-tiet-nut": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/lineage/58710f64-9b10-4e62-8da3-6b388da22313",
+    "viewport": "desktop-tall",
+    "steps": [
+      {
+        "wait": 2500
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "RAW",
+          "exact": false
+        }
+      },
+      {
+        "wait": 1500
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm một ô trong chuỗi",
+        "locator": {
+          "role": "button",
+          "name": "RAW",
+          "exact": false
+        }
+      },
+      {
+        "n": 2,
+        "label": "Đọc mã lô, trạng thái, thời gian của ô đó ở khung **Chi tiết nút**",
+        "locator": {
+          "union": [
+            {
+              "text": "Chi tiết nút",
+              "exact": true
+            },
+            {
+              "text": "Kết nối đi",
+              "exact": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "23-xac-minh-co": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/verify-co",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Gõ số C/O rồi bấm **Xác minh tính xác thực**",
+        "locator": {
+          "union": [
+            {
+              "css": "main input"
+            },
+            {
+              "role": "button",
+              "name": "Xác minh tính xác thực"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "24-ban-do": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/heatmap",
+    "steps": [
+      {
+        "wait": 4000
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chọn **Cấp hành chính** và **Chỉ số** muốn tô màu",
+        "locator": {
+          "union": [
+            {
+              "field": "Cấp hành chính"
+            },
+            {
+              "field": "Chỉ số"
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **CSV** để tải số liệu đang xem",
+        "locator": {
+          "role": "button",
+          "name": "CSV",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "24-tem-theo-tinh": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/stamps",
+    "marks": []
+  },
+  "24-thu-hoi": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/recalls",
+    "mask": [
+      "E2E Ánh Dương LED",
+      "Hộ kinh doanh Trần Quốc Việt",
+      "MFG-OUT-1793634013252",
+      "Bóng đèn LED Bulb",
+      "Kiểm thử minh họa"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bỏ chọn **Chỉ việc đang xử** để xem cả lệnh đã xong",
+        "locator": {
+          "text": "Chỉ việc đang xử",
+          "exact": false
+        }
+      }
+    ]
+  },
+  "25-thanh-tra": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/inspections",
+    "steps": [
+      {
+        "click": {
+          "role": "tab",
+          "name": "Tất cả",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Lập cuộc thanh tra** để lên lịch một đợt kiểm tra",
+        "locator": {
+          "role": "button",
+          "name": "Lập cuộc thanh tra",
+          "exact": true
+        }
+      },
+      {
+        "n": 2,
+        "label": "Chọn tab theo tình trạng: đang làm, đã lên lịch, đã xong",
+        "locator": {
+          "union": [
+            {
+              "role": "tab",
+              "name": "Đang thực hiện"
+            },
+            {
+              "role": "tab",
+              "name": "Tất cả",
+              "exact": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "25-lap-thanh-tra": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/inspections?drawer=tao",
+    "steps": [
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "within": {
+            "role": "dialog"
+          },
+          "css": "input[placeholder='dd/mm/yyyy']"
+        },
+        "value": "20/11/2026"
+      },
+      {
+        "fill": {
+          "within": {
+            "role": "dialog"
+          },
+          "css": "input[placeholder^='VD: kho lạnh']"
+        },
+        "value": "Kho nguyên liệu và xưởng đóng gói bánh gạo"
+      }
+    ],
+    "marks": []
+  },
+  "26-vi-pham": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/violations",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Chi tiết"
+        }
+      },
+      {
+        "wait": 800
+      }
+    ],
+    "mask": [
+      "admin@nacencheck.com"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Lọc vi phạm theo tình trạng xử lý",
+        "locator": {
+          "union": [
+            {
+              "within": {
+                "css": "main"
+              },
+              "text": "Đang mở",
+              "exact": false
+            },
+            {
+              "within": {
+                "css": "main"
+              },
+              "text": "Đã đóng",
+              "exact": true
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "label": "Xem hạn CAPA, diễn biến xử lý và quyết định của Sở ở khung chi tiết",
+        "locator": {
+          "text": "Mức phạt dự tính",
+          "card": true
+        }
+      }
+    ]
+  },
+  "26-lap-vi-pham": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/violations",
+    "steps": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Lập vi phạm",
+          "exact": true
+        }
+      },
+      {
+        "wait": 800
+      },
+      {
+        "fill": {
+          "within": {
+            "role": "dialog"
+          },
+          "css": "input[placeholder^='VD: LOT']"
+        },
+        "value": "BGNM-20261030-JWQZ"
+      },
+      {
+        "click": {
+          "within": {
+            "role": "dialog"
+          },
+          "role": "button",
+          "name": "Tìm",
+          "exact": true
+        }
+      },
+      {
+        "wait": 2000
+      },
+      {
+        "click": {
+          "within": {
+            "role": "dialog"
+          },
+          "text": "BGNM-20261030-JWQZ",
+          "exact": true
+        },
+        "optional": true
+      },
+      {
+        "click": {
+          "within": {
+            "role": "dialog"
+          },
+          "role": "combobox",
+          "nth": 0
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "Nhãn mác",
+          "exact": true
+        }
+      },
+      {
+        "click": {
+          "within": {
+            "role": "dialog"
+          },
+          "role": "combobox",
+          "nth": 1
+        }
+      },
+      {
+        "click": {
+          "role": "option",
+          "name": "MEDIUM",
+          "exact": true
+        }
+      },
+      {
+        "fill": {
+          "within": {
+            "role": "dialog"
+          },
+          "css": "input[placeholder^='VD: Đ.12']"
+        },
+        "value": "Nghị định 43/2017/NĐ-CP"
+      },
+      {
+        "fill": {
+          "within": {
+            "role": "dialog"
+          },
+          "css": "textarea"
+        },
+        "value": "Nhãn gói 180g thiếu ngày sản xuất."
+      }
+    ],
+    "marks": []
+  },
+  "26-hop-quyet-dinh": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/decisions/inbox",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Quyết định SEV1 chờ bạn ký thứ hai nằm ở tab **Chờ tôi ký**",
+        "locator": {
+          "union": [
+            {
+              "role": "tab",
+              "name": "Chờ tôi ký"
+            },
+            {
+              "role": "tab",
+              "name": "Kẹt ở chữ ký thứ nhất"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "27-bao-cao-ky": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/reports",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm **Tạo báo cáo mới** khi cần báo cáo ngoài kỳ",
+        "locator": {
+          "role": "button",
+          "name": "Tạo báo cáo mới",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "27-tao-bao-cao": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/reports?drawer=tao",
+    "steps": [
+      {
+        "wait": 800
+      },
+      {
+        "click": {
+          "within": {
+            "role": "dialog"
+          },
+          "role": "combobox"
+        }
+      },
+      {
+        "wait": 500
+      }
+    ],
+    "marks": []
+  },
+  "27-phan-hang-du-lieu": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/data-classification",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm một tầng để chỉ xem các trường thuộc tầng đó",
+        "locator": {
+          "union": [
+            {
+              "text": "CÔNG KHAI (Quét mã QR tiêu dùng)",
+              "exact": true,
+              "card": true
+            },
+            {
+              "text": "NỘI BỘ DOANH NGHIỆP (Bảo mật nội bộ DN)",
+              "exact": true,
+              "card": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "27-so-vet": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/audit",
+    "mask": [
+      "ipAddress"
+    ],
+    "marks": [
+      {
+        "n": 1,
+        "label": "Chọn loại hành động rồi bấm **Lọc**",
+        "locator": {
+          "union": [
+            {
+              "role": "combobox",
+              "name": "Hành động"
+            },
+            {
+              "role": "button",
+              "name": "Lọc",
+              "exact": true
+            }
+          ]
+        }
+      },
+      {
+        "n": 2,
+        "label": "Bấm **Xuất CSV** để tải nhật ký đang xem",
+        "locator": {
+          "role": "button",
+          "name": "Xuất CSV",
+          "exact": true
+        }
+      }
+    ]
+  },
+  "27-tro-ly-ai": {
+    "portal": "gov",
+    "auth": true,
+    "url": "/agent",
+    "marks": [
+      {
+        "n": 1,
+        "label": "Bấm một câu gợi ý, hoặc gõ câu hỏi rồi bấm **Gửi**",
+        "locator": {
+          "union": [
+            {
+              "role": "button",
+              "name": "Địa bàn có bao nhiêu doanh nghiệp, ngành nào nhiều nhất?"
+            },
+            {
+              "role": "button",
+              "name": "Gửi",
+              "exact": true
+            }
+          ]
+        }
+      }
+    ]
   }
 }

@@ -7,6 +7,8 @@ import { markdownPlugins } from './markdown'
 const SRC = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 export const APP_BASE = 'https://trace.nacencheck.com'
 export const ADMIN_BASE = 'https://admin.nacencheck.com'
+// Cổng cơ quan quản lý (chương 22–27). Đổi ở đây khi cổng chuyển sang tên miền chính thức.
+export const GOV_BASE = 'https://dev-gov.nacencheck.com'
 
 // Danh sách chương lấy từ frontmatter, sắp theo `order`. Dùng cho nút Chương trước / Chương sau.
 type Chapter = { link: string; title: string; order: number; file: string }
@@ -50,7 +52,7 @@ export default defineConfig({
   ],
 
   markdown: {
-    config: (md) => markdownPlugins(md, { appBase: APP_BASE, adminBase: ADMIN_BASE }),
+    config: (md) => markdownPlugins(md, { appBase: APP_BASE, adminBase: ADMIN_BASE, govBase: GOV_BASE }),
   },
 
   transformPageData(pageData) {
@@ -63,16 +65,14 @@ export default defineConfig({
   },
 
   themeConfig: {
-    // Menu ngang 7 nhóm (vẽ bởi SiteHeader.vue). Không có sidebar.
+    // Menu ngang 6 mục. Tab Doanh nghiệp gồm 4 thư mục mo-dau, bat-dau, luong-chinh, mo-rong (chuyển phần bằng PartNav.vue) (vẽ bởi SiteHeader.vue). Không có sidebar.
     nav: [
       { text: 'Trang chủ', link: '/', activeMatch: '^/$' },
-      { text: 'Mở đầu', link: '/mo-dau/00-gioi-thieu', activeMatch: '^/mo-dau/' },
-      { text: 'Bắt đầu', link: '/bat-dau/02-dang-nhap-va-giao-dien', activeMatch: '^/bat-dau/' },
-      { text: 'Luồng chính', link: '/luong-chinh/03-thiet-lap-doanh-nghiep', activeMatch: '^/luong-chinh/' },
-      { text: 'Mở rộng', link: '/mo-rong/11-tinh-nang-bo-sung', activeMatch: '^/mo-rong/' },
+      { text: 'Doanh nghiệp', link: '/mo-dau/00-gioi-thieu', activeMatch: '^/(mo-dau|bat-dau|luong-chinh|mo-rong)/' },
       { text: 'Hợp tác xã', link: '/hop-tac-xa/14-hop-tac-xa', activeMatch: '^/hop-tac-xa/' },
       { text: 'Quản trị', link: '/quan-tri/15-tong-quan-cong-quan-tri', activeMatch: '^/quan-tri/' },
-      { text: 'Hỗ trợ', link: '/ho-tro/22-cau-hoi-thuong-gap', activeMatch: '^/ho-tro/' },
+      { text: 'Cơ quan quản lý', link: '/co-quan-quan-ly/22-lam-quen-cong-co-quan-quan-ly', activeMatch: '^/co-quan-quan-ly/' },
+      { text: 'Hỗ trợ', link: '/ho-tro/28-cau-hoi-thuong-gap', activeMatch: '^/ho-tro/' },
     ],
     outline: { level: 2, label: 'Trên trang này' },
     docFooter: { prev: 'Chương trước', next: 'Chương sau' },

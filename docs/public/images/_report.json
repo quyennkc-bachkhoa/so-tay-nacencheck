@@ -1391,8 +1391,294 @@
         }
       ],
       "missing": []
+    },
+    "22-dang-nhap": {
+      "ok": true,
+      "file": "/images/22-dang-nhap.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ email, mật khẩu rồi bấm **Đăng nhập**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "22-tong-quan": {
+      "ok": true,
+      "file": "/images/22-tong-quan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Kiểm tra cơ quan và vai trò của tài khoản ở khung đầu menu",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Xem nhanh số doanh nghiệp, lô hàng, vi phạm, đợt kiểm tra trong phạm vi",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "22-tim-kiem-nhanh": {
+      "ok": true,
+      "file": "/images/22-tim-kiem-nhanh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "22-tai-khoan": {
+      "ok": true,
+      "file": "/images/22-tai-khoan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Đăng xuất** khi dùng xong trên máy dùng chung",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "23-tra-cuu-lo": {
+      "ok": true,
+      "file": "/images/23-tra-cuu-lo.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ mã lô hoặc tên sản phẩm rồi bấm **Tra cứu**",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Chi tiết** để mở sơ đồ truy vết của lô",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "23-chuoi-cung-ung": {
+      "ok": true,
+      "file": "/images/23-chuoi-cung-ung.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ mã lô hoặc tên doanh nghiệp để lọc danh sách",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "23-truy-vet": {
+      "ok": true,
+      "file": "/images/23-truy-vet.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Đọc chuỗi từ trái sang phải: nguyên liệu, chế biến, phân phối",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "23-xac-minh-co": {
+      "ok": true,
+      "file": "/images/23-xac-minh-co.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Gõ số C/O rồi bấm **Xác minh tính xác thực**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "24-ban-do": {
+      "ok": true,
+      "file": "/images/24-ban-do.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Chọn **Cấp hành chính** và **Chỉ số** muốn tô màu",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **CSV** để tải số liệu đang xem",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "24-tem-theo-tinh": {
+      "ok": true,
+      "file": "/images/24-tem-theo-tinh.png",
+      "drawn": [],
+      "missing": []
+    },
+    "24-thu-hoi": {
+      "ok": true,
+      "file": "/images/24-thu-hoi.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bỏ chọn **Chỉ việc đang xử** để xem cả lệnh đã xong",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "25-thanh-tra": {
+      "ok": true,
+      "file": "/images/25-thanh-tra.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Lập cuộc thanh tra** để lên lịch một đợt kiểm tra",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Chọn tab theo tình trạng: đang làm, đã lên lịch, đã xong",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "25-lap-thanh-tra": {
+      "ok": true,
+      "file": "/images/25-lap-thanh-tra.png",
+      "drawn": [],
+      "missing": []
+    },
+    "26-vi-pham": {
+      "ok": true,
+      "file": "/images/26-vi-pham.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Lọc vi phạm theo tình trạng xử lý",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Xem hạn CAPA, diễn biến xử lý và quyết định của Sở ở khung chi tiết",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "26-lap-vi-pham": {
+      "ok": true,
+      "file": "/images/26-lap-vi-pham.png",
+      "drawn": [],
+      "missing": []
+    },
+    "26-hop-quyet-dinh": {
+      "ok": true,
+      "file": "/images/26-hop-quyet-dinh.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Quyết định SEV1 chờ bạn ký thứ hai nằm ở tab **Chờ tôi ký**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "27-bao-cao-ky": {
+      "ok": true,
+      "file": "/images/27-bao-cao-ky.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm **Tạo báo cáo mới** khi cần báo cáo ngoài kỳ",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "27-tao-bao-cao": {
+      "ok": true,
+      "file": "/images/27-tao-bao-cao.png",
+      "drawn": [],
+      "missing": []
+    },
+    "27-phan-hang-du-lieu": {
+      "ok": true,
+      "file": "/images/27-phan-hang-du-lieu.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm một tầng để chỉ xem các trường thuộc tầng đó",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "27-so-vet": {
+      "ok": true,
+      "file": "/images/27-so-vet.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Chọn loại hành động rồi bấm **Lọc**",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Xuất CSV** để tải nhật ký đang xem",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "27-tro-ly-ai": {
+      "ok": true,
+      "file": "/images/27-tro-ly-ai.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm một câu gợi ý, hoặc gõ câu hỏi rồi bấm **Gửi**",
+          "source": 1
+        }
+      ],
+      "missing": []
+    },
+    "23-chi-tiet-nut": {
+      "ok": true,
+      "file": "/images/23-chi-tiet-nut.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Bấm một ô trong chuỗi",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Đọc mã lô, trạng thái, thời gian của ô đó ở khung **Chi tiết nút**",
+          "source": 2
+        }
+      ],
+      "missing": []
+    },
+    "22-ho-so-ca-nhan": {
+      "ok": true,
+      "file": "/images/22-ho-so-ca-nhan.png",
+      "drawn": [
+        {
+          "n": 1,
+          "label": "Đổi mật khẩu ở khối **Đổi mật khẩu**",
+          "source": 1
+        },
+        {
+          "n": 2,
+          "label": "Bấm **Bật 2FA** để thêm lớp bảo vệ khi đăng nhập",
+          "source": 2
+        }
+      ],
+      "missing": []
     }
   },
-  "generatedAt": "2026-10-31T03:35:18.000Z",
+  "generatedAt": "2026-11-03T06:52:04.736Z",
   "base": "https://trace.nacencheck.com"
 }

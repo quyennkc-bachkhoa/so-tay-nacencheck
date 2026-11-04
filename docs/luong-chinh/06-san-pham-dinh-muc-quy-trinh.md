@@ -80,7 +80,7 @@ Ví dụ trong chương này là Bánh gạo nướng mật ong Hạt Vàng Vi�
 
 ## 4.3 Dựng và xuất bản quy trình
 
-Quy trình là danh sách công đoạn mà mọi lô của sản phẩm phải đi qua, theo đúng thứ tự. Các loại công đoạn lấy từ gói ngành do đội vận hành quản lý ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)), thiếu loại nào thì [liên hệ hỗ trợ](/ho-tro/22-cau-hoi-thuong-gap).
+Quy trình là danh sách công đoạn mà mọi lô của sản phẩm phải đi qua, theo đúng thứ tự. Các loại công đoạn lấy từ gói ngành do đội vận hành quản lý ([chương 17](/quan-tri/17-nganh-quy-trinh-bieu-mau)), thiếu loại nào thì [liên hệ hỗ trợ](/ho-tro/28-cau-hoi-thuong-gap).
 
 1. Ở danh sách sản phẩm, bấm vào chữ trong cột **Quy trình** của dòng sản phẩm.
 2. Bấm **Áp dụng quy trình chuẩn ngành** để nạp sẵn các công đoạn.

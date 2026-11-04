@@ -12,21 +12,9 @@ hero:
       text: Đi thẳng vào luồng chính
       link: /luong-chinh/03-thiet-lap-doanh-nghiep
 features:
-  - title: Mở đầu
-    details: Chương 00–01. NacenCheck làm gì, và 8 khái niệm hay gặp như sản phẩm, lô hàng, quy trình, định mức.
+  - title: Doanh nghiệp
+    details: "Chương 00–13, cho nhân viên doanh nghiệp. Mở đầu (khái niệm), Bắt đầu (đăng nhập), Luồng chính 8 bước từ thiết lập doanh nghiệp đến tạo lô, in tem QR, bán hàng, và Mở rộng (kho, tuân thủ, tài sản)."
     link: /mo-dau/00-gioi-thieu
-    linkText: Đọc nhóm này
-  - title: Bắt đầu
-    details: Chương 02. Đăng nhập, làm quen bố cục màn hình và trình hướng dẫn Bắt đầu.
-    link: /bat-dau/02-dang-nhap-va-giao-dien
-    linkText: Đọc nhóm này
-  - title: Luồng chính
-    details: Chương 03–10. 8 bước từ thiết lập doanh nghiệp, cơ sở và vùng nguyên liệu đến tạo lô hàng, in tem QR và bán hàng.
-    link: /luong-chinh/03-thiet-lap-doanh-nghiep
-    linkText: Đọc nhóm này
-  - title: Mở rộng
-    details: Chương 11–13. Kho, hóa đơn, đối tác, tuân thủ và quản lý tài sản. Dùng khi đã chạy được luồng chính.
-    link: /mo-rong/11-tinh-nang-bo-sung
     linkText: Đọc nhóm này
   - title: Hợp tác xã
     details: Chương 14. Tạo tài khoản nông hộ, khai thửa, phát quy trình kỹ thuật, ghi nhật ký thay nông hộ.
@@ -36,9 +24,13 @@ features:
     details: Chương 15–21. Dành cho đội vận hành NacenCheck. 7 bước trên cổng quản trị, từ mở tổ chức, cấu hình ngành, bộ luật đến thu tiền và giám sát.
     link: /quan-tri/15-tong-quan-cong-quan-tri
     linkText: Đọc nhóm này
+  - title: Cơ quan quản lý
+    details: Chương 22–27. Dành cho cán bộ Sở. 6 bước trên cổng cơ quan quản lý, từ tra cứu lô, truy vết chuỗi cung ứng đến thanh tra, ghi vi phạm và báo cáo kỳ.
+    link: /co-quan-quan-ly/22-lam-quen-cong-co-quan-quan-ly
+    linkText: Đọc nhóm này
   - title: Hỗ trợ
-    details: Chương 22. Câu hỏi thường gặp và nơi liên hệ khi cần giúp.
-    link: /ho-tro/22-cau-hoi-thuong-gap
+    details: Chương 28. Câu hỏi thường gặp và nơi liên hệ khi cần giúp.
+    link: /ho-tro/28-cau-hoi-thuong-gap
     linkText: Đọc nhóm này
 ---
 

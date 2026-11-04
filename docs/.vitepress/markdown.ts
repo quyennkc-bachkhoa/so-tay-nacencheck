@@ -19,7 +19,7 @@ const TERMS = Object.entries(glossary as Record<string, any>)
   })
 const NO_TERMS = ['index.md', 'mo-dau/01-khai-niem-co-ban.md']
 
-export function markdownPlugins(md: MarkdownIt, opts: { appBase: string; adminBase: string }) {
+export function markdownPlugins(md: MarkdownIt, opts: { appBase: string; adminBase: string; govBase: string }) {
   // 1. Ảnh: ![alt](/images/xx.png) → <Shot name="xx" alt="alt" />, bỏ thẻ <p> bao quanh.
   const onlyImage = (tokens: any[], i: number) =>
     tokens[i + 1]?.type === 'inline' && tokens[i + 1].children?.length === 1 && tokens[i + 1].children[0].type === 'image'
@@ -37,9 +37,20 @@ export function markdownPlugins(md: MarkdownIt, opts: { appBase: string; adminBa
   }
 
   // 2. Đường dẫn màn hình `/dashboard/...`, `/admin/...` → nhãn breadcrumb, bấm mở trang thật ở tab mới.
+  //    `/gov/...` là màn của cổng cơ quan quản lý: bỏ chữ "gov", mở trên tên miền của cổng đó.
   const code = md.renderer.rules.code_inline!
+  const govHost = opts.govBase.replace(/^https?:\/\//, '').split('.')[0]
   md.renderer.rules.code_inline = (tokens, idx, o, env, self) => {
     const c = tokens[idx].content.trim()
+    if (/^\/gov(\/|$)/.test(c)) {
+      const segs = c.split('/').filter(Boolean).slice(1)
+      const cut = segs.findIndex((s) => s.includes('<'))
+      const href = opts.govBase + '/' + (cut < 0 ? segs : segs.slice(0, cut)).join('/')
+      const crumbs = [govHost, ...segs]
+        .map((s) => `<span class="crumb${s.includes('<') ? ' crumb-var' : ''}">${esc(s.replace(/[<>]/g, ''))}</span>`)
+        .join('<span class="crumb-sep" aria-hidden="true">›</span>')
+      return `<a class="route-chip" href="${esc(href)}" target="_blank" rel="noopener" title="Mở trên cổng cơ quan quản lý (tab mới)">${LINK_ICON}${crumbs}</a>`
+    }
     let route = c
     if (c.startsWith(opts.appBase)) route = c.slice(opts.appBase.length) || '/'
     if (/^\/(dashboard|m|admin)(\/|$)/.test(route)) {

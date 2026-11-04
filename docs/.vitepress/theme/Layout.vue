@@ -6,9 +6,10 @@ import SiteHeader from './components/SiteHeader.vue'
 import FlowSteps from './components/FlowSteps.vue'
 import InfoBox from './components/InfoBox.vue'
 import NewbieSteps from './components/NewbieSteps.vue'
+import PartNav from './components/PartNav.vue'
 
 const { page, frontmatter } = useData()
-const isFlow = computed(() => /^(luong-chinh|quan-tri)\//.test(page.value.relativePath))
+const isFlow = computed(() => /^(luong-chinh|quan-tri|co-quan-quan-ly)\//.test(page.value.relativePath))
 </script>
 
 <template>
@@ -18,6 +19,7 @@ const isFlow = computed(() => /^(luong-chinh|quan-tri)\//.test(page.value.relati
     </template>
 
     <template #doc-before>
+      <PartNav />
       <FlowSteps v-if="isFlow" />
       <InfoBox v-if="isFlow && frontmatter.prerequisites" kind="before" title="Trước khi bắt đầu" :items="frontmatter.prerequisites" />
     </template>

@@ -198,5 +198,23 @@
       "rollback"
     ],
     "def": "Lùi về phiên bản trước khi bản mới gây lỗi."
+  },
+  "c-o": {
+    "term": "C/O",
+    "match": [
+      "C/O",
+      "giấy C/O"
+    ],
+    "def": "Giấy chứng nhận xuất xứ hàng hóa, cấp cho lô xuất khẩu để chứng minh hàng được làm ở đâu."
+  },
+  "sev": {
+    "term": "Mức SEV",
+    "match": [
+      "SEV1",
+      "SEV2",
+      "SEV3",
+      "SEV4"
+    ],
+    "def": "Mức nghiêm trọng của vi phạm trên cổng cơ quan quản lý. SEV1 nặng nhất, SEV4 nhẹ nhất."
   }
 }
